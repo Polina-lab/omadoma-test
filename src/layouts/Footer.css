@@ -1,0 +1,131 @@
+.footer-bg-wrapper {
+  position: relative;
+  width: 100%;
+  background-image: url("../assets/category-bg.png");
+  background-size: 100% 30%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.footer-bg-decor {
+  background-image: url("../assets/footer/footer-left.png"),
+                    url("../assets/footer/footer-right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom, right bottom;
+  background-size: auto 60%, auto 60%;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 5;
+}
+
+.footer {
+  color: var(--color-green);
+  font-size: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding:20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.footer-slogan {
+  font-style: italic;
+  margin-bottom: 23px;
+  font-weight: 700;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.footer h4 {
+  font-size: 18px;
+}
+
+.footer-logo {
+  width: 250px;
+  margin-top: 8px;
+}
+
+.footer-contact img,
+.footer-contact p img {
+  width: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.footer-links ul,
+.footer-legal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-legal li {
+  margin-bottom: 15px;
+}
+
+.footer-links a,
+.footer-legal a {
+  color: var(--color-gray);
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: var(--color-gray);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-green);
+  background-color: rgba(0, 128, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon img, .social-icon a {
+  width: 28px;
+  height: 28px;
+}
+
+.social-icon:hover { background-color: rgba(0, 128, 0, 0.3); }
+
+.footer-social-buttons {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.footer-social-buttons button {
+  width: 200px;
+  padding:10px 10px;
+}
+

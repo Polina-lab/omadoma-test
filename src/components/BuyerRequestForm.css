@@ -1,0 +1,66 @@
+.byuer-request h2{
+  color: var(--color-blue-light);
+}
+
+.byuer-request.modal-close {
+  color: var(--color-blue-light);
+}
+
+.byuer-request.modal-close:hover {
+  color: var(--color-blue-light);
+}
+
+.byuer-request.modal-form input:focus,
+.byuer-request.modal-form textarea:focus,
+.byuer-request.modal-form select:focus,
+.upload-button:focus {
+  border-color: var(--color-blue-light);
+  box-shadow: 0 0 0 3px rgba(48, 162, 207, 0.2);
+  outline: none;
+}
+
+.byuer-request label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-blue-light);
+}
+
+.byuer-request.upload-button {
+  color: var(--color-blue-light);
+}
+
+.byuer-request.upload-icon {
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  color: var(--color-blue-light);
+}
+
+.room-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.room-btn {
+  padding: 10px 10px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+  color: var(--color-gray);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.room-btn:hover {
+  border-color: var(--color-blue-light);
+  background-color: var(--color-blue-light);
+  color: white;
+  font-weight: 700;
+}
+
+
+

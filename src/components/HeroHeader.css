@@ -1,0 +1,116 @@
+/* HeroHeader.css */
+.hero-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-bg-right {
+  position: absolute;
+  top: -60px;
+  right:0;
+  width: 60%;
+  height: 800px;
+  background-image: url('../assets/header-bg.png');
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-left {
+  position: absolute;
+  top: 70px;
+  left:0;
+  width: 20%;
+  height: 600px;
+  background-image: url('../assets/header-bg-left.png');
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.hero-content h2{
+  font-size: 30px;
+  width:60%;
+  color: var(--color-green);
+}
+.hero-content p{
+  width:60%;
+  color: var(--color-gray);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 56px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.quick-sale-block {
+  position: relative;
+  padding: 40px 0;
+}
+
+h3.quick-sale-title  {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--color-blue-dark);
+  margin-bottom: -5px;
+}
+
+.quick-sale-description {
+  margin-bottom: 2px;
+}
+
+.quick-sale-counter {
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 12px;
+  color: black;
+  text-align: left;
+}
+span.count {
+  color: var(--color-blue-dark);
+  font-weight: 900;
+}
+
+.quick-sale-button {
+  background-color: var(--color-blue-dark);
+  border: 2px solid var(--color-blue-dark);
+}
+
+.quick-sale-button:hover {
+  background-color: black;
+  border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+  .quick-sale-title {
+    font-size: 24px;
+  }
+
+  .quick-sale-description,
+  .quick-sale-counter {
+    font-size: 15px;
+  }
+
+  .quick-sale-button {
+    width: 100%;
+    font-size: 15px;
+    padding: 14px 20px;
+  }
+}
+
+

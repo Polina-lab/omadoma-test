@@ -1,0 +1,214 @@
+:root {
+  --font-main: "Avenir Next", sans-serif, system-ui;
+
+  --color-gray: #adadad;
+  --color-blue-gray: #bec4ff50;
+  --color-orange: #ffa800;
+  --color-dorange: #b47904;
+  --color-blue-light: #13a3dc;
+  --color-blue-dark: #131f76;
+  --color-green: #2f8542;
+  --color-green-dark:#1e582b;
+
+  font-family: "Avenir Next", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 400;
+  color: var(--color-blue-dark);
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.btn {
+  padding: 10px 48px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/*button green*/
+.btn-outline-green{
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  color: var(--color-green);
+  border: 2px solid var(--color-green);
+}
+
+.btn-outline-green:hover {
+  background-color: var(--color-green);
+  border: 2px solid var(--color-green);
+  color: white;
+}
+
+.btn-solid-green {
+  color: white;
+  border: 2px solid var(--color-green);
+  background-color: var(--color-green);
+}
+
+.btn-solid-green:hover {
+  background-color: var(--color-green-dark);
+  border: 2px solid var(--color-green-dark);
+}
+
+/*button dark blue*/
+.btn-outline-dblue{
+  background-color: transparent;
+  color: var(--color-blue-dark);
+  border: 2px solid var(--color-blue-dark);
+}
+
+.btn-outline-dblue:hover {
+  background-color: var(--color-blue-dark);
+  border: 2px solid var(--color-blue-dark);
+  color: white;
+}
+
+.btn-solid-dblue {
+  color: white;
+  border: 2px solid var(--color-blue-dark);
+  background-color: var(--color-blue-dark);
+}
+
+.btn-solid-dblue:hover {
+  background-color: black;
+  border: 2px solid black;
+}
+
+/*button blue*/
+.btn-outline-blue{
+  background-color: transparent;
+  color: var(--color-blue-light);
+  border: 2px solid var(--color-blue-light);
+}
+
+.btn-outline-blue:hover {
+  background-color: var(--color-blue-light);
+  border: 2px solid var(--color-blue-light);
+  color: white;
+}
+
+.btn-solid-blue {
+  color: white;
+  border: 2px solid var(--color-blue-light);
+  background-color: var(--color-blue-light);
+}
+
+.btn-solid-blue:hover {
+  background-color: var(--color-blue-dark);
+  border: 2px solid var(--color-blue-dark);
+}
+
+/*white*/ 
+.btn-solid-white {
+  color: var(--color-blue-light);
+  border: 2px solid white;
+  background-color: white;
+}
+
+.btn-solid-white:hover {
+  background-color: var(--color-blue-light);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*orange*/
+.btn-solid-orange {
+  color: white;
+  border: 2px solid var(--color-orange);
+  background-color: var(--color-orange);
+}
+
+.btn-solid-orange:hover {
+  background-color: var(--color-dorange);
+  border: 2px solid var(--color-dorange);
+  color: var(--color-blue-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.small {
+  font-variant: small-caps;
+}
+
+span.orange {
+  color: var(--color-orange);
+  font-weight: 900;
+}
+
+span.blue {
+  color: var(--color-blue-light);
+  font-weight: 900;
+}
+span.green {
+  color: var(--color-green);
+  font-weight: 900;
+}
+
+span.gray {
+  color: var(--color-gray);
+}
+
+span.italic {
+  font-style: italic;
+}
+
+span.underline {
+  text-decoration: underline;
+}
+
+span.orange2 {
+  color: var(--color-orange);
+}
+
+span.blue2 {
+  color: var(--color-blue-light);
+}
+
+span.green2 {
+  color: var(--color-green);
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./assets/fonts/AvenirNextLTPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+

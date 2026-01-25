@@ -1,0 +1,63 @@
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-blue-dark);
+  font-weight: 700;
+  padding: 6px 10px;
+}
+
+.flag-icon {
+  width: 25px;
+  height: auto;
+  display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+
+.arrow-icon {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.lang-menu {
+  position: absolute;
+  margin-top: 4px;
+  background: rgba(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(80, 80, 80, 0.15);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--color-blue-dark);
+  font-weight: 200;
+  overflow: visible;
+}
+.lang-option:hover .flag-icon {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+

@@ -1,0 +1,45 @@
+.buyer-banner {
+  position: relative;
+  z-index: 1;
+  color: white;
+  width: 100%;
+  align-items: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.banner-text {
+  max-width: 700px;
+  flex: 1;
+}
+
+.banner-content h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.banner-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-solid-white {
+    margin-top: 16px;
+    width: 100%;
+  }
+}

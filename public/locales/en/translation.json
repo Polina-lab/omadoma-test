@@ -1,0 +1,458 @@
+{
+  "nav.home": "Avaleht",
+  "nav.services": "Teenused",
+  "nav.advantages": "Meie eelised",
+  "nav.process": "Protsess",
+  "nav.contact": "Kontakt",
+  "hero.subtitle": "Sujuvad kinnisvaratehingud. Diskreetsed ja läbimõeldud investeerimislahendused.",
+  "hero.description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
+  "hero.offers": "MEIE PAKKUMISED",
+  "hero.buyPlot": "OSTA ELAMU KRUNT",
+  "quickSale.title": "TURUHINNAGA KIIRMÜÜK",
+  "quickSale.description": "Aitame Sinu kinnisvarale kiiresti leida ostja",
+  "quickSale.buyersCount": "HETKEL ON 10 REGISTREERITUD OSTUHUVILIST",
+  "quickSale.sendOffer": "SAADA MEILE ENDA PAKKUMINE",
+  "buyerRequest.title": "SOOVID OSTA?",
+  "buyerRequest.description": "Saada enda päring meile ja lisame selle andmebaasi kuni leiame või meie pakkujate just sulle sobivat kinnisvara!",
+  "buyerRequest.sendRequest": "SAADA MEILE ENDA PÄRING",
+  "quickSale": {
+    "title": "Turuhinnaga kiirmüük",
+    "description": "Aitame Sinu kinnisvarale kiiresti leida ostja",
+    "counter": "Hetkel on <0>{{count}}</0> registreeritud ostuhuvilist",
+    "button": "Saada meile enda pakkumine",
+    "modalIntro": "NB! mõistliku hinna eest, mitte alla turuhinna! <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> andmebaasis on autentsed ostuhuvilised, kellele soovime pakkuda just Sinu kinnisvara ja aidata vormistada KIIRE TEHING!"
+  },
+  "form": {
+    "name": "Nimi",
+    "email": "Email",
+    "address": "Aadress",
+    "size": "Suurus (m²)",
+    "desiredPrice": "Soovitud hind:",
+    "beforePrice": "Eelarve:",
+    "priceFrom": "alates",
+    "priceTo": "kuni",
+    "uploadLabel": "Dokumendi ja piltide lisamine",
+    "uploadButton": "Laadi failid üles",
+    "uploadNote": "Maksimaalne faili suurus peab olema mitte rohkem kui 2Mb. Kokku saab lisada kuni 10 faili",
+    "phone": "Telefon",
+    "region": "Soovitud piirkond",
+    "wish": "Soovin:",
+    "sell": "Müüa",
+    "rending": "Üürile anda",
+    "profile": "Profipilte",
+    "dron": "Droonifotosid",
+    "video": "Videoteenust",
+    "sizeFrom": "alates",
+    "sizeTo": "kuni",
+    "rooms": "Tubade arv",
+    "financing": "Finantseerimine",
+    "propertyType": "Kinnisvara tüüp",
+    "addressMultiple": "Aadress(id):",
+    "objectCount": "Soovin haldusteenust: ",
+    "servicesWanted": "Soovin järgmiseid teenuseid",
+    "servicesOptions": {
+      "fullManagement": "Täishaldus",
+      "cleaning": "Koristus",
+      "moving": "Kolimine",
+      "utilization": "Vana mööbli/tehnika utiliseerimine",
+      "associationCommunication": "KÜ suhtlemine",
+      "debtCollection": "Üürniku võla sissenõudmine",
+      "eviction": "Üürniku väljatõstmine",
+      "contractExtension": "Üürilepingu pikendamine", 
+      "otherServices": "Muud teenused" },
+    "managementDetails": "Lisainfo/detailid: siia saad soovi korral kirjutada kogu vajalikku infot haldusteenust vajava(te) objekti(de) kohta, nagu kas nad on üürile antud või tühjad, ehk vaja leida üürnike, kas soovid lisaks need ära renoveerida, korrastada vms enne üürile andmist ja haldusesse võtmist, kas on seal probleemseid üürnike, kellega oleks vaja esmajärjekorras tegeleda, mis hinnaga objektid on üürileantud ja millised on üüriootused, jne ",
+    "renovationDetails": "Lisainfo/küsimused: siin saad täpsustada, millist teenust/remonditööd oleksid huvitatud tellima",
+    "types": {
+      "studio": "Stuudio-korter",
+      "apartment": "Korter",
+      "commercial": "Kaubandus",
+      "office": "Büroo",
+      "service": "Teenindus",
+      "food": "Toitlustus",
+      "storage": "Ladu",
+      "production": "Tootmine",
+      "house": "Maja",
+      "housePart": "Majaosa",
+      "rowhouse": "Ridaelamusboks",
+      "summerhouse": "Suvila",
+      "plot": "Maatükk",
+      "parking": "Parkimiskoht",
+      "garage": "Garaaž"
+    },
+    "cadastral": "Katastritunnus",
+    "condition": "Seisukord:",
+    "conditionOptions": {
+      "new": "Uus, Uusarendus",
+      "good": "Heas korras",
+      "freshFinish": "Uus viimistlus",
+      "renovated": "Renoveeritud",
+      "sanitaryDone": "San. remont tehtud",
+      "average": "Keskmine",
+      "sanitaryNeeds": "San. remonti vajav",
+      "capitalNeeds": "Kap. remonti vajav"
+    },
+    "servicePeriod": "Teenuse periood",
+    "periodOptions": { "oneTime": "Ühekordne", "oneYear": "1 aasta", "moreThanYear": "Rohkem kui aasta", "agreement": "Kokkuleppel" },
+    "moreThan5":"rohkem kui 5",
+    "additionalInfo": "Lisainfo / Küsimused",
+    "submit": "Saada pakkumine"
+  },
+  "buyer": {
+    "title": "SOOVID OSTA?",
+    "description": "Saada enda päring meile ja lisame selle andmebaasi kuni leiame või meile pakutakse just sulle sobivat kinnisvara!",
+    "region": "Soovitud piirkond",
+    "size": "Suurus (m²)",
+    "sizeFrom": "alates",
+    "sizeTo": "kuni",
+    "rooms": "Tubade arv",
+    "financing": "Finantseerimine"
+  },
+  "success": {
+    "title": "AITÄH!",
+    "message": "Saime Sinu pakkumise kätte.\nVastame kindlasti 24h jooksul.",
+    "hintTitle": "Eelduslikud piirkonnad ja objektid:",
+    "hints": [
+      "Korter (1–3 toaline, remontivajav, Tallinn)",
+      "Korter (2-toaline, hea/keskmine seisukord, 1. korrus, Lasnamäe)",
+      "Äripind (toitlustus, 1. korrus)",
+      "Garaaž (kuni 12 000 €)",
+      "Maatükk (elamumaa, vesi, kanalisatsioon, elekter, tee, Harjumaa)",
+      "Maatükk (elamumaa, mere ääres või läheduses, Kakumäe, Pirita, Viimsi, Harku vald)"
+    ]
+  },
+  "buyerBanner": {
+  "title": "SOOVID OSTA?",
+  "description": "Saada enda päring meile ja lisame selle andmebaasi kuni leiame või meile pakutakse just sulle sobivat kinnisvara!",
+  "button": "SAADA MEILE ENDA PÄRING"
+},
+"services": {
+  "title": "Meie teenused",
+  "readMore": "Vaata lähemalt →",
+  "sendRequest": "Saada päring",
+  "sendRequest2": "Saada tellimus",
+  "brokerage": {
+    "title": "Vahendus (Müük/Üür)",
+    "description": "Müügi ja üüri professionaalne vahendus"
+  },
+  "management": {
+    "title": "Haldus",
+    "description": "Kinnisvara igapäevane haldus ja hooldus"
+  },
+  "renovation": {
+    "title": "Remonditööd",
+    "description": "Väikesed ja suured remonditööd"
+  },
+  "valuation": {
+    "title": "Hindamine",
+    "description": "Kinnisvara turuväärtuse hindamine"
+  },
+  "media": {
+    "title": "Kinnisvara pildistamine",
+    "description": "Silmapaistvad foto- ja videomaterjalid"
+  },
+  "investment": {
+    "title": "Investeerimisnõustamine",
+    "description": "Nõustamine investeerimisvõimaluste osas"
+  },
+  "financing": {
+    "title": "Finantseerimine",
+    "description": "Kui pangad laenu ei anna, aga ikkagi on soovi kinnisvara soetada"
+  },
+  "details": {
+    "brokerage": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib GloReal INVESTMENTS asutaja ja firmajuht German Randla 6-taseme kutsetunnistusega nr KKM 219715 ja üle 18 aastase kinnisvaraalase kogemusega partner ja nõustaja. Müügi vahendamisel tasu on 3%-4% (püsiklientidel 2,5%) kinnisvara müügihinnast, mille tasub müüja (teenuse tellija). Üürikorteri vahendamisel Eestis tavapäraselt maksab vahendustasu kinnisvara üürnik, mis võrdub ühe kuu üürile. NB! GloReal INVESTMENTS elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!",
+    "management": "Pakume igapäevast haldust ja hooldust teie kinnisvarale, sealhulgas kommunaalkulude haldamine, tehniline järelevalve, koristus, avariitööde koordineerimine ja suhtlus üürnikega.",
+    "renovation": "Teostame nii väiksemaid parandustöid kui ka suuremaid renoveerimisprojekte. Koostame tööplaani, hangime materjalid ja tagame kvaliteetse teostuse.",
+    "valuation": "Kinnisvara hindamine turuväärtuse alusel, arvestades asukohta, seisukorda, turutrende ja sarnaste objektide statistikat. Vajalik müügiks, üüriks või finantseerimiseks.",
+    "media": "Loome professionaalseid foto- ja videomaterjale, mis toovad esile kinnisvara parimad küljed. Kasutame drooni, laia nurga objektiive ja vajadusel stiliseerimist.",
+    "investment": "Nõustame investeerimisvõimaluste osas, olgu selleks üürikinnisvara, arendusprojektid või äripinnad. Aitame koostada strateegia ja hinnata riske.",
+    "financing": "Kui pangad laenu ei anna, pakume alternatiivseid finantseerimisvõimalusi koostöös investoritega. Hindame objekti, koostame finantsplaani ja otsime sobiva lahenduse."
+  },
+  "detailss": {
+    "brokerage": [
+      {
+        "type": "text",
+        "content": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> asutaja ja firmajuht <4>German </4><5>Randla</5>, 6-taseme kutsetunnistusega nr <2>KKM 219715</2> ja üle 18 aastase kinnisvaraalalise kogemusega partner ja nõustaja.",
+        "link": "https://www.maakleritekoda.ee/et/maaklerite-register/german-randla/394"
+      },
+      {
+        "type": "text",
+        "content": "Müügi vahendamisel tasu on 3%-4% (püsiklientidel 2,5%) kinnisvara müügihinnast, mille tasub müüja (teenuse tellija)."
+      },
+      {
+        "type": "text",
+        "content": "Üürikorteri vahendamisel Eestis tavapäraselt maksab vahendustasu kinnisvara üürnik, mis võrdub ühe kuu üürile."
+      },
+      {
+        "type": "text",
+        "content": "<3>NB!</3> <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> <3>elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!</3>"
+      },
+      {
+        "type": "cta",
+        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "button": "Saada päring",
+        "formComponent": "BrokerageForm"
+      }
+    ],
+    "management": [
+      {
+        "type": "text",
+        "content": "Omanikule Kinnisvara haldusteenus, mida pakub <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> on - teie kinnisvara tasuline haldamine ja hooldamine kindlaksmääratud aja jooksul koos järgmiste teenustega:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Suhtlemine eluaseme- ja kommunaalteenuste esindajatega",
+          "Hädaolukorrale reageerimine või järelevalve",
+          "Pidev suhtlemine üürnikuga",
+          "Kommunaal- ja üürimaksete jälgimine",
+          "Kinnisvara hoolduse ja remondi koordineerimine",
+          "Üürniku eeskirjade järgimise kontroll",
+          "Võlgnevuste korral: maksegraafik, väljatõstmine, kohtumenetlus"
+        ]
+      },
+      {
+        "type": "pricing",
+        "items": [
+          "25.- EUR/h",
+          "40.- EUR/h (väljaspool tööaega 9:00–17:00)",
+          "Aastahaldus = 100% kuurendist aastas",
+          "Kuuhaldus = 8% kuurendist kuus",
+          "10% – kui üüriväärtus on alla 300.- EUR kuus",
+          "Lepingu uuendamine – 100.- EUR",
+          "75.- EUR – püsiklientidele",
+          "0.- EUR – täisteenuse tellijatele"
+        ]
+      },
+      {
+        "type": "cta",
+        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "button": "Saada päring",
+        "formComponent": "ManagementForm"
+      }
+    ],
+    "renovation": [
+      {
+        "type": "list",
+        "items": [
+          "Seinte lammutamine ja prahi eemaldamine",
+          "Sisemiste seinte ja vaheseinte paigaldus",
+          "Seinte ja lagede maalritööd",
+          "Plaatimine esikutes, vannitubades ja köökides",
+          "Põrandakatted: eemaldamine, ettevalmistus, paigaldus, renoveerimine",
+          "Elektritööd ja projekteerimine",
+          "Toru- ja sanitaartehnilised tööd",
+          "Ventilatsioonitööd",
+          "Tuleohutustööd ja audit",
+          "Renoveerimisjärgne jäätmete äravedu ja puhastus",
+          "Köögimööbli ja tehnika paigaldus",
+          "Disaini projekti koostamine ja sisustamine"
+        ]
+      },
+      {
+        "type": "cta",
+        "text": "Küsi pakkumist",
+        "button": "Küsi pakkumist",
+        "formComponent": "RenovationForm"
+      }
+    ],
+    "valuation": [
+      {
+        "type": "text",
+        "content": "Pakume kiiret ja objektiivset eksperthinnangut sinu kinnisvarale koostööpartnerite kaudu."
+      },
+      {
+        "type": "pricing",
+        "items": [
+          "Kinnisvara turuväärtuse hindamine enne müüki – 50.- EUR",
+          "Eksklusiivlepinguga klientidele TASUTA",
+          "Muude objektide hindamine – hinnakirja alusel",
+          "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> vahendusel müüdavatele objektidele <3>-15% tavahinnast</3>"
+        ]
+      },
+      {
+        "type": "cta",
+        "text": "Telli meilt hindamisteenus",
+        "button": "Telli hindamine",
+        "formComponent": "ValuationForm"
+      }
+    ],
+    "media": [
+      {
+        "type": "text",
+        "content": "Loome silmapaistvaid foto- ja videomaterjale kinnisvara müügiks ja üüriks."
+      },
+      {
+        "type": "pricing",
+        "items": [
+          "1-2 toaline korter – 50.- EUR",
+          "3-4 toaline korter – 75.- EUR",
+          "5+ toaline korter – 100.- EUR",
+          "Maja < 110 m2 – 75.- EUR",
+          "Maja > 110 m2 – 120.- EUR",
+          "Äripind 1-3 ruumi – 50.- EUR",
+          "Äripind 4+ ruumi – 100.- EUR",
+          "Maa – 50.- EUR",
+          "Drooni fotod – 190.- EUR",
+          "Eksklusiivprojektid – alates 200.- EUR",
+          "Eksklusiivlepinguga klientidele kõik fotod TASUTA"
+        ]
+      },
+      {
+        "type": "cta",
+        "text": "Telli meilt kinnisvara pildistamisteenus",
+        "button": "Telli pildistamine",
+        "formComponent": "MediaForm"
+      }
+    ],
+    "investment": [
+      {
+        "type": "text",
+        "content": "Pakume erinevaid investeerimisvõimalusi kinnisvara ja äri valdkondades."
+      },
+      {
+        "type": "cta",
+        "text": "Saada oma päring ja leiame parima lahenduse",
+        "button": "Saada päring",
+        "formComponent": "InvestmentForm"
+      }
+    ],
+    "financing": [
+      {
+        "type": "text",
+        "content": "Kui pangad laenu ei anna, pakume alternatiivseid finantseerimisvõimalusi koostöös investoritega."
+      },
+      {
+        "type": "text",
+        "content": "Vaatame sinu päringu üle ning pakume lahendusi, mis sobivad sinu eesmärkidega."
+      },
+      {
+        "type": "cta",
+        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "button": "Saada päring",
+        "formComponent": "FinancingForm"
+      }
+    ]
+  }
+
+
+
+},
+"category": {
+  "title": "<0>Mida me</0> <1>Vahendame</1>",
+  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016"
+},
+"categories": {
+    "businessSpaces": "Äripinnad",
+    "summerhouses": "Suvilad",
+    "houses": "Majad ja majaosad",
+    "land": "Maa ja krundid",
+    "apartments": "Korterid",
+    "garages": "Garaažid",
+    "entrepreneurship": "Ettevõtlus ja äri",
+    "development": "Arendusprojekt",
+    "investments": "Investeeringud",
+    "newDevelopments": "Uusarendused"
+  },
+  "process": {
+  "title": "<0>Meie lihtne</0> <1>Tööprotsess</1>",
+  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
+  "consultation": {
+    "title": "Konsultatsioon",
+    "description": "Esmane kohtumine ja vajaduste kaardistamine"
+  },
+  "analysis": {
+    "title": "Analüüs",
+    "description": "Turuolukorra ja objekti hindamine"
+  },
+  "strategy": {
+    "title": "Strateegia",
+    "description": "Müügi- või investeerimisplaani koostamine"
+  },
+  "marketing": {
+    "title": "Turundus",
+    "description": "Professionaalne reklaam ja sihitud kampaaniad"
+  },
+  "negotiation": {
+    "title": "Läbirääkimised",
+    "description": "Hinnaläbirääkimised ja tingimuste kokkulepped"
+  },
+  "followup": {
+    "title": "Järelteenindus",
+    "description": "Toetus pärast tehingut ja edasine koostöö"
+  }
+},
+"advantages": {
+  "title": "<0>Meie</0> <1>Eelised</1>",
+  "speed": {
+    "title": "Kiirmüük",
+    "description": "Otsus 24h, notar 3 päeva, raha järgmisel päeval"
+  },
+  "investment": {
+    "title": "Investeerimine",
+    "description": "Spetsialiseerumine investeerimisobjektidele"
+  },
+  "database": {
+    "title": "Andmebaas",
+    "description": "Aktiivsed ostjad ja investorid"
+  },
+  "business": {
+    "title": "Äripinnad ja arendused",
+    "description": "Vahendus uusarenduste ja äripindadega"
+  },
+  "personal": {
+    "title": "Personaalne suhtlus",
+    "description": "Kiire reageerimine ja individuaalne lähenemine"
+  },
+  "regions": {
+    "title": "Tööpiirkonnad",
+    "description": "Tallinn, Harjumaa, Riia, Tenerife"
+  }
+},
+"partners": "Meie partnerid",
+"contact": {
+  "title": "Võta meiega ühendust",
+  "description": "Aitame sind kinnisvara või investeeringutega seotud küsimustes. Täida vorm ja võtame ühendust 24h jooksul.",
+  "form": {
+    "name": "Nimi",
+    "phone": "Telefon",
+    "email": "Email",
+    "topic": "Teema",
+    "message": "Küsimused / detailid",
+    "submit": "Saada päring"
+  },
+  "agent": {
+    "name": "German Randla",
+    "title": "Vanemmaakler, tase 6",
+    "cert": "Kutsetunnistus: 219715",
+    "reg": "Kinnisvaramaakleri reg.nr: KMR 26618",
+    "phone": "+372 55599313",
+    "email": "german@gloreal.ee"
+  }
+},
+"footer": {
+  "slogan": "Diskreetne ja pädev – mõeldud Sulle",
+  "contact": {
+    "title": "Kontakt",
+    "phone": "+372 55599313",
+    "email": "info@gloreal.ee",
+    "address": "Liivalaia 28, Tallinn 10118"
+  },
+  "links": {
+    "title": "Lingid",
+    "offers": "Meie pakkumised",
+    "broker": "Vahendusteenus",
+    "management": "Telli haldusteenust",
+    "valuation": "Telli hindamisakt"
+  },
+  "legal": {
+    "title": "Õiguslik",
+    "privacy": "Privaatsuspoliitika",
+    "cookies": "Küpsised",
+    "terms": "Kasutustingimused"
+  },
+  "buttons": { "sell": "Müü/Üüri välja", "quick": "Kiirmüük" },
+  "bottom": "Kõik andmed kaitstud."
+}
+
+
+}
