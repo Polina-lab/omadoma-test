@@ -212,3 +212,43 @@ span.green2 {
   font-style: normal;
 }
 
+@media (max-width: 768px) {
+  .services-bg,
+  .category-wrapper,
+  .process-advantages-wrapper {
+    background-image: none !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .home,
+  .home * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .content-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .process-advantages-wrapper {
+    background-attachment: scroll;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-wrapper {
+    padding: 40px 0;
+  }
+}
+
+
+

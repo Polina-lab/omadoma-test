@@ -100,3 +100,20 @@
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .categories-horizontal {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+.category-tile {
+  padding: 10px 20px;
+  min-width: 150px;
+}
+.category-block {
+  padding: 30px 40px;
+}
+}
+
+

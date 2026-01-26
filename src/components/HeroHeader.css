@@ -97,6 +97,50 @@ span.count {
 }
 
 @media (max-width: 768px) {
+
+  .hero-content {
+    padding: 60px 40px;
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hero-content h2,
+  .hero-content p {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  .quick-sale-block {
+    padding: 32px 16px;
+    text-align: center;
+  }
+
+  .quick-sale-counter {
+    text-align: center;
+  }
+
+  .quick-sale-button {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 768px) {
   .quick-sale-title {
     font-size: 24px;
   }
@@ -110,6 +154,13 @@ span.count {
     width: 100%;
     font-size: 15px;
     padding: 14px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-bg-right,
+  .hero-bg-left {
+    background-image: none !important;
   }
 }
 

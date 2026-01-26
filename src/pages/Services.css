@@ -211,3 +211,13 @@
 .pricing-block p {
   margin: 4px 0;
 }
+
+
+@media (max-width: 768px) {
+  .services-wrapper {
+    overflow: visible;
+  }
+  .services-section{
+    padding: 0px 40px;
+  }
+}

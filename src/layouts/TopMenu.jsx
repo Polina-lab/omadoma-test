@@ -9,6 +9,7 @@ const TopMenu = () => {
   const { i18n, t } = useTranslation();
   const location = useLocation();
   const [langOpen, setLangOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const changeLanguage = (lng) => {
@@ -28,6 +29,24 @@ const TopMenu = () => {
   return (
     <header className={`top-menu ${scrolled ? "scrolled" : "initial"}`}>
       <div className="menu-inner">
+
+        <button
+          className={`burger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>{t("nav.home")}</Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>{t("nav.services")}</Link>
+          <Link to="/advantages" onClick={() => setMenuOpen(false)}>{t("nav.advantages")}</Link>
+          <Link to="/process" onClick={() => setMenuOpen(false)}>{t("nav.process")}</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>{t("nav.contact")}</Link>
+        </nav>
+
         <div className="logo-block">
           <img src={logoUrl} alt="GloReal Investments" className="logo-icon" />
         </div>
