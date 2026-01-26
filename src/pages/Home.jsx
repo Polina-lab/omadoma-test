@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import HeroHeader from "../components/HeroHeader";
 import BuyerRequestBlock from "../components/BuyerRequestBlock";
@@ -14,6 +14,18 @@ const Home = () => {
 
   const [activeService, setActiveService] = useState(null);
 
+  const lastScrollPosition = useRef(0);
+
+  const handleServiceClick = (serviceKey) => {
+    lastScrollPosition.current = window.scrollY; // запоминаем позицию
+    setActiveService(serviceKey);
+  };
+
+const handleClose = () => { setActiveService(null); setTimeout(() => { window.scrollTo({ top: lastScrollPosition.current, behavior: "smooth" }); }, 50); };
+
+
+  const modalRef = useRef(null);
+
   return (
     <div className="home">
       <div className="hero-wrapper">
@@ -24,15 +36,17 @@ const Home = () => {
       </div>
       <div className="services-wrapper">
         <div className="services-bg" />
-        <Services activeService={activeService} setActiveService={setActiveService} />
+        <Services activeService={activeService} setActiveService={handleServiceClick} />
         </div>
 
         {activeService && (
           <ServiceDetails
+            ref={modalRef}
             serviceKey={activeService}
-            onClose={() => setActiveService(null)}
+            onClose={handleClose}
           />
         )}
+
 
       <div className="category-wrapper">
         <CategoryBlock />

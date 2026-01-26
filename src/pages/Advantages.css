@@ -88,3 +88,45 @@
   font-size: 14px;
   color: var(--color-gray);
 }
+
+@media (max-width: 768px) {
+
+  /* Общий контейнер */
+  .advantages-block {
+    padding: 20px 40px;
+  }
+
+  .advantages-title::after {
+    width: 160px;
+  }
+
+  /* Сетка — превращаем в одну колонку */
+  .advantages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Элемент преимущества */
+  .advantage-item {
+    padding: 16px 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Иконка */
+  .advantage-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+  }
+
+  /* Текст */
+  .advantage-text p, .advantage-text h4  {
+    text-align: left;
+    margin-left: 30px;
+  }
+}
+

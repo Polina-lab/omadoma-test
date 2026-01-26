@@ -227,6 +227,6 @@ textarea::placeholder {
 
   .price-range {
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
   }
 }

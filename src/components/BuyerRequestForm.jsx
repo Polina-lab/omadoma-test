@@ -92,12 +92,13 @@ const handleSubmit = (e) => {
             <div className="form-group">
               <div className="room-buttons">
               <label className="field-label">{t("buyer.rooms")}</label>
-              
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <button type="button" key={num} className="room-btn">
-                    {num}
-                  </button>
-                ))}
+                <div className="button-group">
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <button type="button" key={num} className="room-btn">
+                      {num}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="form-group">

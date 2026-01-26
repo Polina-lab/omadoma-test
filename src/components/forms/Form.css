@@ -62,3 +62,77 @@
   font-weight: 700;
 }
 
+
+/* ----------------------------- */
+/*   MOBILE VERSION ONLY         */
+/* ----------------------------- */
+@media (max-width: 768px) {
+
+  /* Поля формы — 100% ширины */
+  .service-form input,
+  .service-form select,
+  .service-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ряды превращаем в колонку */
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button-group {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .button-group .room-btn {
+    flex: 1 1 calc(50% - 12px);
+    padding: 14px 0;
+    box-sizing: border-box;
+  }
+
+  .room-buttons {
+    flex-direction: column;
+  }
+
+  /* Блок загрузки файлов */
+  .upload-block {
+    text-align: center;
+  }
+
+  .upload-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .upload-end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .upload-icon {
+    width: 20px;
+    opacity: 0.8;
+  }
+
+  /* Кнопка отправки */
+  .service-form button[type="submit"] {
+    width: 100%;
+    max-width: 260px;
+    margin: 20px auto 0;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+}
+

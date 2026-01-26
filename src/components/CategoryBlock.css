@@ -114,6 +114,11 @@
 .category-block {
   padding: 30px 40px;
 }
+
+.category-title::after {
+  max-width: 200px;
+  margin: auto;
+}
 }
 
 

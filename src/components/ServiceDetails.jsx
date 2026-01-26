@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {forwardRef, useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 
 import BrokerageForm from "./forms/BrokerageForm";
@@ -36,16 +36,24 @@ const serviceIcons = {
   financing: iconFinancingHover
 };
 
-const ServiceDetails = ({ serviceKey, onClose }) => {
+const ServiceDetails = forwardRef(({ serviceKey, onClose }, ref) => {
   const { t } = useTranslation();
   const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => { setShowForm(false); }, [serviceKey]);
+  useEffect(() => { setShowForm(false); }, [serviceKey]);useEffect(() => {
+    if (ref && ref.current) {
+        const yOffset = -120; // регулируй под высоту меню
+        const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+
+    }
+    }, []);
+
 
   const blocks = t(`services.detailss.${serviceKey}`, { returnObjects: true });
 
   return (
-    <section className="service-details">
+    <section className="service-details"  ref={ref}>
         <button className="details-close" onClick={onClose}>&times;</button>
 
         <div className="service-details-content">
@@ -129,6 +137,6 @@ const ServiceDetails = ({ serviceKey, onClose }) => {
         </div>
     </section>
   );
-};
+});
 
 export default ServiceDetails;

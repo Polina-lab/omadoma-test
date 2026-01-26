@@ -45,4 +45,78 @@
   color: var(--color-blue-dark);
 }
 
+/* ----------------------------- */
+/*   MOBILE VERSION ONLY         */
+/* ----------------------------- */
+@media (max-width: 768px) {
+
+  /* Модалка занимает весь экран */
+  .modal.quick-sale {
+    padding: 0;
+    align-items: flex-start; /* чтобы контент начинался сверху */
+  }
+
+  /* Контент модалки — на всю ширину телефона */
+  .modal.quick-sale .modal-content {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh; /* полноэкранно */
+    border-radius: 0; /* убираем скругления */
+    padding: 20px 40px;
+    overflow-y: auto; /* скролл внутри */
+    box-sizing: border-box;
+  }
+
+  /* Крестик остаётся в углу */
+  .modal.quick-sale .modal-close {
+    top: 16px;
+    right: 16px;
+    font-size: 30px;
+    color: var(--color-blue-dark);
+  }
+
+  /* Заголовок по центру, но без ограничения ширины */
+  .modal.quick-sale h2 {
+    width: 100%;
+    font-size: 26px;
+    margin-top: 40px;
+  }
+
+  .modal.quick-sale h2::after {
+    width: 150px;
+  }
+
+  /* Формы — на всю ширину */
+  .modal.quick-sale .modal-form {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Ряды превращаем в колонку */
+  .modal.quick-sale .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Поля — 100% ширины */
+  .modal.quick-sale input,
+  .modal.quick-sale select,
+  .modal.quick-sale textarea {
+    width: 100%;
+  }
+
+  /* Upload block — центрируем */
+  .modal.quick-sale .upload-block {
+    text-align: center;
+  }
+  .price-block  {
+    width: 100%;
+  }
+  .price-range input {
+    text-align: center;
+  }
+}
+
+
 
