@@ -105,7 +105,8 @@
     "sizeFrom": "alates",
     "sizeTo": "kuni",
     "rooms": "Tubade arv",
-    "financing": "Finantseerimine"
+    "financing": "Finantseerimine",
+    "financingOptions": { "ownMoney": "Enda raha", "bankLoan": "Pangalaen", "fromSale": "Enda kinnisvara müügist"}
   },
   "success": {
     "title": "AITÄH!",

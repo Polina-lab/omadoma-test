@@ -42,7 +42,7 @@ const Services = ({ activeService, setActiveService }) => {
   };
 
   return (
-    <section className="services-section">
+    <section id="services" className="services-section">
       <h2 className="services-title">{t("services.title")}</h2>
       <div className="services-grid">
         {serviceList.map(({ key, iconDefault, iconHover }) => (

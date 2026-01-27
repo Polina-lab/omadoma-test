@@ -8,7 +8,7 @@ const HeroHeader = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="hero-header">
+    <section id="home" className="hero-header">
       <div className="hero-bg-left" />
       <div className="hero-bg-right" />
       <div className="hero-content">

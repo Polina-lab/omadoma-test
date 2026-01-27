@@ -16,11 +16,15 @@ const DynamicForm = ({ config }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("/send-mail.php", {
+    const response = await fetch("https://uustest.gloreal.ee/send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formData }),
     });
+
+    const result = await response.json();
+    console.log("MAIL RESULT:", result);
+
 
     if (response.ok) {
       setSubmitted(true);
@@ -80,7 +84,11 @@ const DynamicForm = ({ config }) => {
                             <label className="field-label">{t(input.label)}</label>
                             <div className="button-group">
                             {input.options.map((opt) => (
-                                <button type="button" key={opt} className="room-btn" onClick={() => handleButtonSelect(input.name, opt)}>
+                                <button
+                                  type="button"
+                                  key={opt}
+                                  className={`room-btn ${formData[input.name] === opt ? "activeDark" : ""}`}
+                                  onClick={() => handleButtonSelect(input.name, opt)}>
                                 {typeof opt === "string" ? t(opt) : opt}
                                 </button>
                             ))}
@@ -155,7 +163,10 @@ const DynamicForm = ({ config }) => {
                             <label className="field-label">{t(block.label)}</label>
                             <div className="button-group">
                             {block.options.map((opt) => (
-                                <button type="button" key={opt} className="room-btn">
+                                <button type="button"
+                                  key={opt}
+                                  className={`room-btn ${formData[block.name] === opt ? "activeDark" : ""}`}
+                                  onClick={() => handleButtonSelect(block.name, opt)}>
                                 {typeof opt === "string" ? t(opt) : opt}
                                 </button>
                             ))}

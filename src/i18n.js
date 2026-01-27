@@ -11,8 +11,12 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'et',
     debug: true,
+    fallbackLng: "et",
+    detection: {
+      order: ["localStorage", "cookie"], // НЕ смотреть язык браузера
+      caches: ["localStorage", "cookie"],
+    },
     resources: {
       et: { translation: et },
       en: { translation: en },

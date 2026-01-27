@@ -62,6 +62,17 @@
   font-weight: 700;
 }
 
+  .room-btn.active {
+  background-color: var(--color-blue-light);
+  color: white;
+  border-color: var(--color-blue-light);
+}
+
+  .room-btn.activeDark {
+  background-color: var(--color-blue-dark);
+  color: white;
+  border-color: var(--color-blue-dark);
+}
 
 /* ----------------------------- */
 /*   MOBILE VERSION ONLY         */

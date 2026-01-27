@@ -23,6 +23,7 @@ const BuyerRequestForm = () => {
     setFormData({ ...formData, rooms: value });
   };
 
+
   // загрузка файлов (имена)
   const handleFileUpload = (e) => {
     const files = Array.from(e.target.files).map((f) => f.name);
@@ -33,13 +34,17 @@ const BuyerRequestForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("/send-mail.php", {
+    const response = await fetch("https://uustest.gloreal.ee/send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formData }),
     });
 
+    const result = await response.json();
+    console.log("MAIL RESULT:", result);
+
     if (response.ok) {
+      console.log("all good email");
       setSubmitted(true);
     } else {
       alert("Ошибка отправки. Попробуйте позже.");
@@ -104,7 +109,7 @@ const BuyerRequestForm = () => {
                     {t("form.propertyType")}
                   </option>
 
-                  {Object.entries(t("types", { returnObjects: true })).map(
+                  {Object.entries(t("form.types", { returnObjects: true })).map(
                     ([key, label]) => (
                       <option key={key} value={key}>
                         {label}
@@ -162,11 +167,12 @@ const BuyerRequestForm = () => {
                       <button
                         type="button"
                         key={num}
-                        className="room-btn"
+                        className={`room-btn ${formData.rooms === num ? "active" : ""}`}
                         onClick={() => handleButtonSelect(num)}
                       >
                         {num}
                       </button>
+
                     ))}
                   </div>
                 </div>
@@ -219,16 +225,16 @@ const BuyerRequestForm = () => {
 
               <div className="form-group">
                 <select
-                  name="condition2"
+                  name="financing"
                   className="form-select"
                   onChange={handleChange}
                 >
                   <option value="" disabled selected hidden>
-                    {t("form.condition")}
+                    {t("buyer.financing")}
                   </option>
 
                   {Object.entries(
-                    t("form.conditionOptions", { returnObjects: true })
+                    t("buyer.financingOptions", { returnObjects: true })
                   ).map(([key, label]) => (
                     <option key={key} value={key}>
                       {label}

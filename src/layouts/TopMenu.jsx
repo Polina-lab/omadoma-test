@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom"
+import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import "./TopMenu.css";
 import logoUrl from "../assets/logo.svg";
@@ -40,24 +41,46 @@ const TopMenu = () => {
         </button>
 
         <nav className={`mobile-menu ${menuOpen ? "show" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>{t("nav.home")}</Link>
-          <Link to="/services" onClick={() => setMenuOpen(false)}>{t("nav.services")}</Link>
-          <Link to="/advantages" onClick={() => setMenuOpen(false)}>{t("nav.advantages")}</Link>
-          <Link to="/process" onClick={() => setMenuOpen(false)}>{t("nav.process")}</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>{t("nav.contact")}</Link>
+          <ScrollLink to="home" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.home")}
+          </ScrollLink>
+          <ScrollLink to="services" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.services")}
+          </ScrollLink>
+          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.advantages")}
+          </ScrollLink>
+          <ScrollLink to="process" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.process")}
+          </ScrollLink>
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.contact")}
+          </ScrollLink>
         </nav>
+
 
         <div className="logo-block">
           <img src={logoUrl} alt="GloReal Investments" className="logo-icon" />
         </div>
 
         <nav className="nav-links">
-          <Link to="/" className={location.pathname === "/" ? "active" : ""}>{t("nav.home")}</Link>
-          <Link to="/services" className={location.pathname === "/services" ? "active" : ""}>{t("nav.services")}</Link>
-          <Link to="/advantages" className={location.pathname === "/advantages" ? "active" : ""}>{t("nav.advantages")}</Link>
-          <Link to="/process" className={location.pathname === "/process" ? "active" : ""}>{t("nav.process")}</Link>
-          <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>{t("nav.contact")}</Link>
+          <ScrollLink to="home" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+            {t("nav.home")}
+          </ScrollLink>
+          <ScrollLink to="services" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+            {t("nav.services")}
+          </ScrollLink>
+          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+            {t("nav.advantages")}
+          </ScrollLink>
+          <ScrollLink to="process" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+            {t("nav.process")}
+          </ScrollLink>
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+            {t("nav.contact")}
+          </ScrollLink>
         </nav>
+
 
         <div className="lang-dropdown">
           <LangSwitcher />

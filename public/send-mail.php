@@ -2,9 +2,10 @@
 header("Content-Type: application/json");
 
 $data = json_decode(file_get_contents("php://input"), true);
-$form = $data["formData"];
+$form = $data["formData"] ?? [];
 
 $to = "polina1510golubeva@gmail.com";
+$from = "info@gloreal.ee";
 
 $subject = "Новая заявка с сайта";
 
@@ -21,23 +22,32 @@ $html .= "</table>";
 
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-$headers .= "From: GLO Real Estate <polina1510golubeva@gmail.com>\r\n";
+$headers .= "From: GLO Real Estate <{$from}>\r\n";
+$headers .= "Reply-To: {$from}\r\n";
+$headers .= "Return-Path: {$from}\r\n";
 
-mail($to, $subject, $html, $headers);
+// отправка админу
+$adminSent = mail($to, $subject, $html, $headers, "-f{$from}");
 
 // автоответ клиенту
+$clientSent = false;
 if (!empty($form["email"])) {
     $clientMessage = "
         <p>Здравствуйте, {$form['name']}!</p>
         <p>Спасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.</p>
     ";
 
-    mail(
+    $clientSent = mail(
         $form["email"],
         "Спасибо за ваш запрос",
         $clientMessage,
-        $headers
+        $headers,
+        "-f{$from}"
     );
 }
 
-echo json_encode(["success" => true]);
+echo json_encode([
+    "success" => true,
+    "adminSent" => $adminSent,
+    "clientSent" => $clientSent
+]);
