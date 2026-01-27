@@ -12,10 +12,36 @@ const QuickSaleForm = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    console.log({ formData });
+
+    const response = await fetch("/send-mail.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ formData }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
   };
+
+
+  const [formData, setFormData] = useState({});
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files).map(f => f.name);
+    setFormData({ ...formData, files });
+  };
+
+
 
   const handleClose = () => {
     window.location.href = "/";
@@ -43,65 +69,98 @@ const handleSubmit = (e) => {
 
         <form className="modal-form" onSubmit={handleSubmit}>
           <div className="form-row">
-            <input type="text" placeholder={t("form.name")} required />
-            <input type="tel" placeholder={t("form.phone")} required />
+            <input
+              type="text"
+              name="name"
+              placeholder={t("form.name")}
+              required
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder={t("form.phone")}
+              required
+              onChange={handleChange}
+            />
           </div>
 
           <div className="form-row">
             <div className="form-group">
               <input
                 type="email"
+                name="email"
                 className="form-input"
                 placeholder={t("form.email")}
                 required
+                onChange={handleChange}
               />
             </div>
 
             <div className="form-group">
-              <select className="form-select" required>
+              <select
+                name="propertyType"
+                className="form-select"
+                required
+                onChange={handleChange}
+              >
                 <option value="" disabled selected hidden>
                   {t("form.propertyType")}
                 </option>
-                <option value="studio">Stuudio-korter</option>
-                <option value="apartment">Korter</option>
-                <option value="commercial">Kaubandus</option>
-                <option value="office">Büroo</option>
-                <option value="service">Teenindus</option>
-                <option value="food">Toitlustus</option>
-                <option value="storage">Ladu</option>
-                <option value="production">Tootmine</option>
-                <option value="house">Maja</option>
-                <option value="housePart">Majaosa</option>
-                <option value="rowhouse">Ridaelamusboks</option>
-                <option value="summerhouse">Suvila</option>
-                <option value="land">Maatükk</option>
-                <option value="parking">Parkimiskoht</option>
-                <option value="garage">Garaaž</option>
+
+                {Object.entries(t("form.types", { returnObjects: true })).map(([key, label]) => (
+                  <option key={key} value={key}>
+                    {label}
+                  </option>
+                ))}
               </select>
+
             </div>
           </div>
 
           <div className="form-row">
-            <input type="text" placeholder={t("form.address")} />
-            <input type="text" placeholder={t("form.cadastral")} />
+            <input
+              type="text"
+              name="address"
+              placeholder={t("form.address")}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="cadastral"
+              placeholder={t("form.cadastral")}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="form-row">
             <div className="form-group">
-              <input type="number" placeholder={t("form.size")} />
+              <input
+                type="number"
+                name="size"
+                placeholder={t("form.size")}
+                onChange={handleChange}
+              />
             </div>
+
             <div className="form-group">
-              <select className="form-select">
-                  <option value="" disabled selected hidden>{t("form.condition")}</option>
-                  <option value="uus">{t("form.conditionOptions.new")}</option>
-                  <option value="heas">{t("form.conditionOptions.good")}</option>
-                  <option value="viimistlus">{t("form.conditionOptions.freshFinish")}</option>
-                  <option value="renoveeritud">{t("form.conditionOptions.renovated")}</option>
-                  <option value="sanTehtud">{t("form.conditionOptions.sanitaryDone")}</option>
-                  <option value="keskmine">{t("form.conditionOptions.average")}</option>
-                  <option value="sanVajab">{t("form.conditionOptions.sanitaryNeeds")}</option>
-                  <option value="kapVajab">{t("form.conditionOptions.capitalNeeds")}</option>
+              <select
+                name="condition"
+                className="form-select"
+                onChange={handleChange}
+              >
+                <option value="" disabled selected hidden>
+                  {t("form.condition")}
+                </option>
+
+                {Object.entries(t("form.conditionOptions", { returnObjects: true }))
+                  .map(([key, label]) => (
+                    <option key={key} value={key}>
+                      {label}
+                    </option>
+                  ))}
               </select>
+
             </div>
           </div>
 
@@ -109,20 +168,37 @@ const handleSubmit = (e) => {
             <div className="price-block">
               <div className="price-range">
                 <label className="field-label">{t("form.desiredPrice")}</label>
-                <input type="number" placeholder={t("form.priceFrom")} />
+
+                <input
+                  type="number"
+                  name="priceFrom"
+                  placeholder={t("form.priceFrom")}
+                  onChange={handleChange}
+                />
+
                 <span className="price-separator">–</span>
-                <input type="number" placeholder={t("form.priceTo")} />
+
+                <input
+                  type="number"
+                  name="priceTo"
+                  placeholder={t("form.priceTo")}
+                  onChange={handleChange}
+                />
               </div>
             </div>
 
             <div className="upload-block">
-              
               <span className="upload-button">
                 <span className="upload-label">{t("form.uploadLabel")}</span>
                 <div className="upload-end">
                   {t("form.uploadButton")}
                   <img src={uplSvg} alt="upload" className="upload-icon" />
-                  <input type="file" multiple accept="image/*,.pdf" />
+                  <input
+                    type="file"
+                    multiple
+                    accept="image/*,.pdf"
+                    onChange={handleFileUpload}
+                  />
                 </div>
               </span>
 
@@ -130,12 +206,18 @@ const handleSubmit = (e) => {
             </div>
           </div>
 
-          <textarea placeholder={t("form.additionalInfo")} rows="4" />
+          <textarea
+            name="additionalInfo"
+            placeholder={t("form.additionalInfo")}
+            rows="4"
+            onChange={handleChange}
+          />
 
           <button type="submit" className="btn btn-solid-dblue">
             {t("form.submit")}
           </button>
         </form>
+
       </div>
       ) : (
           <FormSuccess onClose={handleClose} />

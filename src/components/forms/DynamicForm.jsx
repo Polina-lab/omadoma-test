@@ -13,11 +13,31 @@ const DynamicForm = ({ config }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    console.log("Form submitted:", formData);
+
+    const response = await fetch("/send-mail.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ formData }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
   };
+
+  const handleButtonSelect = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files).map(f => f.name);
+    setFormData({ ...formData, [input.name]: files });
+  };
+
 
   const handleClose = () => {
     window.location.href = "/";
@@ -60,7 +80,7 @@ const DynamicForm = ({ config }) => {
                             <label className="field-label">{t(input.label)}</label>
                             <div className="button-group">
                             {input.options.map((opt) => (
-                                <button type="button" key={opt} className="room-btn">
+                                <button type="button" key={opt} className="room-btn" onClick={() => handleButtonSelect(input.name, opt)}>
                                 {typeof opt === "string" ? t(opt) : opt}
                                 </button>
                             ))}
@@ -75,9 +95,9 @@ const DynamicForm = ({ config }) => {
                     <div className="price-block" key={input.name}>
                       <div className="price-range">
                         <label className="field-label">{t(input.label)}</label>
-                        <input type="number" placeholder={t(input.from)} />
+                        <input type="number" placeholder={t(input.from)} name={`${input.name}_from`} onChange={handleChange}/>
                         <span className="price-separator">–</span>
-                        <input type="number" placeholder={t(input.to)} />
+                        <input type="number" placeholder={t(input.to)} name={`${input.name}_to`} onChange={handleChange}/>
                       </div>
                     </div>
                   );
@@ -91,7 +111,7 @@ const DynamicForm = ({ config }) => {
                         <div className="upload-end">
                           {t(input.button)}
                           <img src={uplSvg} alt="upload" className="upload-icon" />
-                          <input type="file" multiple accept="image/*,.pdf" />
+                          <input type="file" multiple accept="image/*,.pdf" onChange={handleFileUpload}/>
                         </div>
                       </span>
                       <span className="upload-note">{t(input.note)}</span>

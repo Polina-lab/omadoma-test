@@ -7,12 +7,12 @@
 
 .hero-bg-right {
   position: absolute;
-  top: -60px;
+  top: -40px;
   right:0;
-  width: 60%;
+  width: 65%;
   height: 800px;
   background-image: url('../assets/header-bg.png');
-  background-size: contain;
+  background-size:contain;
   background-position: center right;
   background-repeat: no-repeat;
   z-index: 0;
