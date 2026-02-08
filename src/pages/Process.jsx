@@ -9,7 +9,7 @@ import icon4 from "../assets/process/marketing.svg";
 import icon5 from "../assets/process/negotiation.svg";
 import icon6 from "../assets/process/followup.svg";
 
-import arrowNext from "../assets/process/arrow.png";
+import arrowNext from "../assets/process/arrow.svg";
 
 const steps = [
   { key: "consultation", icon: icon1 },
@@ -29,17 +29,10 @@ const Process = () => {
         <div className="process-steps">
           <div className="process-header">
             <h2 className="process-title">
-              <Trans i18nKey="process.title" components={[
-                <span className="gray" />,
-                <span className="blue2" />
-              ]} />
+              {t("process.title")}
             </h2>
             <p className="process-description">
-              <Trans i18nKey="process.description" components={[
-                <span className="blue" />,
-                <span className="green" />,
-                <span className="gray italic" />
-              ]} />
+              {t("process.description")}
             </p>
         </div>
           {steps.map((step, i) => (

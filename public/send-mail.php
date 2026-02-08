@@ -7,7 +7,8 @@ $form = $data["formData"] ?? [];
 $to = "polina1510golubeva@gmail.com";
 $from = "info@gloreal.ee";
 
-$subject = "Новая заявка с сайта";
+$subject = "=?UTF-8?B?" . base64_encode("Новая заявка с сайта") . "?=";
+
 
 // plain text версия
 $plain = "Новая заявка с сайта\n\n";
@@ -31,14 +32,14 @@ $html .= "</table>";
 // граница для multipart
 $boundary = md5(time());
 
-// заголовки
-$headers = "From: GLO Real Estate <{$from}>\r\n";
-$headers .= "Reply-To: {$from}\r\n";
-$headers .= "Return-Path: {$from}\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Message-ID: <" . uniqid() . "@gloreal.ee>\r\n";
-$headers .= "Date: " . date('r') . "\r\n";
-$headers .= "Content-Type: multipart/alternative; boundary=\"{$boundary}\"\r\n";
+$headers = [];
+$headers[] = "From: GLO Real Estate <info@gloreal.ee>";
+$headers[] = "Reply-To: info@gloreal.ee";
+$headers[] = "MIME-Version: 1.0";
+$headers[] = "Content-Type: text/html; charset=UTF-8";
+
+$headers = implode("\r\n", $headers);
+
 
 // тело письма
 $body = "--{$boundary}\r\n";
@@ -57,7 +58,7 @@ $adminSent = mail($to, $subject, $body, $headers, "-f{$from}");
 // автоответ клиенту
 $clientSent = false;
 if (!empty($form["email"])) {
-    $clientSubject = "Спасибо за ваш запрос";
+    $clientSubject = "=?UTF-8?B?" . base64_encode("Спасибо за ваш запрос") . "?=";
     $clientPlain = "Здравствуйте, {$form['name']}!\nСпасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.";
     $clientHtml = "<p>Здравствуйте, {$form['name']}!</p><p>Спасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.</p>";
 

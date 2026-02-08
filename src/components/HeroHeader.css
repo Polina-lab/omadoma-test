@@ -75,10 +75,9 @@ h3.quick-sale-title  {
 }
 
 .quick-sale-counter {
-  text-transform: uppercase;
   font-weight: 300;
   margin-bottom: 12px;
-  color: black;
+  color: var(--color-gray);
   text-align: left;
 }
 span.count {

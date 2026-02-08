@@ -1,7 +1,8 @@
 :root {
   --font-main: "Avenir Next", sans-serif, system-ui;
 
-  --color-gray: #adadad;
+  --color-gray2: #adadad;
+  --color-gray: #4b4b4b;
   --color-blue-gray: #bec4ff50;
   --color-orange: #ffa800;
   --color-dorange: #b47904;

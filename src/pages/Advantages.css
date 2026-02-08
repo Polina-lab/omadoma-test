@@ -8,7 +8,7 @@
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
-  color: var(--color-blue-dark);
+  color: var(--color-green);
 }
 
 .advantages-title::after {
@@ -16,7 +16,7 @@
   display: block;
   width: 150px;
   height: 3px;
-  background-color: var(--color-green);
+  background-color: var(--color-orange);
   margin: 5px auto 0;
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactBlock.css";
 import agentPhoto from "../assets/german.jpg";
 import { useTranslation, Trans } from "react-i18next";
+import { Link as ScrollLink } from "react-scroll";
 
 import iconPhone from "../assets/phone.svg";
 import iconEmail from "../assets/mail.svg";
@@ -20,20 +21,21 @@ const ContactBlock = () => {
             <div className="agent-info">
                 <h3 className="agent-name">
                     <Trans i18nKey="contact.agent.name" components={[
-                            <span className="blue2 underline" />,
-                            <span className="green2 underline" />
-                    ]} />
+                            <a href="https://www.maakleritekoda.ee/et/maaklerite-register/german-randla/394"/>
+                ]} />
                     </h3>
                 <div className="agent-contact">
-                    <div className="contact-line">
+                    <a href={`tel:${t("contact.agent.phone")}`} className="contact-line">
                         <img src={iconPhone} alt="phone" className="contact-icon" />
                         <span>{t("contact.agent.phone")}</span>
-                    </div>
-                    <div className="contact-line">
+                    </a>
+
+                    <a href={`mailto:${t("contact.agent.email")}`} className="contact-line">
                         <img src={iconEmail} alt="email" className="contact-icon" />
                         <span>{t("contact.agent.email")}</span>
-                    </div>
+                    </a>
                 </div>
+
 
                 <div className="agent-meta">
                     <span>{t("contact.agent.cert")}</span>
@@ -45,15 +47,12 @@ const ContactBlock = () => {
 
         <div className="contact-form">
             <h2>
-                <Trans i18nKey="contact.title" components={[
-                            <span className="blue2" />,
-                            <span className="green2" />,
-                            <span className="orange2" />
-                ]} />
+                {t("contact.title")}
             </h2>
             <p>
                 <Trans i18nKey="contact.description" components={[
-                            <a href="/services" className="orange underline" />
+                            <ScrollLink to="services"  className="services-link" smooth={true} duration={500} offset={-80} spy={true} isDynamic={true}>
+                            </ScrollLink>
                 ]} />
             </p>
 

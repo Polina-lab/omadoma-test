@@ -123,17 +123,10 @@ const CategoryBlock = () => {
   return (
     <div className="category-block">
       <h2 className="category-title">
-        <Trans i18nKey="category.title" components={[
-          <span className="blue2" />,
-          <span className="orange2" />
-        ]} />
+        {t("category.title")}
       </h2>
       <p className="category-description">
-        <Trans i18nKey="category.description" components={[
-          <span className="blue" />,
-          <span className="green" />,
-          <span className="gray italic" />
-        ]} />
+        {t("category.description")}
       </p>
 
       <div className="categories-horizontal">

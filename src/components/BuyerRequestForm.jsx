@@ -34,7 +34,7 @@ const BuyerRequestForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://uustest.gloreal.ee/send-mail.php", {
+    const response = await fetch("send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formData }),

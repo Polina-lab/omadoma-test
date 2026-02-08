@@ -5,12 +5,12 @@
   "nav.process": "Protsess",
   "nav.contact": "Kontakt",
   "hero.subtitle": "Sujuvad kinnisvaratehingud. Diskreetsed ja läbimõeldud investeerimislahendused.",
-  "hero.description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
+  "hero.description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
   "hero.offers": "MEIE PAKKUMISED",
   "hero.buyPlot": "OSTA ELAMU KRUNT",
   "quickSale.title": "TURUHINNAGA KIIRMÜÜK",
   "quickSale.description": "Aitame Sinu kinnisvarale kiiresti leida ostja",
-  "quickSale.buyersCount": "HETKEL ON 10 REGISTREERITUD OSTUHUVILIST",
+  "quickSale.buyersCount": "Hetkel on 10 registreeritud ostuhuvilist ",
   "quickSale.sendOffer": "SAADA MEILE ENDA PAKKUMINE",
   "buyerRequest.title": "SOOVID OSTA?",
   "buyerRequest.description": "Saada enda päring meile ja lisame selle andmebaasi kuni leiame või meie pakkujate just sulle sobivat kinnisvara!",
@@ -20,12 +20,14 @@
     "description": "Aitame Sinu kinnisvarale kiiresti leida ostja",
     "counter": "Hetkel on <0>{{count}}</0> registreeritud ostuhuvilist",
     "button": "Saada meile enda pakkumine",
-    "modalIntro": "NB! mõistliku hinna eest, mitte alla turuhinna! <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> andmebaasis on autentsed ostuhuvilised, kellele soovime pakkuda just Sinu kinnisvara ja aidata vormistada KIIRE TEHING!"
+    "modalIntro": "NB! mõistliku hinna eest, mitte alla turuhinna! GloReal INVESTMENTS andmebaasis on autentsed ostuhuvilised, kellele soovime pakkuda just Sinu kinnisvara ja aidata vormistada KIIRE TEHING!"
   },
   "form": {
     "name": "Nimi",
     "email": "Email",
     "address": "Aadress",
+    "backAddress": "Tagatise aadress",
+    "desiredPlace": "Eelistatud asukoht:",
     "size": "Suurus (m²)",
     "desiredPrice": "Soovitud hind:",
     "beforePrice": "Eelarve:",
@@ -37,6 +39,10 @@
     "phone": "Telefon",
     "region": "Soovitud piirkond",
     "wish": "Soovin:",
+    "wishInvest": "Soovin investeerida:",
+    "wishRE": "Kinnisvarasse",
+    "wishBS": "Ärisse",
+    "wishOther": "Muu varasse",
     "sell": "Müüa",
     "rending": "Üürile anda",
     "profile": "Profipilte",
@@ -46,7 +52,19 @@
     "sizeTo": "kuni",
     "rooms": "Tubade arv",
     "financing": "Finantseerimine",
+    "loanPrice": "Soovitud laenusumma",
+    "loanPurpose": "Laenu otstarve",
+    "loanPurposeOptions": {
+      "realEstate":"Kinnisvara ostmiseks",
+      "car":"Auto ostmiseks",
+      "business":"Ärilaen",
+      "renovation":"Remondilaen",
+      "personal":"Eralaen",
+      "other":"Muu otstarve"
+    },
+    "financingAfter":"Vaatame sinu päringu üle ning pakume sulle lahendused, mis kõige paremini sobiksid sinu eesmärgi ellu viimiseks.\nGloReal INVESTMENTS ise laenu hetke seisuga ei väljasta, aga meil on mitmeid partnereid, kellega teeme tihedat koostööd ning kes vastavad meie tingimustele ja kellele saame usaldada meie väärtuslikke kliente.",
     "propertyType": "Kinnisvara tüüp",
+    "propertyTypeFinancing": "Tagatiseks pakutava kinnisvara tüüp",
     "addressMultiple": "Aadress(id):",
     "objectCount": "Soovin haldusteenust: ",
     "servicesWanted": "Soovin järgmiseid teenuseid",
@@ -95,6 +113,7 @@
     "periodOptions": { "oneTime": "Ühekordne", "oneYear": "1 aasta", "moreThanYear": "Rohkem kui aasta", "agreement": "Kokkuleppel" },
     "moreThan5":"rohkem kui 5",
     "additionalInfo": "Lisainfo / Küsimused",
+    "additionalInfoFinancig": "Lisainfo /Küsimused: Siin võid kirjeldada  täpsemalt mille jaoks laenu soovid",
     "submit": "Saada pakkumine"
   },
   "buyer": {
@@ -160,20 +179,19 @@
     "description": "Kui pangad laenu ei anna, aga ikkagi on soovi kinnisvara soetada"
   },
   "details": {
-    "brokerage": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib GloReal INVESTMENTS asutaja ja firmajuht German Randla 6-taseme kutsetunnistusega nr KKM 219715 ja üle 18 aastase kinnisvaraalase kogemusega partner ja nõustaja. Müügi vahendamisel tasu on 3%-4% (püsiklientidel 2,5%) kinnisvara müügihinnast, mille tasub müüja (teenuse tellija). Üürikorteri vahendamisel Eestis tavapäraselt maksab vahendustasu kinnisvara üürnik, mis võrdub ühe kuu üürile. NB! GloReal INVESTMENTS elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!",
+    "brokerage": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib GloReal INVESTMENTS asutaja ja firmajuht <0>German Randla</0> 6-taseme kutsetunnistusega nr KKM 219715 ja üle 18 aastase kinnisvaraalase kogemusega partner ja nõustaja. Müügi vahendamisel tasu on 3%-4% (püsiklientidel 2,5%) kinnisvara müügihinnast, mille tasub müüja (teenuse tellija). Üürikorteri vahendamisel Eestis tavapäraselt maksab vahendustasu kinnisvara üürnik, mis võrdub ühe kuu üürile. NB! GloReal INVESTMENTS elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!",
     "management": "Pakume igapäevast haldust ja hooldust teie kinnisvarale, sealhulgas kommunaalkulude haldamine, tehniline järelevalve, koristus, avariitööde koordineerimine ja suhtlus üürnikega.",
     "renovation": "Teostame nii väiksemaid parandustöid kui ka suuremaid renoveerimisprojekte. Koostame tööplaani, hangime materjalid ja tagame kvaliteetse teostuse.",
     "valuation": "Kinnisvara hindamine turuväärtuse alusel, arvestades asukohta, seisukorda, turutrende ja sarnaste objektide statistikat. Vajalik müügiks, üüriks või finantseerimiseks.",
     "media": "Loome professionaalseid foto- ja videomaterjale, mis toovad esile kinnisvara parimad küljed. Kasutame drooni, laia nurga objektiive ja vajadusel stiliseerimist.",
-    "investment": "Nõustame investeerimisvõimaluste osas, olgu selleks üürikinnisvara, arendusprojektid või äripinnad. Aitame koostada strateegia ja hinnata riske.",
-    "financing": "Kui pangad laenu ei anna, pakume alternatiivseid finantseerimisvõimalusi koostöös investoritega. Hindame objekti, koostame finantsplaani ja otsime sobiva lahenduse."
+    "investment": "Pakume erinevaid võimalusi investeerimiseks nii kinnisvara kui ka äri valdkondades. GloReal INVESTMENTS portfellis on hulgaliselt avalikustatuid kui ka mitteavalikke pakkumisi.",
+    "financing": "Kui pangad laenu ei anna, aga ikkagi on soovi kinnisvara soetada, siis on olemas mitmeid teisi variante oma soovi ellu viimiseks."
   },
   "detailss": {
     "brokerage": [
       {
         "type": "text",
-        "content": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> asutaja ja firmajuht <4>German </4><5>Randla</5>, 6-taseme kutsetunnistusega nr <2>KKM 219715</2> ja üle 18 aastase kinnisvaraalalise kogemusega partner ja nõustaja.",
-        "link": "https://www.maakleritekoda.ee/et/maaklerite-register/german-randla/394"
+        "content": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib GloReal INVESTMENTS asutaja ja firmajuht <0>German Randla</0>, 6-taseme kutsetunnistusega nr KKM 219715 ja üle 18 aastase kinnisvaraalalise kogemusega partner ja nõustaja."
       },
       {
         "type": "text",
@@ -185,11 +203,11 @@
       },
       {
         "type": "text",
-        "content": "<3>NB!</3> <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> <3>elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!</3>"
+        "content": "NB! GloReal INVESTMENTS elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!"
       },
       {
         "type": "cta",
-        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust:",
         "button": "Saada päring",
         "formComponent": "BrokerageForm"
       }
@@ -197,7 +215,7 @@
     "management": [
       {
         "type": "text",
-        "content": "Omanikule Kinnisvara haldusteenus, mida pakub <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> on - teie kinnisvara tasuline haldamine ja hooldamine kindlaksmääratud aja jooksul koos järgmiste teenustega:"
+        "content": "Omanikule Kinnisvara haldusteenus, mida pakub GloReal INVESTMENTS on - teie kinnisvara tasuline haldamine ja hooldamine kindlaksmääratud aja jooksul koos järgmiste teenustega:"
       },
       {
         "type": "list",
@@ -226,7 +244,7 @@
       },
       {
         "type": "cta",
-        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust:",
         "button": "Saada päring",
         "formComponent": "ManagementForm"
       }
@@ -251,7 +269,7 @@
       },
       {
         "type": "cta",
-        "text": "Küsi pakkumist",
+        "text": "Küsi pakkumist:",
         "button": "Küsi pakkumist",
         "formComponent": "RenovationForm"
       }
@@ -267,12 +285,12 @@
           "Kinnisvara turuväärtuse hindamine enne müüki – 50.- EUR",
           "Eksklusiivlepinguga klientidele TASUTA",
           "Muude objektide hindamine – hinnakirja alusel",
-          "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> vahendusel müüdavatele objektidele <3>-15% tavahinnast</3>"
+          "GloReal INVESTMENTS vahendusel müüdavatele objektidele -15% tavahinnast"
         ]
       },
       {
         "type": "cta",
-        "text": "Telli meilt hindamisteenus",
+        "text": "Telli meilt hindamisteenus:",
         "button": "Telli hindamine",
         "formComponent": "ValuationForm"
       }
@@ -300,7 +318,7 @@
       },
       {
         "type": "cta",
-        "text": "Telli meilt kinnisvara pildistamisteenus",
+        "text": "Telli meilt kinnisvara pildistamisteenus:",
         "button": "Telli pildistamine",
         "formComponent": "MediaForm"
       }
@@ -308,11 +326,11 @@
     "investment": [
       {
         "type": "text",
-        "content": "Pakume erinevaid investeerimisvõimalusi kinnisvara ja äri valdkondades."
+        "content": "Pakume erinevaid võimalusi investeerimiseks nii kinnisvara kui ka äri valdkondades. GloReal INVESTMENTS portfellis on hulgaliselt avalikustatuid kui ka mitteavalikke pakkumisi."
       },
       {
         "type": "cta",
-        "text": "Saada oma päring ja leiame parima lahenduse",
+        "text": "Võta julgelt ühendust ja me leiame Sulle parima lahenduse, kuidas enda raha teenima panna:",
         "button": "Saada päring",
         "formComponent": "InvestmentForm"
       }
@@ -320,15 +338,11 @@
     "financing": [
       {
         "type": "text",
-        "content": "Kui pangad laenu ei anna, pakume alternatiivseid finantseerimisvõimalusi koostöös investoritega."
-      },
-      {
-        "type": "text",
-        "content": "Vaatame sinu päringu üle ning pakume lahendusi, mis sobivad sinu eesmärkidega."
+        "content": "Kui pangad laenu ei anna, aga ikkagi on soovi kinnisvara soetada, siis on olemas mitmeid teisi variante oma soovi ellu viimiseks."
       },
       {
         "type": "cta",
-        "text": "Saada oma päring ja me võtame Sinuga peatselt ühendust",
+        "text": "Võta ühendust meiega või saada enda päring ja me leiame mõistliku lahenduse:",
         "button": "Saada päring",
         "formComponent": "FinancingForm"
       }
@@ -339,8 +353,8 @@
 
 },
 "category": {
-  "title": "<0>Mida me</0> <1>Vahendame</1>",
-  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016"
+  "title": "Mida me Vahendame",
+  "description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016"
 },
 "categories": {
     "businessSpaces": "Äripinnad",
@@ -355,8 +369,8 @@
     "newDevelopments": "Uusarendused"
   },
   "process": {
-  "title": "<0>Meie lihtne</0> <1>Tööprotsess</1>",
-  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
+  "title": "Meie lihtne Tööprotsess",
+  "description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
   "consultation": {
     "title": "Konsultatsioon",
     "description": "Esmane kohtumine ja vajaduste kaardistamine"
@@ -383,7 +397,7 @@
   }
 },
 "advantages": {
-  "title": "<0>Meie</0> <1>Eelised</1>",
+  "title": "Meie Eelised",
   "speed": {
     "title": "Kiirmüük",
     "description": "Otsus 24h, notar 3 päeva, raha järgmisel päeval"
@@ -411,7 +425,7 @@
 },
 "partners": "Meie partnerid",
 "contact": {
-  "title": "Võtke meiega julgelt ühendust ja laske meil aidata Teid kõigis <0>kinnis</0><1>vara</1> või <2>investeeringutega</2> seotud küsimustes",
+  "title": "Võtke meiega julgelt ühendust ja laske meil aidata Teid kõigis kinnisvara või investeeringutega seotud küsimustes",
   "description": "Kohtumise broneerimiseks täitke palun järgmine vorm ning võtame Teiega ühendust 24 tunni jooksul. Konkreetse soovi korral külastage jaotist <0>Meie teenused</0>",
   "form": {
     "name": "Nimi",
@@ -422,7 +436,7 @@
     "submit": "Saada päring"
   },
   "agent": {
-    "name": "<0>German </0><1>Randla</1>",
+    "name": "<0>German Randla</0>",
     "title": "Kutsetase: Vanemmaakler tase 6 ",
     "cert": "Kutsetunnistus: 219715",
     "reg": "Kinnisvaramaakleri reg.nr: KMR 26618",
@@ -453,7 +467,18 @@
   },
   "buttons": { "sell": "Müü/Üüri välja", "quick": "Kiirmüük" },
   "bottom": "© <0>Glo</0><1>Real</1>™ OÜ 2025 | Kõik andmed kaitstud."
-}
+},
+  "dev": {
+    "title": "Veebileht on töös",
+    "subtitle": "Mõned osad võivad olla kättesaamatud",
+    "continue": "Jätka"
+  },
+  "legal": {
+    "privacyText": "Käesolev privaatsuspoliitika selgitab, kuidas GloReal Investments töötleb ja kaitseb Teie isikuandmeid. Meie eesmärk on tagada, et Teie andmed oleksid alati turvalised ning kasutataks ainult selgelt määratletud eesmärkidel.\n\nMe kogume isikuandmeid peamiselt siis, kui täidate meie veebilehel vormi, võtate meiega ühendust või kasutate meie teenuseid. Kogutavad andmed võivad hõlmata Teie nime, kontaktandmeid, kinnisvara eelistusi ja muid vabatahtlikult esitatud andmeid.\n\nKasutame Teie andmeid selleks, et pakkuda Teile sobivaid kinnisvarapakkumisi, vastata päringutele, koostada hinnanguid ning täiustada meie teenuseid. Töötleme andmeid ainult õiguspärasel alusel ning ei edasta neid kolmandatele osapooltele ilma Teie nõusolekuta, välja arvatud seadusest tulenevatel juhtudel.\n\nGloReal Investments rakendab tehnilisi ja organisatsioonilisi turvameetmeid, et kaitsta Teie andmeid volitamata juurdepääsu, muutmise või kadumise eest.\n\nTeil on õigus tutvuda oma andmetega, taotleda nende parandamist või kustutamist ning võtta tagasi oma nõusolek. Päringute esitamiseks palume võtta meiega ühendust e-posti teel.\n\nKäesolevat privaatsuspoliitikat võidakse ajakohastada vastavalt õigusaktide muutumisele või teenuste täiendamisele.",
+    "cookiesText":"Meie veebileht kasutab küpsiseid, et tagada paremat kasutuskogemust, analüüsida veebilehe toimivust ja pakkuda Teile asjakohasemat sisu. Küpsised on väikesed tekstifailid, mis salvestatakse Teie seadmesse, kui külastate meie veebilehte.\n\nKasutame nii vajalikke küpsiseid, mis tagavad veebilehe tehnilise toimimise, kui ka analüütilisi küpsiseid, mis aitavad mõista, kuidas külastajad meie lehte kasutavad. Need andmed on anonüümsed ega võimalda Teid isiklikult tuvastada.\n\nTeil on võimalus küpsiste kasutamist oma brauseri seadetes piirata või täielikult keelata. Palun arvestage, et küpsiste blokeerimine võib mõjutada veebilehe mõningate funktsioonide tööd.\n\nKüpsiste kasutamise eesmärk on parandada meie teenuste kvaliteeti ja pakkuda Teile sujuvamat ning mugavamat kasutuskogemust.",
+    "termsText":"Käesolevad kasutustingimused reguleerivad GloReal Investments veebilehe kasutamist ning kirjeldavad kasutaja õigusi ja kohustusi. Veebilehte kasutades kinnitate, et olete tingimustega tutvunud ja nõustute neid järgima.\n\nVeebilehel esitatud teave on mõeldud üldiseks kasutamiseks ning võib sisaldada hinnanguid, kirjeldusi ja turuülevaateid, mis ei pruugi olla ammendavad ega alati ajakohased. Kuigi püüame tagada teabe täpsuse, ei saa me garanteerida selle täielikku õigsust või sobivust konkreetseks eesmärgiks.\n\nKasutaja kohustub kasutama veebilehte heas usus ning mitte teostama tegevusi, mis võivad kahjustada veebilehe toimimist, turvalisust või kättesaadavust. Keelatud on veebilehe sisu kopeerimine, levitamine või muutmine ilma GloReal Investments kirjaliku loata.\n\nVeebilehel võivad olla viited kolmandate osapoolte teenustele või välistele veebilehtedele. GloReal Investments ei vastuta nende sisu, täpsuse ega turvalisuse eest. Kolmandate osapoolte teenuste kasutamine toimub kasutaja enda vastutusel.\n\nKasutaja poolt veebilehe kaudu edastatud andmeid, sealhulgas päringuid ja kontaktinfot, kasutatakse üksnes teenuse osutamiseks ja suhtluse tagamiseks. Andmete töötlemine toimub vastavalt meie privaatsuspoliitikale.\n\nGloReal Investments jätab endale õiguse veebilehte ajakohastada, muuta või peatada selle toimimist ilma eelneva etteteatamiseta. Samuti võime kasutustingimusi igal ajal täiendada või muuta, et tagada vastavus õigusaktidele ja teenuse arengule.\n\nKui kasutaja ei nõustu kasutustingimustega, ei ole tal lubatud veebilehte kasutada. Veebilehe kasutamist käsitletakse nõustumisena käesolevate tingimustega."
+  }
+
 
 
 }

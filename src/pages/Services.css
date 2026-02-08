@@ -61,14 +61,17 @@
 }
 
 .service-layout {
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
   align-items: stretch;
   gap: 20px;
+  
 }
 
 .service-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex: 1;
   flex-direction: column;
 }
@@ -210,6 +213,11 @@
 
 .pricing-block p {
   margin: 4px 0;
+}
+
+.German-link {
+  color: var(--color-blue-dark);
+  font-weight: 600;
 }
 
 

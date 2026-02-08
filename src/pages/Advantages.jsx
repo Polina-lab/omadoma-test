@@ -32,10 +32,7 @@ const Advantages = () => {
     <section id="advantages">
       <div className="advantages-block">
         <h2 className="advantages-title">
-          <Trans i18nKey="advantages.title" components={[
-                        <span className="gray" />,
-                        <span className="orange2" />
-                      ]} />
+          {t("advantages.title")}
           </h2>
         <div className="advantages-list">
           {advantages.map((item) => (

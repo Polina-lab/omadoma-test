@@ -34,6 +34,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 .logo-icon {
@@ -50,6 +51,7 @@
   text-decoration: none;
   font-weight: 200;
   transition: opacity 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-links a:hover {

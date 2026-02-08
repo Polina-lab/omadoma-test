@@ -27,6 +27,14 @@ const TopMenu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+  const firstLink = document.querySelector(".nav-links a");
+  if (firstLink) {
+    firstLink.classList.add("active");
+  }
+}, []);
+
+
   return (
     <header className={`top-menu ${scrolled ? "scrolled" : "initial"}`}>
       <div className="menu-inner">
@@ -47,11 +55,11 @@ const TopMenu = () => {
           <ScrollLink to="services" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
             {t("nav.services")}
           </ScrollLink>
-          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.advantages")}
-          </ScrollLink>
           <ScrollLink to="process" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
             {t("nav.process")}
+          </ScrollLink>
+          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.advantages")}
           </ScrollLink>
           <ScrollLink to="contact" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
             {t("nav.contact")}
@@ -59,24 +67,24 @@ const TopMenu = () => {
         </nav>
 
 
-        <div className="logo-block">
+        <div className="logo-block" onClick={() => { window.location.href = "/"; }} >
           <img src={logoUrl} alt="GloReal Investments" className="logo-icon" />
         </div>
 
         <nav className="nav-links">
-          <ScrollLink to="home" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+          <ScrollLink to="home" smooth={true} duration={500} offset={0} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.home")}
           </ScrollLink>
-          <ScrollLink to="services" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+          <ScrollLink to="services" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.services")}
           </ScrollLink>
-          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
-            {t("nav.advantages")}
-          </ScrollLink>
-          <ScrollLink to="process" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+          <ScrollLink to="process" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.process")}
           </ScrollLink>
-          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} spy={true} activeClass="active">
+          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
+            {t("nav.advantages")}
+          </ScrollLink>
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.contact")}
           </ScrollLink>
         </nav>

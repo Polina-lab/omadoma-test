@@ -58,6 +58,11 @@
   vertical-align: middle;
 }
 
+.footer-contact a {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
 .footer-links ul,
 .footer-legal ul {
   list-style: none;

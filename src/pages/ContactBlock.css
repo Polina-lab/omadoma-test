@@ -29,7 +29,7 @@
     display: block;
 }
 
-.agent-name {
+.agent-name a {
   font-size: 20px;
   font-weight: 600;
   color: var(--color-blue-dark);
@@ -48,10 +48,13 @@
   justify-content: center;
   gap: 8px;
   font-size: 20px;
-  color: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .contact-icon {
+  fill: #131f76;
   width: 25px;
   height: 25px;
 }
@@ -66,6 +69,12 @@
   flex-direction: column;
 }
 
+.services-link {
+  text-decoration: underline;
+  color: var(--color-orange);
+  cursor: pointer;
+}
+
 .contact-form {
   flex: 1 1 500px;
 }
@@ -73,7 +82,7 @@
 .contact-form h2 {
   font-size: 28px;
   margin-bottom: 12px;
-  color: var(--color-gray);
+  color: var(--color-blue-dark);
 }
 
 .contact-form h2::after {
@@ -81,7 +90,7 @@
   display: block;
   width: 200px;
   height: 3px;
-  background-color: var(--color-blue-light);
+  background-color: var(--color-orange);
 }
 
 .contact-form p {
@@ -126,7 +135,7 @@
 .form-button button {
     width: 100%;
   padding: 12px 24px;
-  background-color: var(--color-blue-light);
+  background-color: var(--color-blue-dark);
   color: white;
   border: none;
   border-radius: 8px;
@@ -137,7 +146,7 @@
 }
 
 .form-button button:hover {
-  background-color: var(--color-blue-dark);
+  background-color: black;
 }
 
 .contact-form a {

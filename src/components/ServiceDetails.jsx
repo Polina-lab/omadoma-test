@@ -71,12 +71,8 @@ const ServiceDetails = forwardRef(({ serviceKey, onClose }, ref) => {
                         if (block.type === "text") {
                             return (
                             <p key={index}>
-                                <Trans i18nKey={`services.detailss.${serviceKey}.${index}.content`} components={[ <span className="blue" />,
-                                    <span className="green" />,
-                                    <span className="gray italic" />,
-                                    <span className="orange" />,
-                                    <span className="underline blue" />,
-                                    <span className="underline green" />
+                                <Trans i18nKey={`services.detailss.${serviceKey}.${index}.content`} components={[
+                                    <a href="https://www.maakleritekoda.ee/et/maaklerite-register/german-randla/394" className="German-link"/>
                                     ]}
                                 />
                                 {block.link && (

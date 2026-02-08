@@ -6,7 +6,7 @@
   "nav.contact": "Contact",
 
   "hero.subtitle": "Smooth real estate transactions. Discreet and well-considered investment solutions.",
-  "hero.description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – your reliable long-term partner in real estate, construction, and investment since 2016",
+  "hero.description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investment since 2016",
   "hero.offers": "OUR OFFERS",
   "hero.buyPlot": "BUY A RESIDENTIAL PLOT",
 
@@ -24,12 +24,14 @@
     "description": "We help you quickly find a buyer for your property",
     "counter": "Currently <0>{{count}}</0> registered buyers",
     "button": "Send us your offer",
-    "modalIntro": "NB! At a reasonable price, not below market value! The <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> database includes verified buyers to whom we want to offer your property and help complete a FAST TRANSACTION!"
+    "modalIntro": "NB! At a reasonable price, not below market value! The GloReal INVESTMENTS database includes verified buyers to whom we want to offer your property and help complete a FAST TRANSACTION!"
   },
   "form": {
     "name": "Name",
     "email": "Email",
     "address": "Address",
+    "backAddress": "Collateral address",
+    "desiredPlace": "Preferred location:",
     "size": "Size (m²)",
     "desiredPrice": "Desired price:",
     "beforePrice": "Budget:",
@@ -41,6 +43,10 @@
     "phone": "Phone",
     "region": "Preferred region",
     "wish": "I want to:",
+    "wishInvest": "I want to invest in:",
+    "wishRE": "Real estate",
+    "wishBS": "Business",
+    "wishOther": "Other assets",
     "sell": "Sell",
     "rending": "Rent out",
     "profile": "Professional photos",
@@ -50,7 +56,19 @@
     "sizeTo": "to",
     "rooms": "Number of rooms",
     "financing": "Financing",
+    "loanPrice": "Desired loan amount",
+    "loanPurpose": "Loan purpose",
+    "loanPurposeOptions": {
+      "realEstate":"Real estate purchase",
+      "car":"Car purchase",
+      "business":"Business loan",
+      "renovation":"Renovation loan",
+      "personal":"Personal loan",
+      "other":"Other purpose"
+    },
+    "financingAfter": "We will review your request and offer solutions that best suit the achievement of your goals.\nAt this time, GloReal INVESTMENTS does not issue loans directly, but we work closely with several trusted partners who meet our requirements and to whom we can confidently refer our valued clients.",
     "propertyType": "Property type",
+    "propertyTypeFinancing": "Type of property offered as collateral",
     "addressMultiple": "Address(es):",
     "objectCount": "I need property management service:",
     "servicesWanted": "I would like the following services",
@@ -105,6 +123,7 @@
     },
     "moreThan5": "more than 5",
     "additionalInfo": "Additional information / Questions",
+    "additionalInfoFinancig": "Additional information / Questions: here you can describe in more detail what the loan is for",
     "submit": "Submit offer"
   },
   "buyer": {
@@ -188,8 +207,7 @@
     "brokerage": [
       {
         "type": "text",
-        "content": "Real estate and business project brokerage is carried out and coordinated by the founder and CEO of <0>Glo</0><1>Real</1> <2>INVESTMENTS</2>, <4>German </4><5>Randla</5>, holder of a Level 6 professional certificate No. <2>KKM 219715</2> and a partner and consultant with over 18 years of experience in the real estate sector.",
-        "link": "https://www.maakleritekoda.ee/et/maaklerite-register/german-randla/394"
+        "content": "Real estate and business project brokerage is carried out and coordinated by the founder and CEO of GloReal INVESTMENTS, <0>German Randla</0>, holder of a Level 6 professional certificate No. KKM 219715 and a partner and consultant with over 18 years of experience in the real estate sector."
       },
       {
         "type": "text",
@@ -201,7 +219,7 @@
       },
       {
         "type": "text",
-        "content": "<3>NB!</3> <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> <3>does not add VAT to residential property brokerage fees. VAT is included in the price.</3>"
+        "content": "NB! GloReal INVESTMENTS does not add VAT to residential property brokerage fees. VAT is included in the price."
       },
       {
         "type": "cta",
@@ -213,7 +231,7 @@
     "management": [
       {
         "type": "text",
-        "content": "The property management service for owners provided by <0>Glo</0><1>Real</1> <2>INVESTMENTS</2> is a paid management and maintenance service for your property over a specified period, including the following services:"
+        "content": "The property management service for owners provided by GloReal INVESTMENTS is a paid management and maintenance service for your property over a specified period, including the following services:"
       },
       {
         "type": "list",
@@ -283,7 +301,7 @@
           "Market value assessment before sale — 50.- EUR",
           "FREE for clients with an exclusive agreement",
           "Valuation of other properties — according to the price list",
-          "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2>: <3>-15% off the standard price</3> for properties sold through us"
+          "GloReal INVESTMENTS: -15% off the standard price for properties sold through us"
         ]
       },
       {
@@ -352,8 +370,8 @@
   }
 },
 "category": {
-  "title": "<0>What We</0> <1>Broker</1>",
-  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – your reliable long-term partner in real estate, construction, and investments since 2016"
+  "title": "What We Broker",
+  "description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investments since 2016"
 },
 "categories": {
   "businessSpaces": "Commercial Spaces",
@@ -368,8 +386,8 @@
   "newDevelopments": "New Developments"
 },
 "process": {
-  "title": "<0>Our Simple</0> <1>Work Process</1>",
-  "description": "<0>Glo</0><1>Real</1> <2>INVESTMENTS</2> – your reliable long-term partner in real estate, construction, and investments since 2016",
+  "title": "Our Simple Work Process",
+  "description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investments since 2016",
   "consultation": {
     "title": "Consultation",
     "description": "Initial meeting and needs assessment"
@@ -396,7 +414,7 @@
   }
 },
 "advantages": {
-  "title": "<0>Our</0> <1>Advantages</1>",
+  "title": "Our Advantages",
   "speed": {
     "title": "Fast Sale",
     "description": "Decision in 24h, notary in 3 days, money the next day"
@@ -424,7 +442,7 @@
 },
 "partners": "Our Partners",
 "contact": {
-  "title": "Feel free to contact us and let us help you with all <0>real estate</0> or <2>investment</2> related matters",
+  "title": "Feel free to contact us and let us help you with all real estate or investment related matters",
   "description": "To book a meeting, please fill out the form below and we will contact you within 24 hours. For specific requests, visit the <0>Our Services</0> section",
   "form": {
     "name": "Name",
@@ -435,7 +453,7 @@
     "submit": "Send request"
   },
   "agent": {
-    "name": "<0>German </0><1>Randla</1>",
+    "name": "<0>German Randla</0>",
     "title": "Qualification level: Senior Broker level 6",
     "cert": "Certificate: 219715",
     "reg": "Real estate broker reg. no: KMR 26618",
@@ -469,7 +487,21 @@
     "quick": "Fast Sale"
   },
   "bottom": "© <0>Glo</0><1>Real</1>™ OÜ 2025 | All rights reserved."
+},
+  "dev": {
+    "title": "Website under construction",
+    "subtitle": "Some sections may not be available",
+    "continue": "Continue"
+  },
+  "legal": {
+  "privacyText": "This Privacy Policy explains how GloReal Investments processes and protects your personal data. Our goal is to ensure that your data is always secure and used only for clearly defined purposes.\n\nWe primarily collect personal data when you fill out forms on our website, contact us, or use our services. The collected data may include your name, contact details, property preferences, and other information voluntarily provided by you.\n\nWe use your data to provide suitable real estate offers, respond to inquiries, prepare assessments, and improve our services. Data processing is carried out strictly on a lawful basis, and we do not share your data with third parties without your consent, except where required by law.\n\nGloReal Investments implements technical and organizational security measures to protect your data against unauthorized access, alteration, or loss.\n\nYou have the right to access your data, request correction or deletion, and withdraw your consent. To submit a request, please contact us via email.\n\nThis Privacy Policy may be updated in accordance with changes in legislation or service enhancements.",
+  
+  "cookiesText": "Our website uses cookies to ensure a better user experience, analyze website performance, and provide more relevant content. Cookies are small text files that are stored on your device when you visit our website.\n\nWe use both essential cookies necessary for the technical functioning of the website and analytical cookies that help us understand how visitors use the site. This data is anonymous and does not allow personal identification.\n\nYou may restrict or completely disable the use of cookies in your browser settings. Please note that blocking cookies may affect the functionality of certain features of the website.\n\nThe purpose of using cookies is to improve the quality of our services and provide a smoother and more convenient user experience.",
+  
+  "termsText": "These Terms of Use govern the use of the GloReal Investments website and describe the rights and obligations of users. By using the website, you confirm that you have read and agree to comply with these terms.\n\nThe information provided on the website is for general informational purposes only and may include estimates, descriptions, and market overviews that may not always be complete or up to date. While we strive to ensure accuracy, we do not guarantee the completeness, correctness, or suitability of the information for any specific purpose.\n\nUsers agree to use the website in good faith and refrain from actions that could damage the website’s functionality, security, or availability. Copying, distributing, or modifying website content without written permission from GloReal Investments is prohibited.\n\nThe website may contain links to third-party services or external websites. GloReal Investments is not responsible for the content, accuracy, or security of such third-party resources. Use of third-party services is at the user’s own risk.\n\nData submitted by users through the website, including inquiries and contact information, is used solely for service provision and communication purposes. Data processing is carried out in accordance with our Privacy Policy.\n\nGloReal Investments reserves the right to update, modify, or suspend the operation of the website without prior notice. We may also amend these Terms of Use at any time to ensure compliance with legal requirements and service development.\n\nIf a user does not agree with these Terms of Use, they are not permitted to use the website. Continued use of the website constitutes acceptance of these terms."
 }
+
+
 
 
 }

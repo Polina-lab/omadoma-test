@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation, Trans } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import ContactBlock from "../pages/ContactBlock";
@@ -16,14 +17,37 @@ import instagramIcon from "../assets/footer/instagram.svg";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+
+  const hideContactBlockOn = [
+    "/privacy",
+    "/cookies",
+    "/terms"
+  ];
+
+  const shouldHideContactBlock = hideContactBlockOn.includes(location.pathname);
+
+
+
+  const address = t("footer.contact.address");
+  const encoded = encodeURIComponent(address);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const mapLink = isIOS
+    ? `https://maps.apple.com/?q=${encoded}`
+    : `https://www.google.com/maps?q=${encoded}`;
+
 
   return (
     <div className="footer-bg-wrapper">
       <div className="footer-bg-decor">
         <div className="footer-content">
-          <div className="contact-wrapper">
+          {!shouldHideContactBlock && (
+            <div className="contact-wrapper">
               <ContactBlock />
-          </div>
+            </div>
+          )}
+
           <footer className="footer">
             <div className="footer-grid">
               <div className="footer-brand">
@@ -50,12 +74,14 @@ const Footer = () => {
                 <button className="btn btn-solid-green">{t("footer.buttons.quick")}</button>
               </div>
 
-
               <div className="footer-contact">
                 <h4>{t("footer.contact.title")}</h4>
-                <p><img src={iconPhone} alt="" /> {t("footer.contact.phone")}</p>
-                <p><img src={iconEmail} alt="" /> {t("footer.contact.email")}</p>
-                <p><img src={iconLocation} alt="" /> {t("footer.contact.address")}</p>
+                <p><a href={`tel:${t("footer.contact.phone")}`}><img src={iconPhone} alt="" /> {t("footer.contact.phone")}</a></p>
+                <p><a href={`mailto:${t("footer.contact.email")}`}><img src={iconEmail} alt="" /> {t("footer.contact.email")}</a></p>
+                <p><a href={mapLink} target="_blank" rel="noopener noreferrer">
+                    <img src={iconLocation} alt="location" className="contact-icon" />
+                    <span>{address}</span>
+                </a></p>
               </div>
 
               <div className="footer-links">
