@@ -56,13 +56,21 @@ export const investmentFormConfig = {
         to: "form.priceTo"
       },
       {
-        name: "upload",
-        type: "upload",
-        label: "form.desiredPlace",
-        button: "form.uploadButton",
-        note: "form.uploadNote"
-      }
-    ]},/*Eelistatud asukoht: [  ] Välismaa, [  ] Eesti >> [Maakond] >> [Linn]*/
+        name: "location",
+        type: "locationSelector",
+        label: "form.preferredLocation",
+        countries: [
+          { value: "foreign", label: "form.foreign" },
+          { value: "estonia", label: "form.estonia" }
+        ],
+        counties: [
+          { name: "harjumaa", cities: ["Tallinn", "Maardu", "Keila"] },
+          { name: "tartumaa", cities: ["Tartu", "Elva"] },
+          { name: "pärnumaa", cities: ["Pärnu"] },
+          { name: "idaVirumaa", cities: ["Narva", "Jõhvi"] }
+        ]
+    }
+    ]},
     {
       type: "textarea",
       name: "message",

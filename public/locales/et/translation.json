@@ -51,6 +51,17 @@
     "sizeFrom": "alates",
     "sizeTo": "kuni",
     "rooms": "Tubade arv",
+    "preferredLocation": "Eelistatud asukoht",
+    "foreign": "Välismaa",
+    "estonia": "Eesti",
+    "selectCounty": "Vali maakond",
+    "selectCity": "Vali linn",
+    "counties": {
+      "harjumaa": "Harjumaa",
+      "tartumaa": "Tartumaa",
+      "pärnumaa": "Pärnumaa",
+      "idaVirumaa": "Ida-Virumaa"
+    },
     "financing": "Finantseerimine",
     "loanPrice": "Soovitud laenusumma",
     "loanPurpose": "Laenu otstarve",
@@ -61,6 +72,14 @@
       "renovation":"Remondilaen",
       "personal":"Eralaen",
       "other":"Muu otstarve"
+    },
+    "loanPeriod": "Laenu periood",
+    "loanPeriodNumber": "Vali number",
+    "loanPeriodUnit": "Vali periood",
+    "loanUnits": {
+      "days": "päeva",
+      "months": "kuud",
+      "years": "aastat"
     },
     "financingAfter":"Vaatame sinu päringu üle ning pakume sulle lahendused, mis kõige paremini sobiksid sinu eesmärgi ellu viimiseks.\nGloReal INVESTMENTS ise laenu hetke seisuga ei väljasta, aga meil on mitmeid partnereid, kellega teeme tihedat koostööd ning kes vastavad meie tingimustele ja kellele saame usaldada meie väärtuslikke kliente.",
     "propertyType": "Kinnisvara tüüp",

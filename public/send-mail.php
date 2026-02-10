@@ -1,82 +1,81 @@
 <?php
 header("Content-Type: application/json");
+error_reporting(0);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/phpmailer/PHPMailer.php';
+require __DIR__ . '/phpmailer/SMTP.php';
+require __DIR__ . '/phpmailer/Exception.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 $form = $data["formData"] ?? [];
 
-$to = "polina1510golubeva@gmail.com";
-$from = "info@gloreal.ee";
+$mail = new PHPMailer(true);
 
-$subject = "=?UTF-8?B?" . base64_encode("Новая заявка с сайта") . "?=";
+try {
+    // SMTP настройки
+    $mail->isSMTP();
+    $mail->Host = 'smtp.elkdata.ee';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'info@gloreal.ee';
+    $mail->Password = 'SuperGR1GD';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
+    // От кого
+    $mail->setFrom('info@gloreal.ee', 'GLO Real Estate');
 
-// plain text версия
-$plain = "Новая заявка с сайта\n\n";
-foreach ($form as $key => $value) {
-    if (is_array($value)) {
-        $value = implode(", ", $value);
+    // Кому
+    $mail->addAddress('info@gloreal.ee');
+
+    // Тема
+    $mail->Subject = "Новая заявка с сайта";
+
+    // HTML письмо
+    $html = "<h2>Новая заявка</h2><table cellspacing='0' cellpadding='6' border='1'>";
+    foreach ($form as $key => $value) {
+        if (is_array($value)) $value = implode(", ", $value);
+        $html .= "<tr><td><strong>$key</strong></td><td>$value</td></tr>";
     }
-    $plain .= "$key: $value\n";
-}
+    $html .= "</table>";
 
-// HTML версия
-$html = "<h2>Новая заявка</h2><table cellspacing='0' cellpadding='6' border='1'>";
-foreach ($form as $key => $value) {
-    if (is_array($value)) {
-        $value = implode(", ", $value);
+    $mail->isHTML(true);
+    $mail->Body = $html;
+
+    $adminSent = $mail->send();
+
+    // Автоответ клиенту
+    $clientSent = false;
+    if (!empty($form["email"])) {
+        $mail2 = new PHPMailer(true);
+        $mail2->isSMTP();
+        $mail2->Host = 'smtp.elkdata.ee';
+        $mail2->SMTPAuth = true;
+        $mail2->Username = 'info@gloreal.ee';
+        $mail2->Password = 'SuperGR1GD';
+        $mail2->SMTPSecure = 'ssl';
+        $mail2->Port = 465;
+
+        $mail2->setFrom('info@gloreal.ee', 'GLO Real Estate');
+        $mail2->addAddress($form["email"]);
+        $mail2->Subject = "Спасибо за ваш запрос";
+        $mail2->isHTML(true);
+        $mail2->Body = "<p>Здравствуйте, {$form['name']}!</p><p>Спасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.</p>";
+
+        $clientSent = $mail2->send();
     }
-    $html .= "<tr><td><strong>$key</strong></td><td>$value</td></tr>";
+
+    echo json_encode([
+        "success" => true,
+        "adminSent" => $adminSent,
+        "clientSent" => $clientSent
+    ]);
+
+} catch (Exception $e) {
+    echo json_encode([
+        "success" => false,
+        "error" => $e->getMessage()
+    ]);
 }
-$html .= "</table>";
-
-// граница для multipart
-$boundary = md5(time());
-
-$headers = [];
-$headers[] = "From: GLO Real Estate <info@gloreal.ee>";
-$headers[] = "Reply-To: info@gloreal.ee";
-$headers[] = "MIME-Version: 1.0";
-$headers[] = "Content-Type: text/html; charset=UTF-8";
-
-$headers = implode("\r\n", $headers);
-
-
-// тело письма
-$body = "--{$boundary}\r\n";
-$body .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
-$body .= $plain . "\r\n";
-
-$body .= "--{$boundary}\r\n";
-$body .= "Content-Type: text/html; charset=UTF-8\r\n\r\n";
-$body .= $html . "\r\n";
-
-$body .= "--{$boundary}--";
-
-// отправка админу
-$adminSent = mail($to, $subject, $body, $headers, "-f{$from}");
-
-// автоответ клиенту
-$clientSent = false;
-if (!empty($form["email"])) {
-    $clientSubject = "=?UTF-8?B?" . base64_encode("Спасибо за ваш запрос") . "?=";
-    $clientPlain = "Здравствуйте, {$form['name']}!\nСпасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.";
-    $clientHtml = "<p>Здравствуйте, {$form['name']}!</p><p>Спасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.</p>";
-
-    $clientBody = "--{$boundary}\r\n";
-    $clientBody .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
-    $clientBody .= $clientPlain . "\r\n";
-
-    $clientBody .= "--{$boundary}\r\n";
-    $clientBody .= "Content-Type: text/html; charset=UTF-8\r\n\r\n";
-    $clientBody .= $clientHtml . "\r\n";
-
-    $clientBody .= "--{$boundary}--";
-
-    $clientSent = mail($form["email"], $clientSubject, $clientBody, $headers, "-f{$from}");
-}
-
-echo json_encode([
-    "success" => true,
-    "adminSent" => $adminSent,
-    "clientSent" => $clientSent
-]);

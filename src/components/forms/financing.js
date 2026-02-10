@@ -46,23 +46,17 @@ export const financingFormConfig = {
         translationPrefix: "form.conditionOptions"
       }
     ]},
-    /*{ type: "row", inputs: [
-      {
-        name: "rooms",
-        type: "buttons",
-        label: "form.rooms",
-        options: [1, 2, 3, 4, 5, "form.moreThan5"]
-      },
-      {
-        name: "wish",
-        type: "buttons",
-        label: "form.wish",
-        options: ["form.sell", "form.rending"]
-      }
-    ]},
-
-    Laenu periood*: 1,2,3,4,5...30 päeva, kuud, aastat
+    /*
+    Laenu periood*: от 1,2,3,4,5... до 30 и дальше выбрать päeva, kuud, aastat
     */
+   {
+    type: "loanPeriod",
+    name: "loanPeriod",
+    label: "form.loanPeriod",
+    placeholderNumber: "form.loanPeriodNumber",
+    placeholderUnit: "form.loanPeriodUnit",
+    units: ["days", "months", "years"]
+  },
     { type: "row", inputs: [
       {
         name: "price",

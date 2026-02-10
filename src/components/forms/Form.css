@@ -74,6 +74,12 @@
   border-color: var(--color-blue-dark);
 }
 
+.county-select,
+.city-select {
+  margin-top: 8px;
+}
+
+
 /* ----------------------------- */
 /*   MOBILE VERSION ONLY         */
 /* ----------------------------- */

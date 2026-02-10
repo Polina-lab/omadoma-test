@@ -55,6 +55,17 @@
     "sizeFrom": "from",
     "sizeTo": "to",
     "rooms": "Number of rooms",
+    "preferredLocation": "Preferred location",
+    "foreign": "Abroad",
+    "estonia": "Estonia",
+    "selectCounty": "Select county",
+    "selectCity": "Select city",
+    "counties": {
+      "harjumaa": "Harju County",
+      "tartumaa": "Tartu County",
+      "pärnumaa": "Pärnu County",
+      "idaVirumaa": "Ida-Viru County"
+    },
     "financing": "Financing",
     "loanPrice": "Desired loan amount",
     "loanPurpose": "Loan purpose",
@@ -65,6 +76,14 @@
       "renovation":"Renovation loan",
       "personal":"Personal loan",
       "other":"Other purpose"
+    },
+    "loanPeriod": "Loan period",
+    "loanPeriodNumber": "Select number",
+    "loanPeriodUnit": "Select unit",
+    "loanUnits": {
+      "days": "days",
+      "months": "months",
+      "years": "years"
     },
     "financingAfter": "We will review your request and offer solutions that best suit the achievement of your goals.\nAt this time, GloReal INVESTMENTS does not issue loans directly, but we work closely with several trusted partners who meet our requirements and to whom we can confidently refer our valued clients.",
     "propertyType": "Property type",

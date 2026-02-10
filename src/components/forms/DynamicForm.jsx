@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import FormSuccess from "../FormSuccess";
+import FormSuccessSecond from "./FormSuccessSecond";
 import uplSvg from "../../assets/upload.svg";
 import "./Form.css";
 
@@ -47,7 +47,7 @@ const DynamicForm = ({ config }) => {
     window.location.href = "/";
   };
 
-  if (submitted) return <FormSuccess onClose={handleClose} />;
+  if (submitted) return <FormSuccessSecond onClose={handleClose} />;
 
   return (
     <form className="modal-form service-form" onSubmit={handleSubmit}>
@@ -76,6 +76,90 @@ const DynamicForm = ({ config }) => {
                     </select>
                   );
                 }
+
+                if (input.type === "locationSelector") {
+                const selectedCountry = formData[`${input.name}_country`];
+                const selectedCounty = formData[`${input.name}_county`];
+
+                return (
+                  <div className="location-block" key={input.name}>
+                    
+
+                    {/* Выбор: Välismaa / Eesti */}
+                    <div className="button-group">
+                      <label className="field-label">{t(input.label)}</label>
+                      {input.countries.map((country) => (
+                        <button
+                          type="button"
+                          key={country.value}
+                          className={`room-btn ${
+                            selectedCountry === country.value ? "activeDark" : ""
+                          }`}
+                          onClick={() =>
+                            setFormData({
+                              ...formData,
+                              [`${input.name}_country`]: country.value,
+                              [`${input.name}_county`]: "",
+                              [`${input.name}_city`]: ""
+                            })
+                          }
+                        >
+                          {t(country.label)}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Если выбрана Эстония → показываем maakond */}
+                    {selectedCountry === "estonia" && (
+                      <div className="county-select">
+                        <select
+                          name={`${input.name}_county`}
+                          value={selectedCounty || ""}
+                          onChange={handleChange}
+                          className="form-select"
+                          required
+                        >
+                          <option value="" disabled hidden>
+                            {t("form.selectCounty")}
+                          </option>
+
+                          {input.counties.map((county) => (
+                            <option key={county.name} value={county.name}>
+                              {t(`form.counties.${county.name}`)}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+
+                    {/* Если выбран maakond → показываем города */}
+                    {selectedCountry === "estonia" && selectedCounty && (
+                      <div className="city-select">
+                        <select
+                          name={`${input.name}_city`}
+                          value={formData[`${input.name}_city`] || ""}
+                          onChange={handleChange}
+                          className="form-select"
+                          required
+                        >
+                          <option value="" disabled hidden>
+                            {t("form.selectCity")}
+                          </option>
+
+                          {input.counties
+                            .find((c) => c.name === selectedCounty)
+                            ?.cities.map((city) => (
+                              <option key={city} value={city}>
+                                {city}
+                              </option>
+                            ))}
+                        </select>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
 
                 if (input.type === "buttons") {
                   return (
@@ -142,6 +226,48 @@ const DynamicForm = ({ config }) => {
             </div>
           );
         }
+
+        if (block.type === "loanPeriod") {
+        return (
+          <div className="form-group" key={block.name}>
+
+            <div className="price-range">
+              <label className="field-label">{t(block.label)}</label>
+              {/* Число 1–30 — обычный input */}
+              <input
+                type="number"
+                min="1"
+                max="30"
+                name={`${block.name}_value`}
+                value={formData[`${block.name}_value`] || ""}
+                onChange={handleChange}
+                placeholder={t(block.placeholderNumber)}
+                className="form-input"
+                required
+              />
+
+              {/* Päeva / kuud / aastat — кнопки */}
+              <div className="button-group">
+                {block.units.map((unit) => (
+                  <button
+                    type="button"
+                    key={unit}
+                    className={`room-btn ${
+                      formData[`${block.name}_unit`] === unit ? "activeDark" : ""
+                    }`}
+                    onClick={() =>
+                      setFormData({ ...formData, [`${block.name}_unit`]: unit })
+                    }
+                  >
+                    {t(`form.loanUnits.${unit}`)}
+                  </button>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        );
+      }
 
         if (block.type === "text") {
           return (
