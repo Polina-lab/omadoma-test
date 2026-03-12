@@ -9,7 +9,9 @@
   z-index: 2000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px 0;
 }
 
 .modal-content {
@@ -19,6 +21,7 @@
   width: 100%;
   padding: 40px;
   position: relative;
+  max-height: none;
 }
 
 .modal-content h2{
@@ -209,6 +212,10 @@
 textarea::placeholder {
   font-style: italic;
   color: var(--color-gray);
+}
+
+.form-success2 h2::after {
+display: none;
 }
 
 @media (max-width: 768px) {

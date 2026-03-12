@@ -1,13 +1,12 @@
 .category-block {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 60px 20px 10px;
   min-height: 350px;
 }
 
 .category-title {
   text-align: center;
-  font-size: 32px;
   margin: auto;
   width: 100%;
   display: inline-block;
@@ -30,9 +29,10 @@
 
 .categories-horizontal {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 50px;
+  gap: 10px;
 }
 
 .category-tile {
@@ -104,7 +104,8 @@
 @media (max-width: 768px) {
   .categories-horizontal {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5px;
   flex-wrap: wrap;
   padding-top: 10px;
 }
@@ -113,7 +114,7 @@
   min-width: 150px;
 }
 .category-block {
-  padding: 30px 40px;
+  padding: 40px 20px;
 }
 
 .category-title::after {

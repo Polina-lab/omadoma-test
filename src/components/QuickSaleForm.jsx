@@ -1,34 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "./ModalBlock.css";
 import "./QuickSaleForm.css";
 import uplSvg from "../assets/upload.svg";
 import FormSuccess from "./FormSuccess";
 import { useNavigate } from "react-router-dom";
+import { renderRecaptcha } from "../utils/recaptcha";
 
 const QuickSaleForm = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log({ formData });
+  useEffect(() => {
+    renderRecaptcha("recaptcha-quickform", "recaptchaQuickId", "6LfPDXIsAAAAAFwt-mPrn_86Mcs502uX8_fxdM14");
+  }, []);
 
-    const response = await fetch("send-mail.php", {
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  //const token = window.grecaptcha.getResponse();
+  const token = window.grecaptcha.getResponse(window.recaptchaQuickId);
+  //const token = "test";
+
+  if (!token) {
+    alert("Please confirm you are not a robot.");
+    return;
+  }
+
+  const response = await fetch("https://gloreal.ee/send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({
+        formType: "quickSale",
+        ...formData,
+        lang: i18n.language,
+        recaptchaToken: token
+      }),
     });
 
     const result = await response.json();
-    console.log("MAIL RESULT:", result);
 
-    if (response.ok) {
+    if (result.success) {
       setSubmitted(true);
+      //window.grecaptcha.reset();
+      window.grecaptcha.reset(window.recaptchaQuickId);
     } else {
-      alert("Ошибка отправки. Попробуйте позже.");
+      alert("Error sending message");
     }
   };
 
@@ -43,8 +62,6 @@ const QuickSaleForm = () => {
     const files = Array.from(e.target.files).map(f => f.name);
     setFormData({ ...formData, files });
   };
-
-
 
   const handleClose = () => {
     window.location.href = "/";
@@ -215,7 +232,7 @@ const QuickSaleForm = () => {
             rows="4"
             onChange={handleChange}
           />
-
+          <div id="recaptcha-quickform" className="g-recaptcha"></div>
           <button type="submit" className="btn btn-solid-dblue">
             {t("form.submit")}
           </button>

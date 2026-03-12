@@ -45,7 +45,7 @@
 
 .category-wrapper {
   background-image: url("../assets/category-bg.png");
-  background-size:100% 80%;
+  background-size:auto;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
@@ -63,3 +63,5 @@
 .partners-wrapper {
   background-color: var(--color-blue-light);
 }
+
+

@@ -55,6 +55,12 @@ const TopMenu = () => {
           <ScrollLink to="services" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
             {t("nav.services")}
           </ScrollLink>
+          <ScrollLink to="brokerage" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.objects")}
+          </ScrollLink>
+          <ScrollLink to="team" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+            {t("nav.team")}
+          </ScrollLink>
           <ScrollLink to="process" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
             {t("nav.process")}
           </ScrollLink>
@@ -77,6 +83,12 @@ const TopMenu = () => {
           </ScrollLink>
           <ScrollLink to="services" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.services")}
+          </ScrollLink>
+          <ScrollLink to="brokerage" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
+            {t("nav.objects")}
+          </ScrollLink>
+          <ScrollLink to="team" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
+            {t("nav.team")}
           </ScrollLink>
           <ScrollLink to="process" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
             {t("nav.process")}

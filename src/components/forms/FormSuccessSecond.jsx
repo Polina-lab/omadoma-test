@@ -6,11 +6,8 @@ const FormSuccessSecond = ({ onClose }) => {
 
   return (
     <div className="form-success2">
-      <button className="modal-close" onClick={onClose} aria-label="Sulge">
-        &times;
-      </button>
 
-      <h2>{t("success.title")}</h2>
+      <h3>{t("success.title")}</h3>
 
       <p className="success-message2">
         {t("success.message")}

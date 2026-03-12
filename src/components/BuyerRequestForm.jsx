@@ -1,17 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "./BuyerRequestForm.css";
 import "./ModalBlock.css";
 import uplSvg from "../assets/upload.svg";
 import FormSuccessBlue from "./FormSuccessBlue";
 import { useNavigate } from "react-router-dom";
+import { renderRecaptcha } from "../utils/recaptcha";
 
 const BuyerRequestForm = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
+
+  const [roomsRange, setRoomsRange] = useState({ start: null, end: null });
+
+  const normalize = (v) =>
+  typeof v === "string" && v.includes("+") ? parseInt(v) + 1 : Number(v);
+
+  const handleRoomsSelect = (rawValue) => {
+    const value = normalize(rawValue);
+
+    setRoomsRange(prev => {
+      const { start, end } = prev;
+
+        // 1) Первый выбор
+        if (start === null) {
+          setFormData(f => ({ ...f, rooms: rawValue }));
+          return { start: value, end: null };
+        }
+
+        // 2) Второй выбор
+        if (end === null) {
+          if (value > start) {
+            setFormData(f => ({ ...f, rooms: `${start}-${rawValue}` }));
+            return { start, end: value };
+          } else {
+            // если выбрали меньше — начинаем заново
+            setFormData(f => ({ ...f, rooms: rawValue }));
+            return { start: value, end: null };
+          }
+        }
+
+        // 3) Если диапазон уже есть:
+        // — расширяем диапазон
+        if (value > end) {
+          setFormData(f => ({ ...f, rooms: `${start}-${rawValue}` }));
+          return { start, end: value };
+        }
+
+        // — если меньше начала → новый диапазон
+        if (value < start) {
+          setFormData(f => ({ ...f, rooms: rawValue }));
+          return { start: value, end: null };
+        }
+
+        // — если внутри диапазона → сброс
+        setFormData(f => ({ ...f, rooms: rawValue }));
+        return { start: value, end: null };
+      });
+    };
+
+    const isRoomsActive = (opt) => {
+      const value = normalize(opt);
+      const { start, end } = roomsRange;
+
+      if (start === null) return false;
+      if (end === null) return value === start;
+
+      return value >= start && value <= end;
+    };
+
+
+
 
   // универсальный сбор полей
   const handleChange = (e) => {
@@ -30,24 +92,40 @@ const BuyerRequestForm = () => {
     setFormData({ ...formData, files });
   };
 
-  // отправка в PHP
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    renderRecaptcha("recaptcha-buyerform", "recaptchaBuyerId", "6LfPDXIsAAAAAFwt-mPrn_86Mcs502uX8_fxdM14");
+  }, []);
 
-    const response = await fetch("send-mail.php", {
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const token = window.grecaptcha.getResponse(window.recaptchaBuyerId);
+  //const token = "test";
+
+  if (!token) {
+    alert("Please confirm you are not a robot.");
+    return;
+  }
+
+  const response = await fetch("https://gloreal.ee/send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({
+        formType: "buyer",
+        ...formData,
+        lang: i18n.language,
+        recaptchaToken: token
+      }),
     });
 
     const result = await response.json();
-    console.log("MAIL RESULT:", result);
 
-    if (response.ok) {
-      console.log("all good email");
+    if (result.success) {
       setSubmitted(true);
+      window.grecaptcha.reset(window.recaptchaBuyerId);
     } else {
-      alert("Ошибка отправки. Попробуйте позже.");
+      alert("Error sending message");
     }
   };
 
@@ -163,20 +241,20 @@ const BuyerRequestForm = () => {
                   <label className="field-label">{t("buyer.rooms")}</label>
 
                   <div className="button-group">
-                    {[1, 2, 3, 4, 5].map((num) => (
+                    {[1, 2, 3, 4, 5, "5+"].map((num) => (
                       <button
                         type="button"
                         key={num}
-                        className={`room-btn ${formData.rooms === num ? "active" : ""}`}
-                        onClick={() => handleButtonSelect(num)}
+                        className={`room-btn ${isRoomsActive(num) ? "activeDark" : ""}`}
+                        onClick={() => handleRoomsSelect(num)}
                       >
                         {num}
                       </button>
-
                     ))}
                   </div>
                 </div>
               </div>
+
 
               <div className="form-group">
                 <select
@@ -251,7 +329,7 @@ const BuyerRequestForm = () => {
               rows="4"
               onChange={handleChange}
             />
-
+            <div id="recaptcha-buyerform" className="g-recaptcha"></div>
             <button type="submit" className="btn btn-solid-blue">
               {t("form.submit")}
             </button>

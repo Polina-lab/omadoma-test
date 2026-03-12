@@ -123,7 +123,7 @@ main {
   border: 2px solid var(--color-blue-dark);
 }
 
-/*white*/ 
+/*white blue*/ 
 .btn-solid-white {
   color: var(--color-blue-light);
   border: 2px solid white;
@@ -132,6 +132,20 @@ main {
 
 .btn-solid-white:hover {
   background-color: var(--color-blue-light);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*white green*/ 
+.btn-solid-white-green {
+  color: var(--color-green);
+  border: 2px solid white;
+  background-color: white;
+}
+
+.btn-solid-white-green:hover {
+  border: 2px solid var(--color-orange);
+  background-color: var(--color-orange);
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -192,6 +206,10 @@ span.green2 {
   color: var(--color-green);
 }
 
+h2 {
+  font-size: 32px;
+}
+
 @font-face {
   font-family: "Avenir Next";
   src: url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -214,38 +232,29 @@ span.green2 {
 }
 
 @media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
   .services-bg,
   .category-wrapper,
   .process-advantages-wrapper {
     background-image: none !important;
   }
-}
 
-
-@media (max-width: 768px) {
   .home,
   .home * {
     text-align: center;
   }
-}
-
-@media (max-width: 768px) {
 
   .content-wrapper {
     padding-left: 16px;
     padding-right: 16px;
   }
-}
 
-
-@media (max-width: 768px) {
   .process-advantages-wrapper {
     background-attachment: scroll;
-    padding: 40px 0;
+    padding: 20px 0;
   }
-}
-
-@media (max-width: 768px) {
   .partners-wrapper {
     padding: 40px 0;
   }

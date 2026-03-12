@@ -1,4 +1,5 @@
 export const investmentFormConfig = {
+  type: "investment",
   intro: "form.intro",
   fields: [
     { type: "row", inputs: [
@@ -38,7 +39,7 @@ export const investmentFormConfig = {
         name: "rooms",
         type: "buttons",
         label: "form.rooms",
-        options: [1, 2, 3, 4, 5, "form.moreThan5"]
+        options: [1, 2, 3, 4, 5, "5+"]
       },
       {
         name: "wish",

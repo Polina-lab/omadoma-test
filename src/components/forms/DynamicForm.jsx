@@ -1,35 +1,131 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import FormSuccessSecond from "./FormSuccessSecond";
 import uplSvg from "../../assets/upload.svg";
 import "./Form.css";
+import { renderRecaptcha } from "../../utils/recaptcha";
 
 const DynamicForm = ({ config }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  const [range, setRange] = useState({ start: null, end: null });
+
+  const normalize = (v) => (typeof v === "string" && v.includes("+") ? parseInt(v) + 1 : Number(v));
+
+  const handleRangeSelect = (name, rawValue) => {
+    const value = normalize(rawValue);
+
+    setRange(prev => {
+      const { start, end } = prev;
+
+      // 1) Первый выбор
+      if (start === null) {
+        setFormData(f => ({ ...f, [name]: rawValue }));
+        return { start: value, end: null };
+      }
+
+      // 2) Выбор второго значения
+      if (end === null) {
+        if (value > start) {
+          setFormData(f => ({ ...f, [name]: `${start}-${rawValue}` }));
+          return { start, end: value };
+        } else {
+          // если выбрали меньше — начинаем заново
+          setFormData(f => ({ ...f, [name]: rawValue }));
+          return { start: value, end: null };
+        }
+      }
+
+      // 3) Если диапазон уже есть:
+      // — если новое значение больше конца → расширяем диапазон
+      if (value > end) {
+        setFormData(f => ({ ...f, [name]: `${start}-${rawValue}` }));
+        return { start, end: value };
+      }
+
+      // — если новое значение меньше начала → начинаем новый диапазон
+      if (value < start) {
+        setFormData(f => ({ ...f, [name]: rawValue }));
+        return { start: value, end: null };
+      }
+
+      // — если внутри диапазона → сброс и новый старт
+      setFormData(f => ({ ...f, [name]: rawValue }));
+      return { start: value, end: null };
+    });
+  };
+
+
+
+const isActive = (opt) => {
+  const value = normalize(opt);
+  const { start, end } = range;
+
+  if (start === null) return false;
+  if (end === null) return value === start;
+
+  return value >= start && value <= end;
+};
+
+
+
+  const getMaxByUnit = (unit) => {
+    switch (unit) {
+      case "days":
+        return 60;
+      case "months":
+        return 48;
+      case "years":
+        return 30;
+      default:
+        return 30;
+    }
+  };
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    useEffect(() => {
+        renderRecaptcha("recaptcha-dynamicform", "recaptchaDynamicId", "6LfPDXIsAAAAAFwt-mPrn_86Mcs502uX8_fxdM14");
+    }, []);
 
-    const response = await fetch("send-mail.php", {
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("Type:", config.type);
+
+  const token = window.grecaptcha.getResponse(window.recaptchaDynamicId);
+  //const token="test";
+
+  if (!token) {
+    alert("Please confirm you are not a robot.");
+    return;
+  }
+
+  const response = await fetch("https://gloreal.ee/send-mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({
+        formType: config.type,
+        ...formData,
+        lang: i18n.language,
+        recaptchaToken: token
+      }),
     });
 
     const result = await response.json();
-    console.log("MAIL RESULT:", result);
 
+    //console.log("Result from server:", result);
 
-    if (response.ok) {
+    if (result.success) {
       setSubmitted(true);
+      window.grecaptcha.reset(window.recaptchaDynamicId);
     } else {
-      alert("Ошибка отправки. Попробуйте позже.");
+      alert("Error sending message");
     }
   };
 
@@ -43,11 +139,12 @@ const DynamicForm = ({ config }) => {
   };
 
 
+
   const handleClose = () => {
     window.location.href = "/";
   };
 
-  if (submitted) return <FormSuccessSecond onClose={handleClose} />;
+  if (submitted) return <FormSuccessSecond />;
 
   return (
     <form className="modal-form service-form" onSubmit={handleSubmit}>
@@ -82,12 +179,13 @@ const DynamicForm = ({ config }) => {
                 const selectedCounty = formData[`${input.name}_county`];
 
                 return (
-                  <div className="location-block" key={input.name}>
+                  <div className="room-buttons location-mobile" key={input.name}>
                     
 
                     {/* Выбор: Välismaa / Eesti */}
+                    <label className="field-label">{t(input.label)}</label>
                     <div className="button-group">
-                      <label className="field-label">{t(input.label)}</label>
+                      
                       {input.countries.map((country) => (
                         <button
                           type="button"
@@ -164,18 +262,20 @@ const DynamicForm = ({ config }) => {
                 if (input.type === "buttons") {
                   return (
                     <div className="form-group" key={input.name}>
-                        <div className="room-buttons">
+                        <div className={`room-buttons ${input.name === "wish" ? "wish-mobile" : ""}`}>
                             <label className="field-label">{t(input.label)}</label>
                             <div className="button-group">
                             {input.options.map((opt) => (
-                                <button
-                                  type="button"
-                                  key={opt}
-                                  className={`room-btn ${formData[input.name] === opt ? "activeDark" : ""}`}
-                                  onClick={() => handleButtonSelect(input.name, opt)}>
-                                {typeof opt === "string" ? t(opt) : opt}
-                                </button>
+                              <button
+                                type="button"
+                                key={opt}
+                                className={`room-btn ${isActive(opt) ? "activeDark" : ""}`}
+                                onClick={() => handleRangeSelect(input.name, opt)}
+                              >
+                                {typeof opt === "number" || opt.includes("+") ? opt : t(opt)}
+                              </button>
                             ))}
+
                             </div>
                         </div>
                     </div>
@@ -228,24 +328,12 @@ const DynamicForm = ({ config }) => {
         }
 
         if (block.type === "loanPeriod") {
+          const selectedUnit = formData[`${block.name}_unit`];
         return (
           <div className="form-group" key={block.name}>
 
-            <div className="price-range">
+            <div className="price-range loan-period-mobile">
               <label className="field-label">{t(block.label)}</label>
-              {/* Число 1–30 — обычный input */}
-              <input
-                type="number"
-                min="1"
-                max="30"
-                name={`${block.name}_value`}
-                value={formData[`${block.name}_value`] || ""}
-                onChange={handleChange}
-                placeholder={t(block.placeholderNumber)}
-                className="form-input"
-                required
-              />
-
               {/* Päeva / kuud / aastat — кнопки */}
               <div className="button-group">
                 {block.units.map((unit) => (
@@ -255,14 +343,44 @@ const DynamicForm = ({ config }) => {
                     className={`room-btn ${
                       formData[`${block.name}_unit`] === unit ? "activeDark" : ""
                     }`}
-                    onClick={() =>
-                      setFormData({ ...formData, [`${block.name}_unit`]: unit })
-                    }
+                    onClick={() => {
+                      const max = getMaxByUnit(unit);
+                      setFormData(prev => ({
+                        ...prev,
+                        [`${block.name}_unit`]: unit,
+                        [`${block.name}_value`]: ""
+                      }));
+                    }}
+
                   >
                     {t(`form.loanUnits.${unit}`)}
                   </button>
                 ))}
               </div>
+              <input
+                type="number"
+                min="1"
+                max={getMaxByUnit(selectedUnit)}
+                name={`${block.name}_value`}
+                value={formData[`${block.name}_value`] || ""}
+                onChange={(e) => {
+                  if (!selectedUnit) return; // если не выбрана единица — игнорим ввод
+
+                  const max = getMaxByUnit(selectedUnit);
+                  const val = Math.min(Number(e.target.value), max);
+                  setFormData(prev => ({
+                    ...prev,
+                    [`${block.name}_value`]: val
+                  }));
+                }}
+                placeholder={selectedUnit ? t(block.placeholderNumber) : t(block.placeholderUnit)}
+                className="form-input"
+                required
+                disabled={!selectedUnit}
+              />
+
+
+              
 
             </div>
           </div>
@@ -329,7 +447,7 @@ const DynamicForm = ({ config }) => {
 
         return null;
       })}
-
+      <div id="recaptcha-dynamicform" className="g-recaptcha"></div>
       <button type="submit" className="btn btn-solid-orange">
         {t(config.submitLabel)}
       </button>

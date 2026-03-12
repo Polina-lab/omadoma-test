@@ -11,10 +11,6 @@
     margin-right: 40px;
 }
 
-.process-title {
-  font-size: 32px;
-}
-
 .process-title::after {
   content: "";
   margin-top: 10px;
@@ -31,7 +27,7 @@
 .process-steps {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .process-step {
@@ -101,7 +97,7 @@
   .process-header {
     text-align: center;
     max-width: 100%;
-    margin: 0 auto 24px;
+    margin: 0 auto;
     padding: 0 16px;
   }
 

@@ -1,4 +1,5 @@
 export const managementFormConfig = {
+  type: "management",
   fields: [
     { type: "row", inputs: [
       { name: "name", placeholder: "form.name", required: true },

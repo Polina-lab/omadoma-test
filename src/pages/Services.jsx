@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import ServiceDetails from "../components/ServiceDetails";
 import "./Services.css";
 
 
@@ -34,8 +35,21 @@ const serviceList = [
   { key: "financing", iconDefault: financingIcon, iconHover: financingIconHover }
 ];
 
-const Services = ({ activeService, setActiveService }) => {
+const Services = ({ activeService, setActiveService, onClose, modalRef }) => {
+
   const { t } = useTranslation();
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    //console.log("isMobile:", isMobile, "width:", window.innerWidth);
+  
+      useEffect(() => {
+      const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+      };
+  
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+      }, []);
 
   const handleCardClick = (key) => {
     setActiveService(prev => (prev === key ? null : key));
@@ -46,23 +60,32 @@ const Services = ({ activeService, setActiveService }) => {
       <h2 className="services-title">{t("services.title")}</h2>
       <div className="services-grid">
         {serviceList.map(({ key, iconDefault, iconHover }) => (
-          <div
-            className={`service-card ${activeService === key ? "active" : ""}`}
-            key={key}
-            onClick={() => handleCardClick(key)}
-          >
-            <div className="service-layout">
-              <div className="service-icon-wrapper">
-                <img src={iconDefault} alt="" className="icon-default service-icon" />
-                <img src={iconHover} alt="" className="icon-hover service-icon" />
-              </div>
-              <div className="service-content">
-                <h3 className="service-name">{t(`services.${key}.title`)}</h3>
-                <p className="service-description">{t(`services.${key}.description`)}</p>
-                <span className="service-link">{t("services.readMore")}</span>
+          <React.Fragment key={key}>
+            <div className={`service-card ${activeService === key ? "active" : ""}`} onClick={() => handleCardClick(key)}
+            >
+              <div className="service-layout">
+                <div className="service-icon-wrapper">
+                  <img src={iconDefault} alt="" className="icon-default service-icon" />
+                  <img src={iconHover} alt="" className="icon-hover service-icon" />
+                </div>
+
+                <div className="service-content">
+                  <h3 className="service-name">{t(`services.${key}.title`)}</h3>
+                  <p className="service-description">{t(`services.${key}.description`)}</p>
+                  <span className="service-link">{t("services.readMore")}</span>
+                </div>
               </div>
             </div>
-          </div>
+
+            {isMobile && activeService === key && (
+              <ServiceDetails
+                ref={modalRef}
+                serviceKey={activeService}
+                onClose={onClose}
+              />
+            )}
+
+          </React.Fragment>
         ))}
       </div>
     </section>

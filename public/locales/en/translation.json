@@ -1,7 +1,9 @@
 {
   "nav.home": "Home",
   "nav.services": "Services",
-  "nav.advantages": "Our Advantages",
+  "nav.advantages": "Advantages",
+  "nav.objects": "Brokerage",
+  "nav.team": "Team",
   "nav.process": "Process",
   "nav.contact": "Contact",
 
@@ -79,7 +81,7 @@
     },
     "loanPeriod": "Loan period",
     "loanPeriodNumber": "Select number",
-    "loanPeriodUnit": "Select unit",
+    "loanPeriodUnit": "Select a unit first",
     "loanUnits": {
       "days": "days",
       "months": "months",
@@ -404,6 +406,31 @@
   "investments": "Investments",
   "newDevelopments": "New Developments"
 },
+"team": {
+  "title": "Our team",
+  "subtitle": "Our professional team ensures smooth and reliable real estate service",
+  "contactButton": "Contact",
+
+  "german": {
+    "name": "German Randla",
+    "position": "Main company contact person",
+    "description": "Responsible for strategy, investments and company management"
+  },
+
+  "liliana": {
+    "name": "Liliana Živel",
+    "position": "Key account manager",
+    "description": "Responsible for client communication and key account management"
+  },
+
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send request"
+  }
+},
 "process": {
   "title": "Our Simple Work Process",
   "description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investments since 2016",
@@ -505,7 +532,7 @@
     "sell": "Sell / Rent out",
     "quick": "Fast Sale"
   },
-  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ 2025 | All rights reserved."
+  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ {{year}} | All rights reserved."
 },
   "dev": {
     "title": "Website under construction",

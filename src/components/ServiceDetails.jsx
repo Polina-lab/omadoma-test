@@ -40,6 +40,40 @@ const ServiceDetails = forwardRef(({ serviceKey, onClose }, ref) => {
   const { t } = useTranslation();
   const [showForm, setShowForm] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [closedByUser, setClosedByUser] = useState(false);
+
+
+  const handleClose = () => {
+    setClosedByUser(true);
+    onClose();
+    };
+  //console.log("isMobile:", isMobile, "width:", window.innerWidth);
+
+  useEffect(() => {
+    if (!closedByUser && ref?.current) {
+        const yOffset = -120;
+        const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
+    }, [serviceKey, closedByUser]);
+
+    useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
+    useEffect(() => {
+        setClosedByUser(false);
+        setShowForm(false);
+    }, [serviceKey]);
+
+
   useEffect(() => { setShowForm(false); }, [serviceKey]);useEffect(() => {
     if (ref && ref.current) {
         const yOffset = -120; // регулируй под высоту меню
@@ -54,7 +88,7 @@ const ServiceDetails = forwardRef(({ serviceKey, onClose }, ref) => {
 
   return (
     <section className="service-details"  ref={ref}>
-        <button className="details-close" onClick={onClose}>&times;</button>
+        <button className="details-close" onClick={handleClose}>&times;</button>
 
         <div className="service-details-content">
             <div className="top-content">
@@ -106,25 +140,33 @@ const ServiceDetails = forwardRef(({ serviceKey, onClose }, ref) => {
 
                         if (block.type === "cta") {
                             return (
-                            <div className="cta-block" key={index}>
-                                <div className="cta-row">
-                                    <p className="cta-text">{block.text}</p>
-                                    {!showForm && (
-                                        <button className="btn btn-solid-orange" onClick={() => setShowForm(block.formComponent)}
-                                        >
-                                        {block.button}
-                                        </button>
+                                <div className="cta-block" key={index}>
+                                    <div className="cta-row">
+                                        <p className="cta-text">{block.text}</p>
+
+                                        {!showForm && (
+                                            <button
+                                                className="btn btn-solid-orange"
+                                                onClick={() => setShowForm(block.formComponent)}
+                                            >
+                                                {block.button}
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* MOBILE: форма внутри блока */}
+                                    {isMobile && showForm && formComponents[showForm] && (
+                                        <div className="form-wrapper mobile-form">
+                                            {React.createElement(formComponents[showForm])}
+                                        </div>
                                     )}
-                                </div>
-                                {showForm &&
-                                formComponents[showForm] &&
-                                <div className="form-wrapper">
+                                    {!isMobile && showForm && formComponents[showForm] && <div className="form-wrapper">
                                     {React.createElement(formComponents[showForm])}
+                                </div>}
                                 </div>
-                                }
-                            </div>
                             );
                         }
+
 
                         return null;
                         })}

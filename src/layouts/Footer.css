@@ -49,6 +49,7 @@
 .footer-logo {
   width: 250px;
   margin-top: 8px;
+  cursor: pointer;
 }
 
 .footer-contact img,
@@ -79,6 +80,7 @@
 .footer-legal a {
   color: var(--color-gray);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-links a:hover,
@@ -134,10 +136,84 @@
   padding:10px 10px;
 }
 
+
 @media (max-width: 768px) {
+
+  /* Убираем фоны */
   .footer-bg-wrapper,
   .footer-bg-decor {
     background-image: none !important;
   }
 }
 
+@media (max-width: 768px) {
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social-buttons {
+    margin-top: 0px;
+  }
+
+  .footer-contact {
+    justify-self: center;
+  }
+
+  .footer-legal{
+    justify-self: center;
+  }
+
+  .footer-links {
+    justify-self: center;
+  }
+
+  /* Соц. иконки по центру */
+  .footer-social {
+    justify-content: center;
+    gap: 60px;
+  }
+
+}
+
+@media (max-width: 570px) {
+
+  .footer-contact {
+    grid-column: 1 / -1;
+  }
+
+   .footer-social-buttons {
+    margin-top: 10px;
+    grid-column: 1 / -1;
+  }
+
+  /* Контакты в колонку */
+  .footer-contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+
+  /* Соц. иконки */
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-slogan {
+    white-space: wrap;
+  }
+
+
+}

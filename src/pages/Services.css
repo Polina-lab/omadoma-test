@@ -9,7 +9,6 @@
 
 .services-title {
   text-align: center;
-  font-size: 32px;
   margin: auto;
   width: 100%;
   margin-bottom: 60px;
@@ -226,7 +225,7 @@
     overflow: visible;
   }
   .services-section{
-    padding: 0px 40px;
+    padding: 0px;
   }
 
   .services-title::after {
@@ -242,7 +241,11 @@
 
   /* Общий контейнер */
   .service-details {
-    padding: 20px 20px;
+    padding: 20px 10px;
+  }
+
+  .services-title {
+    margin-bottom: 30px;
   }
 
   /* Верхний блок: иконка + текст */
@@ -314,7 +317,6 @@
   .form-wrapper {
     margin-left: 0;
     width: 100%;
-    padding: 0 8px;
   }
 
   /* Закрывающий крестик — не двигаем, но можно уменьшить */
@@ -322,6 +324,39 @@
     top: 12px;
     right: 12px;
     font-size: 26px;
+  }
+
+  .service-card:hover {
+    /* отключаем hover полностью */
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .service-card:hover .icon-default,
+  .service-card:hover .icon-hover {
+    opacity: 1;
+  }
+
+  /* --- Активная услуга --- */
+  .service-card.active {
+    background-color: var(--color-blue-dark);
+    color: white;
+  }
+
+  .service-card.active .icon-default {
+    opacity: 0;
+  }
+
+  .service-card.active .icon-hover {
+    opacity: 1;
+  }
+
+  .service-card.active .service-link {
+    color: var(--color-orange);
+  }
+
+  .service-card.active .service-icon {
+    transform: scale(1.1);
   }
 }
 

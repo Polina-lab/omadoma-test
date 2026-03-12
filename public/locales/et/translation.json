@@ -1,7 +1,9 @@
 {
   "nav.home": "Avaleht",
   "nav.services": "Teenused",
-  "nav.advantages": "Meie eelised",
+  "nav.advantages": "Eelised",
+  "nav.objects": "Vahendamine",
+  "nav.team": "Tiim",
   "nav.process": "Protsess",
   "nav.contact": "Kontakt",
   "hero.subtitle": "Sujuvad kinnisvaratehingud. Diskreetsed ja läbimõeldud investeerimislahendused.",
@@ -75,7 +77,7 @@
     },
     "loanPeriod": "Laenu periood",
     "loanPeriodNumber": "Vali number",
-    "loanPeriodUnit": "Vali periood",
+    "loanPeriodUnit": "Vali esmalt perioodi tüüp",
     "loanUnits": {
       "days": "päeva",
       "months": "kuud",
@@ -387,6 +389,29 @@
     "investments": "Investeeringud",
     "newDevelopments": "Uusarendused"
   },
+  "team": {
+    "title": "Meie tiim",
+    "subtitle": "Meie professionaalne meeskond tagab sujuva ja usaldusväärse kinnisvarateenuse",
+    "contactButton": "Võta ühendust",
+    "german": {
+      "name": "German Randla",
+      "position": "Ettevõtte peamine kontaktisik",
+      "description": "Vastutab strateegia, investeeringute ja ettevõtte juhtimise eest"
+    },
+    "liliana": {
+      "name": "Liliana Živel",
+      "position": "Key account manager",
+      "description": "Vastutab kliendisuhtluse ja võtmeklientide halduse eest"
+    },
+    "form" : {
+      "name": "Nimi",
+      "phone": "Telefon",
+      "email": "Email",
+      "message": "Sõnum",
+      "send": "Saada päring"
+    }
+  },
+  
   "process": {
   "title": "Meie lihtne Tööprotsess",
   "description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
@@ -485,7 +510,7 @@
     "terms": "Kasutustingimused"
   },
   "buttons": { "sell": "Müü/Üüri välja", "quick": "Kiirmüük" },
-  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ 2025 | Kõik andmed kaitstud."
+  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ {{year}} | Kõik andmed kaitstud."
 },
   "dev": {
     "title": "Veebileht on töös",

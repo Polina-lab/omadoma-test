@@ -1,4 +1,5 @@
 export const financingFormConfig = {
+  type: "financing",
   intro: "form.intro",
   fields: [
     { type: "row", inputs: [
@@ -47,7 +48,7 @@ export const financingFormConfig = {
       }
     ]},
     /*
-    Laenu periood*: от 1,2,3,4,5... до 30 и дальше выбрать päeva, kuud, aastat
+    Laenu periood*: выбрать päeva, kuud, aastat и дальше выбрать число от 1,2,3,4,5... в зависимости от выбранной кнопки, если дни то до 60, если месяцы то до 48, если года то до 30
     */
    {
     type: "loanPeriod",

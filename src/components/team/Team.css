@@ -1,0 +1,366 @@
+.team-wrapper {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding:20px;
+}
+
+.team-wrapper h2 {
+  text-align: center;
+  color: var(--color-green);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.team-wrapper h2::after {
+  content: "";
+  display: block;
+  max-width: 100px;
+  margin: auto;
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.team-subtitle {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--color-gray);
+}
+
+.team-list {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+/* CARD */
+
+.team-card {
+  cursor: pointer;
+  position: relative;
+  min-width: 250px;
+}
+
+.main {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 4px var(--color-orange) solid;
+}
+
+.regular {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 4px var(--color-gray) solid; /* grey */
+}
+
+.open.regular {
+  border-bottom: 4px var(--color-green) solid;
+}
+
+
+.team-inner {
+  display: flex;
+  align-items: end;
+}
+
+/* Фото фиксированной высоты */
+.team-photo {
+  width: 220px;
+  height: 300px; /* фиксируем высоту */
+  object-fit: cover;
+  object-position: right;
+  z-index: 2;
+}
+
+/* Цветной блок */
+.team-bg {
+  margin-left: -90px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 55px;
+  border-radius: 10px;
+  flex-grow: 1;
+  flex-basis: 100px;
+  min-width: 50px;
+  max-width: 100px;
+  min-height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+/* При открытии расширяем только ширину */
+.team-bg.expanded {
+  max-width: 500px;
+  min-height: 320px;
+}
+
+.bg-main.expanded {
+  flex-direction: column;
+}
+
+.bg-main.expanded .team-main-btn, .team-regular-btn {
+  margin: 0 auto;
+  display: block;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Цвета */
+.bg-main {
+  background: var(--color-green);
+  color: white;
+  box-shadow: 0px 3px 9.3px 0.7px rgba(53, 53, 53, 0.08);
+}
+
+.team-name {
+  font-weight: 700;
+}
+
+.team-position {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.bg-regular {
+  background-image: linear-gradient(
+    49deg,
+    rgba(255, 170, 0, 0.185) 0%,
+    rgba(255, 170, 0, 0.13) 10%,
+    rgba(255, 170, 0, 0.055) 20%
+  );
+  box-shadow: 0px 3px 9.3px 0.7px rgba(53, 53, 53, 0.08);
+  color: var(--color-gray);
+}
+
+.team-bg.expanded .team-top-row {
+  max-width: 300px;
+}
+/* Верхняя строка */
+.team-top-row {
+  display: flex;
+  max-width: 70px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Стрелка только при закрытии */
+.team-arrow {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+/* Крестик при открытии */
+.team-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.team-card.main .team-close {
+  color: white;
+}
+
+.team-card.regular .team-close {
+  color: var(--color-green);
+}
+
+
+/* Контент внутри */
+.team-extra {
+  display: flex;
+  font-size: 14px;
+}
+
+.main-extra {
+  flex-direction: column;
+}
+
+.regular-extra {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.team-extra-left {
+  min-width: 200px;
+  max-width: 250px;
+  display: flex;
+  flex: 1.5;
+  flex-direction: column;
+}
+
+.team-extra-right {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+}
+
+.team-card.regular .team-name, .team-card.regular .team-arrow {
+  color: var(--color-green);
+}
+
+.team-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-form input, .team-form textarea {
+  border: 1px var(--color-gray) solid;
+  background-color: transparent;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+}
+
+.team-extra.main-extra .team-contact {
+  margin: 14px auto;
+}
+
+.team-contact { display: flex; flex-direction: column; gap: 6px; }
+
+.team-contact a { display: flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; }
+
+.team-contact img { width: 18px; height: 18px; }
+
+
+/* ===========================
+   📱 MOBILE ADAPTATION
+   =========================== */
+@media (max-width: 768px) {
+
+  /* Карточки в колонку */
+  .team-list {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* Закрытая карточка остаётся горизонтальной */
+  .team-inner {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Фото остаётся слева, но уменьшаем ширину */
+  .team-photo {
+    width: 180px;
+    height: 200px;
+    object-position: center;
+  }
+
+  /* Цветной блок справа, как на десктопе */
+  .team-bg {
+    margin-left: -60px;
+    padding: 15px;
+    padding-left: 50px;
+    max-height: 200px;
+    min-height: auto;
+  }
+
+  .open.main {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 4px var(--color-orange) solid;
+}
+
+.open.regular {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 4px var(--color-green) solid; /* grey */
+}
+
+  /* При открытии — всё вниз */
+  .team-bg.expanded {
+    padding: 15px;
+    max-width: 100%;
+    margin-left: 0;
+    max-height: none;
+    overflow: visible;
+    min-height: auto;
+  }
+
+  /* Открытая карточка — вертикальная */
+  .team-inner.open,
+  .team-card.open .team-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-description {
+    width: 80%;
+    margin: 14px auto;
+  }
+
+   .team-bg .team-name,.team-bg .team-position {
+    text-align: left;
+  }
+
+    .team-bg.expanded .team-name,.team-bg.expanded .team-position {
+    text-align: center;
+  }
+  /* Верхняя строка в открытом виде */
+  .team-bg.expanded .team-top-row {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  /* EXTRA CONTENT — всегда вниз */
+  .team-extra {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Левая часть (описание, контакты, кнопка) */
+  .team-extra-left {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+  }
+
+  /* Правая часть (форма) — тоже вниз */
+  .team-extra-right {
+    width: 100%;
+    flex: none;
+  }
+
+  /* Контакты по центру */
+  .team-contact {
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-contact a {
+    justify-content: center;
+  }
+
+  /* Кнопки по центру */
+  .team-main-btn,
+  .team-regular-btn {
+    margin: 0 auto;
+  }
+
+  .team-card.main .team-close {
+    color: var(--color-green);
+  }
+}

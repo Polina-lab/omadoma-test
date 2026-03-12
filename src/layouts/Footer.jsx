@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import ContactBlock from "../pages/ContactBlock";
+import QuickSaleForm from "../components/QuickSaleForm";
+
+import ReactDOM from "react-dom";
 
 import logo from "../assets/logo.svg";
 
@@ -15,15 +18,40 @@ import facebookIcon from "../assets/footer/facebook.svg";
 import twitterIcon from "../assets/footer/browser.svg";
 import instagramIcon from "../assets/footer/instagram.svg";
 
-const Footer = () => {
+const Footer = ({ setActiveService }) => {
   const { t } = useTranslation();
   const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const hideContactBlockOn = [
     "/privacy",
     "/cookies",
     "/terms"
   ];
+
+  const openBrokerage = () => {
+    setActiveService("brokerage");
+
+    document.getElementById("services")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+    const openManagement = () => {
+    setActiveService("management");
+
+    document.getElementById("services")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+    const openValuation = () => {
+    setActiveService("valuation");
+
+    document.getElementById("services")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
 
   const shouldHideContactBlock = hideContactBlockOn.includes(location.pathname);
 
@@ -39,6 +67,7 @@ const Footer = () => {
 
 
   return (
+    <>
     <div className="footer-bg-wrapper">
       <div className="footer-bg-decor">
         <div className="footer-content">
@@ -52,14 +81,14 @@ const Footer = () => {
             <div className="footer-grid">
               <div className="footer-brand">
                 <p className="footer-slogan">{t("footer.slogan")}</p>
-                <img src={logo} alt="GloReal Investments" className="footer-logo" />
+                <img src={logo} alt="GloReal Investments" className="footer-logo" onClick={() => { window.location.href = "/"; }}/>
                 <div className="footer-social">
                   <div className="social-icon">
-                    <a href="https://facebook.com" target="_blank" rel="noopener">
+                    <a href="https://www.facebook.com/glorealkinnisvara" target="_blank" rel="noopener">
                     <img src={facebookIcon} alt="Facebook" /></a>
                   </div>
                   <div className="social-icon">
-                    <a href="https://twitter.com" target="_blank" rel="noopener">
+                    <a href="https://www.kv.ee/firma/12491" target="_blank" rel="noopener">
                     <img src={twitterIcon} alt="Twitter" /></a>
                   </div>
                   <div className="social-icon">
@@ -70,8 +99,8 @@ const Footer = () => {
               </div>
 
               <div className="footer-social-buttons">
-                <button className="btn btn-outline-green">{t("footer.buttons.sell")}</button>
-                <button className="btn btn-solid-green">{t("footer.buttons.quick")}</button>
+                <button className="btn btn-outline-green" onClick={openBrokerage}>{t("footer.buttons.sell")}</button>
+                <button className="btn btn-solid-green" onClick={() => setIsModalOpen(true)}>{t("footer.buttons.quick")}</button>
               </div>
 
               <div className="footer-contact">
@@ -94,9 +123,9 @@ const Footer = () => {
                   >
                     <li>{t("footer.links.offers")}</li>
                   </Link>
-                  <li><a href="/broker">{t("footer.links.broker")}</a></li>
-                  <li><a href="/management">{t("footer.links.management")}</a></li>
-                  <li><a href="/valuation">{t("footer.links.valuation")}</a></li>
+                  <li><a onClick={openBrokerage}>{t("footer.links.broker")}</a></li>
+                  <li><a onClick={openManagement}>{t("footer.links.management")}</a></li>
+                  <li><a onClick={openValuation}>{t("footer.links.valuation")}</a></li>
                 </ul>
               </div>
 
@@ -112,7 +141,10 @@ const Footer = () => {
 
             <div className="footer-bottom">
               <p>
-                <Trans i18nKey="footer.bottom" components={[
+                <Trans
+                i18nKey="footer.bottom"
+                values={{ year: new Date().getFullYear() }}
+                components={[
                   <span className="blue2" />,
                   <span className="green2" />
                 ]} />
@@ -122,6 +154,13 @@ const Footer = () => {
         </div>
       </div>
     </div>
+        {isModalOpen &&
+          ReactDOM.createPortal(
+            <QuickSaleForm onClose={() => setIsModalOpen(false)} />,
+            document.body
+          )
+        }
+    </>
   );
 };
 

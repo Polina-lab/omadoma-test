@@ -42,7 +42,6 @@
 }
 
 .hero-content h2{
-  font-size: 30px;
   width:60%;
   color: var(--color-green);
 }
@@ -117,10 +116,10 @@ span.count {
     margin-top: 24px;
   }
 
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 14px 20px;
+  .hero-buttons .btn, .quick-sale-block .btn, .buyer-banner-wrapper .btn {
+    
+    max-width: 250px;
+    padding: 14px 15px;
     font-size: 16px;
   }
   .quick-sale-block {

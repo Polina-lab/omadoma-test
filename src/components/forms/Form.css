@@ -43,7 +43,7 @@
 }
 
 .button-group .room-btn {
-  padding: 12px 25px;
+  padding: 12px 16px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
   background-color: transparent;
@@ -53,6 +53,7 @@
   height: 100%;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 16px;
 }
 
 .room-btn:hover {
@@ -91,6 +92,15 @@
   .service-form textarea {
     width: 100%;
     box-sizing: border-box;
+    text-align: left;
+  }
+
+  .price-range {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
   }
 
   /* Ряды превращаем в колонку */
@@ -102,20 +112,25 @@
 
   .button-group {
     display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
   }
 
   .button-group .room-btn {
-    flex: 1 1 calc(50% - 12px);
-    padding: 14px 0;
+    padding: 12px 0;
     box-sizing: border-box;
   }
 
   .room-buttons {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+    .button-group::-webkit-scrollbar {
+    display: none;
   }
 
   /* Блок загрузки файлов */
@@ -150,6 +165,64 @@
     padding: 14px 20px;
     font-size: 16px;
     border-radius: 8px;
+  }
+
+  .wish-mobile {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .wish-mobile .button-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .location-mobile {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* Кнопки стран остаются в строку */
+  .location-mobile .button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  /* County и City — вниз, на отдельные строки */
+  .location-mobile .county-select,
+  .location-mobile .city-select {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .location-mobile select {
+    width: 100%;
+  }
+
+  .price-range.loan-period-mobile {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .loan-period-mobile .button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .loan-period-mobile .button-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .loan-period-mobile input {
+    width: 100%;
   }
 }
 

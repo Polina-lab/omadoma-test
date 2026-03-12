@@ -7,17 +7,17 @@ import businessActive from "../assets/category/business-green.svg";
 import businessLeft from "../assets/category/business-blue.svg";
 import businessRight from "../assets/category/business-orange.svg";
 
-import summerhouseActive from "../assets/category/summerhouse-green.svg";
-import summerhouseLeft from "../assets/category/summerhouse-blue.svg";
-import summerhouseRight from "../assets/category/summerhouse-orange.svg";
+import summerhouseActive from "../assets/category/summerhouse-green2.svg";
+import summerhouseLeft from "../assets/category/summerhouse-blue2.svg";
+import summerhouseRight from "../assets/category/summerhouse-orange2.svg";
 
 import houseActive from "../assets/category/house-green.svg";
 import houseLeft from "../assets/category/house-blue.svg";
 import houseRight from "../assets/category/house-orange.svg";
 
-import bussinessActive from "../assets/category/business-green.svg";
-import bussinessLeft from "../assets/category/business-blue.svg";
-import bussinessRight from "../assets/category/business-orange.svg";
+import plotsActive from "../assets/category/plots-green.svg";
+import plotsLeft from "../assets/category/plots-blue.svg";
+import plotsRight from "../assets/category/plots-orange.svg";
 
 import apartmentActive from "../assets/category/apartment-green.svg";
 import apartmentLeft from "../assets/category/apartment-blue.svg";
@@ -67,9 +67,9 @@ export const categoryBlocks = [
   },
   {
     key: "land",
-    active: bussinessActive,
-    left: bussinessLeft,
-    right: bussinessRight,
+    active: plotsActive,
+    left: plotsLeft,
+    right: plotsRight,
     link: "https://www.kv.ee/maakler/gloreal/krundid"
   },
   {
@@ -121,7 +121,7 @@ const CategoryBlock = () => {
   const [activeKey, setActiveKey] = useState("apartments");
 
   return (
-    <div className="category-block">
+    <section id="brokerage" className="category-block">
       <h2 className="category-title">
         {t("category.title")}
       </h2>
@@ -168,7 +168,7 @@ const CategoryBlock = () => {
             })}
 
       </div>
-    </div>
+    </section>
   );
 };
 

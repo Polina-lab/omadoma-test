@@ -1,15 +1,85 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ContactBlock.css";
 import agentPhoto from "../assets/german.jpg";
 import { useTranslation, Trans } from "react-i18next";
 import { Link as ScrollLink } from "react-scroll";
+import FormSuccessSecond from "../components/forms/FormSuccessSecond";
+import { renderRecaptcha } from "../utils/recaptcha";
 
 import iconPhone from "../assets/phone.svg";
 import iconEmail from "../assets/mail.svg";
 
 
 const ContactBlock = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        topic: "",
+        message: ""
+    });
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+
+
+    useEffect(() => {
+        renderRecaptcha("recaptcha-contactform", "recaptchaContactId", "6LfPDXIsAAAAAFwt-mPrn_86Mcs502uX8_fxdM14");
+    }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        //const formElement = e.target;
+        //const formDataToSend = new FormData(formElement);
+
+        //Object.keys(formData).forEach(key => {
+           // formDataToSend.append(key, formData[key]);
+        //});
+
+        const token = window.grecaptcha.getResponse(window.recaptchaContactId);
+        //const token = "test";
+
+        if (!token) {
+        alert("Please confirm you are not a robot.");
+        return;
+        }
+
+        //console.log("Data to server:", formDataToSend);
+
+       /* const response = await fetch("https://gloreal.ee/send-mail.php", {
+        method: "POST",
+        body: formDataToSend,
+        });*/
+
+        console.log("Data to server:", formData);
+
+        const response = await fetch("https://gloreal.ee/send-mail.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                formType: "contact",
+                ...formData,
+                lang: i18n.language,
+                recaptchaToken: token
+            }),
+            });
+
+        const result = await response.json();
+        console.log("Result from server:", result);
+        if (result.success) {
+        setSubmitted(true);
+        window.grecaptcha.reset(window.recaptchaContactId);
+        } else {
+        alert("Error sending message");
+        }
+    };
 
   return (
     <section id="contact">
@@ -55,17 +125,24 @@ const ContactBlock = () => {
                             </ScrollLink>
                 ]} />
             </p>
+                {submitted ? (
+        <FormSuccessSecond />
+      ) : (
+        <form className="form-grid" onSubmit={handleSubmit}>
+            <input name="name" type="text" placeholder={t("contact.form.name")} onChange={handleChange} />
+            <input name="phone" type="tel" placeholder={t("contact.form.phone")} onChange={handleChange} />
+            <input name="email" type="email" placeholder={t("contact.form.email")} onChange={handleChange} />
+            <input name="topic" type="text" placeholder={t("contact.form.topic")} onChange={handleChange} />
+            <textarea name="message" placeholder={t("contact.form.message")} rows="4" onChange={handleChange} />
+            
+            {/* reCAPTCHA */}
+            <div id="recaptcha-contactform" className="g-recaptcha"></div>
 
-            <form className="form-grid">
-                <input type="text" placeholder={t("contact.form.name")} />
-                <input type="tel" placeholder={t("contact.form.phone")} />
-                <input type="email" placeholder={t("contact.form.email")} />
-                <input type="text" placeholder={t("contact.form.topic")} />
-                <textarea placeholder={t("contact.form.message")} rows="4" />
-                <div className="form-button">
+            <div className="form-button">
                 <button type="submit">{t("contact.form.submit")}</button>
-                </div>
-            </form>
+            </div>
+        </form>
+      )}
         </div>
         </div>
     </section>

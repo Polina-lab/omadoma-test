@@ -1,11 +1,10 @@
 .advantages-block {
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 80px 20px;
+  margin: 0 auto 40px;
+  padding: 20px 20px;
 }
 
 .advantages-title {
-  font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
   color: var(--color-green);
@@ -93,7 +92,8 @@
 
   /* Общий контейнер */
   .advantages-block {
-    padding: 20px 40px;
+    padding: 0px 30px;
+    margin-bottom: 20px;
   }
 
   .advantages-title::after {

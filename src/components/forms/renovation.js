@@ -1,4 +1,5 @@
 export const renovationFormConfig = {
+  type: "renovation",
   fields: [
     { type: "row", inputs: [
       { name: "name", placeholder: "form.name", required: true },
@@ -25,7 +26,7 @@ export const renovationFormConfig = {
         name: "rooms",
         type: "buttons",
         label: "form.rooms",
-        options: [1, 2, 3, 4, 5, "form.moreThan5"]
+        options: [1, 2, 3, 4, 5, "5+"]
       },
     ]},
     { type: "row", inputs: [

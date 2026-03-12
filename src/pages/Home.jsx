@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import HeroHeader from "../components/HeroHeader";
 import BuyerRequestBlock from "../components/BuyerRequestBlock";
@@ -8,13 +8,23 @@ import CategoryBlock from "../components/CategoryBlock";
 import Process from "../pages/Process";
 import Advantages from "../pages/Advantages";
 import Partners from "../pages/Partners";
+import Team from "../components/team/Team";
 import "./Home.css"
 
-const Home = () => {
+const Home = ({ activeService, setActiveService }) => {
 
-  const [activeService, setActiveService] = useState(null);
+  
 
   const lastScrollPosition = useRef(0);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   const handleServiceClick = (serviceKey) => {
     lastScrollPosition.current = window.scrollY; // запоминаем позицию
@@ -36,10 +46,16 @@ const handleClose = () => { setActiveService(null); setTimeout(() => { window.sc
       </div>
       <div className="services-wrapper">
         <div className="services-bg" />
-        <Services activeService={activeService} setActiveService={handleServiceClick} />
+        <Services
+          activeService={activeService}
+          setActiveService={handleServiceClick}
+          onClose={handleClose}
+          modalRef={modalRef}
+        />
+
         </div>
 
-        {activeService && (
+        {activeService && !isMobile && (
           <ServiceDetails
             ref={modalRef}
             serviceKey={activeService}
@@ -47,17 +63,23 @@ const handleClose = () => { setActiveService(null); setTimeout(() => { window.sc
           />
         )}
 
-
       <div className="category-wrapper">
         <CategoryBlock />
       </div>
+
+      <div className="team-wrapper">
+        <Team />
+      </div>
+
       <div className="process-advantages-wrapper">
         <Process />
         <Advantages />
       </div>
+
       <div className="partners-wrapper">
         <Partners />
       </div>
+      
     </div>
   );
 };
