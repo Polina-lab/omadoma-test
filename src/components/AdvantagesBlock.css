@@ -1,0 +1,131 @@
+.adv-banner {
+  position: relative;
+  z-index: 10;
+  color: white;
+  width: 100%;
+  align-items: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.adv-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  color: rgba(255, 255, 255, 0.807);
+}
+
+.adv-item {
+  flex: 1 1 0; /* минимальная ширина 150px, равномерно растягиваются */
+  display: flex;
+  flex-direction: column; /* заголовок, иконка, описание сверху вниз */
+  align-items: center; /* центрируем по горизонтали */
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.adv-item:hover {
+  transform: translateY(-3px); /* немного "поднимается" */
+  box-shadow: 0 8px 20px rgba(130, 63, 1, 0.15); /* лёгкая тень */
+}
+
+.adv-title,
+.adv-desc {
+  transition: color 0.2s ease;
+}
+
+.adv-item:hover .adv-title,
+.adv-item:hover .adv-desc {
+  color: white; /* меняем цвет текста на более тёплый/яркий */
+}
+
+
+.adv-title {
+  font-weight: 300;
+  font-variant: small-caps;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.adv-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.adv-desc {
+  font-size: 12px;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.adv-slider-controls {
+  display: none;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .adv-content {
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    color: white;
+  }
+
+  .adv-item {
+    min-width: 80%; /* показываем один элемент за раз */
+    margin: 0 auto;
+    flex: none;
+    box-shadow: none !important;
+    cursor: default;
+  }
+
+  .adv-item:hover,
+  .adv-item:active {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .adv-item:hover .adv-title,
+  .adv-item:hover .adv-desc,
+  .adv-item:hover .adv-icon {
+    color: inherit;
+    transform: none;
+  }
+   .adv-item.hidden {
+    display: none;
+  }
+
+  .adv-slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+  }
+
+  .adv-prev,
+  .adv-next {
+    background: rgba(0,0,0,0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.5s ease;
+  }
+
+  .adv-prev:hover,
+  .adv-next:hover {
+    background: rgba(0,0,0,0.5);
+  }
+}

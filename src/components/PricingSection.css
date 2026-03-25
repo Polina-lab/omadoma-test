@@ -1,0 +1,548 @@
+.card.basic {
+  --accent: var(--color-brown);
+  --accent-light: var(--color-brown-light);
+  --border: var(--color-brown);
+  --hover: var(--color-brown-dark);
+  --opacity: 1;
+}
+
+.card.full {
+  --accent: var(--color-gold);
+  --accent-light: #f0e8db;
+  --border: var(--color-gold);
+  --hover: var(--color-gold-dark);
+  --opacity: 0.5;
+}
+
+.card.flex {
+  --accent: var(--color-dark-gray);
+  --accent-light: #eee;
+  --border: var(--color-gray);
+  --hover: black;
+}
+
+.pricing-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+/* CARD BASE */
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  padding: 0px 20px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  max-width: 280px;
+  font-size: 14px;
+  height:fit-content;
+  font-weight: 100;
+  border: 1px solid var(--border);
+}
+.card h2 {
+    margin: 5px;
+    font-size: 25px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+/* FLEX */
+
+.card.flex {
+  border: 1px solid var(--color-gray);
+  z-index: 2;
+  color: var(--color-gray);
+}
+.card.flex .card-type {
+    position: relative;
+    top: -50px;
+}
+
+.card.flex h3.price {
+    color: var(--color-dark-gray);
+}
+
+
+
+/* BASIC */
+
+.home .card.basic {
+  border: 2px solid #a0522d;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.card.basic .card-type {
+    font-weight: 700;
+}
+
+.card.basic h2.price, .card.basic h3.price {
+    color: black;
+}
+
+
+/* FULL */
+
+.card.full {
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.card.full .card-type {
+    position: relative;
+    top: -50px;
+}
+
+.card.full h3.price {
+    color: var(--color-gray);
+}
+
+.card.full h3.title {
+    white-space: pre-line;
+}
+
+/* BADGE */
+
+.badge {
+  position: relative;
+  top: -10px;
+  margin: auto;
+  width: fit-content;
+  background: var(--color-brown-light);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* TEXT */
+
+.card-type {
+  font-size: 12px;
+  opacity: 0.6;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: black;
+  font-weight: 100;
+}
+
+.desc {
+  margin: 10px 0;
+}
+
+/*.list p, .list-title, .pricing-extra {
+    text-align: left;
+}*/
+
+/* LIST */
+
+ul {
+  padding-left: 20px;
+  list-style:circle;
+  text-align: left;
+}
+
+.check li {
+    list-style: none;
+    color: black;
+}
+
+.cross li {
+    list-style: none;
+    color: black;
+}
+
+.check li::before {
+  content: "✔ ";
+  color: green;
+}
+
+.cross li::before {
+  content: "✖ ";
+  color: red;
+}
+
+/* BUTTON */
+
+.btn-pricing {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 70%;
+  font-family: var(--font-main);
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+}
+
+.btn-pricing:hover {
+  background: var(--hover);
+}
+
+.btn-pricing.hide {
+  display: none;
+}
+
+/* PRICING */
+
+.pricing-extra {
+  margin-top: 20px;
+  color: black;
+}
+.pricing-extra p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  right: 20px;
+  bottom: 130px;
+  background: white;
+  border-radius: 16px;
+  padding: 10px 20px;
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(171, 125, 0, 0.1);
+  overflow: hidden;
+}
+
+.overlay-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.overlay .btn-pricing {
+  margin-top: 0px;
+}
+
+.card.basic .overlay {
+    top: 190px;
+    bottom: 140px;
+    box-shadow: 0 0 30px rgba(137, 46, 1, 0.1);
+}
+
+.overlay-form input,
+.overlay-form select {
+  padding: 10px;
+  width: 70%;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray);
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.overlay-form input:focus,
+.overlay-form select:focus {
+  border-color: var(--accent);
+}
+
+.overlay-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.input-wrapper {
+  position: relative;
+  cursor: text;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px;
+}
+
+.fake-placeholder {
+  position: absolute;
+  left: 12px;
+  top: 45%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.2s;
+  color: var(--color-gray);
+}
+
+.overlay-form .input-wrapper .fake-placeholder {
+  position: absolute;
+  left: 50px;
+  top: 45%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.2s;
+  color: var(--color-gray);
+}
+
+.overlay-form .input-wrapper input {
+  width: 70%;
+  padding: 10px;
+}
+
+
+/* simple*/
+/* раскрытие */
+
+.list.expandable {
+  max-height: 140px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.list.expandable::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.list.expandable.open {
+  max-height: 600px;
+}
+
+.list.expandable.open::after {
+  display: none;
+}
+
+/* стрелка */
+
+.toggle {
+  margin: 10px auto;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle.open {
+  transform: rotate(180deg);
+}
+
+/* иконка */
+
+.card-icon {
+  margin-bottom: 10px;
+}
+
+.card-icon img {
+  width: 80px;
+}
+
+.card-type-top {
+  margin-top: -45px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+/* скрытый блок */
+
+.list p, .list-title, .pricing-extra, .list-simple p {
+  text-align: left;
+}
+
+.list-simple {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.list-simple.open {
+  max-height: 1000px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* toggle */
+
+.toggle-icon {
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+  transition: transform 0.3s ease;
+  opacity: var(--opacity);
+}
+
+.toggle-block:hover .toggle-icon {
+  transform: translateY(2px);
+}
+
+.toggle-block {
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more-text {
+  display: block;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.arrow.up {
+  position:absolute;
+  bottom: 8px;
+}
+
+/*   mob overlay */
+/* Мобильный оверлей на весь экран */
+.overlay.mobile {
+  position: fixed;      /* фиксируем относительно окна, а не родителя */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height:100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+/* Кнопка закрытия */
+.overlay.mobile .overlay-form .overlay-close {
+  position: inherit;
+  align-self: flex-end;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Форма внутри оверлея */
+.overlay.mobile .overlay-form {
+  width: 80%;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.85);;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: auto 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.mobile .overlay-form .fake-placeholder {
+  left: 30%;
+}
+
+/* Поля формы */
+.overlay.mobile .overlay-form input,
+.overlay.mobile .overlay-form select {
+  width: 90%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--color-gray);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Кнопка отправки */
+.overlay.mobile .overlay-form .btn-pricing {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: var(--color-brown);
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 20px;
+  }
+  .pricing-grid {
+    display: flex;
+    max-width: 320px;
+    margin: auto;
+  }
+
+  .card {
+    max-width: 320px;
+  }
+ .card ul {
+    margin: auto;
+    width:max-content;
+    
+  }
+  .check li, .cross li, .flex li {
+    text-align: left;
+  }
+  .card p {
+    text-align: center;
+  }
+
+.slider-top {
+  position: absolute;
+  top: -45px;
+  overflow: visible;
+}
+
+.slider-top.left {
+  left: 10%;
+}
+.slider-top.right {
+  right: 10%;
+}
+
+.slider-top button {
+  background: var(--color-brown);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+  .home .card.basic {
+  border: 1px solid #a0522d;
+  transform: none;
+}
+}

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom"
+import { Link as RouterLink, NavLink, useLocation } from "react-router-dom"
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import "./TopMenu.css";
-import logoUrl from "../assets/logo.svg";
+import { CONTACT } from "../constants/contact";
+import logoUrl from "../assets/logo-horizontal.svg";
+import logoMobile from "../assets/logo.svg";
+import phoneMobile from "../assets/phone-mobile.svg";
 import LangSwitcher from "../components/LangSwitcher";
 
 const TopMenu = () => {
@@ -27,12 +30,7 @@ const TopMenu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-  const firstLink = document.querySelector(".nav-links a");
-  if (firstLink) {
-    firstLink.classList.add("active");
-  }
-}, []);
+
 
 
   return (
@@ -49,61 +47,68 @@ const TopMenu = () => {
         </button>
 
         <nav className={`mobile-menu ${menuOpen ? "show" : ""}`}>
-          <ScrollLink to="home" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+          <RouterLink to="/" onClick={() => setMenuOpen(false)}>
             {t("nav.home")}
-          </ScrollLink>
-          <ScrollLink to="services" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
+          </RouterLink>
+          <RouterLink to="/services" onClick={() => setMenuOpen(false)}>
             {t("nav.services")}
-          </ScrollLink>
-          <ScrollLink to="brokerage" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.objects")}
-          </ScrollLink>
-          <ScrollLink to="team" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.team")}
-          </ScrollLink>
-          <ScrollLink to="process" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.process")}
-          </ScrollLink>
-          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.advantages")}
-          </ScrollLink>
-          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} onClick={() => setMenuOpen(false)}>
-            {t("nav.contact")}
-          </ScrollLink>
+          </RouterLink>
+          <RouterLink to="/" onClick={() => setMenuOpen(false)}>
+            {t("nav.works")}
+          </RouterLink>
+          <RouterLink to="/" onClick={() => setMenuOpen(false)}>
+            {t("nav.about")}
+          </RouterLink>
+          <a
+            href="#footer"
+            onClick={() => setMenuOpen(false)}
+            className="connect-btn-mobile"
+          >
+            {t("nav.connect")}
+          </a>
+          <a href={`tel:${CONTACT.phone}`} className="phone">
+            <img 
+              src={phoneMobile}
+              alt="phone"
+              className="phone-icon"
+            />
+            <span className="text">{CONTACT.phoneFormatted}</span>
+          </a>
         </nav>
 
 
         <div className="logo-block" onClick={() => { window.location.href = "/"; }} >
-          <img src={logoUrl} alt="GloReal Investments" className="logo-icon" />
+          <img src={logoUrl} alt="OMADOMA" className="logo-icon" />
+          <img src={logoMobile} alt="OMADOMA" className="logo-icon-mobile" />
+          <a href="tel:+37258378573" className="phone">
+            <span className="phone-text">+372 5837 8573</span>
+          </a>
         </div>
+          
+        <div className="right-block">
+          <nav className="nav-links">
+            <NavLink to="/" end>
+              {t("nav.home")}
+            </NavLink>
+            <NavLink to="/services">
+              {t("nav.services")}
+            </NavLink>
+            <NavLink to="/">
+              {t("nav.works")}
+            </NavLink>
+            <NavLink to="/">
+              {t("nav.about")}
+            </NavLink>
+          </nav>
 
-        <nav className="nav-links">
-          <ScrollLink to="home" smooth={true} duration={500} offset={0} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.home")}
-          </ScrollLink>
-          <ScrollLink to="services" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.services")}
-          </ScrollLink>
-          <ScrollLink to="brokerage" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.objects")}
-          </ScrollLink>
-          <ScrollLink to="team" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.team")}
-          </ScrollLink>
-          <ScrollLink to="process" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.process")}
-          </ScrollLink>
-          <ScrollLink to="advantages" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.advantages")}
-          </ScrollLink>
-          <ScrollLink to="contact" smooth={true} duration={500} offset={-80} spy={true} activeClass="active" isDynamic={true}>
-            {t("nav.contact")}
-          </ScrollLink>
-        </nav>
+            <a href="#footer" className="btn-solid-green connect-btn">
+              {t("nav.connect")}
+            </a>
 
 
-        <div className="lang-dropdown">
-          <LangSwitcher />
+          <div className="lang-dropdown">
+            <LangSwitcher />
+          </div>
         </div>
       </div>  
     </header>

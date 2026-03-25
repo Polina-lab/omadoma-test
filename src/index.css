@@ -1,17 +1,23 @@
 :root {
-  --font-main: "Avenir Next", sans-serif, system-ui;
+  --font-main: "Raleway", sans-serif, system-ui;
 
   --color-gray2: #adadad;
-  --color-gray: #4b4b4b;
+  --color-gray: #737373;
+  --color-dark-gray: #3c3c3c;
   --color-blue-gray: #bec4ff50;
   --color-orange: #ffa800;
   --color-dorange: #b47904;
+  --color-gold:#d79c0d;
+  --color-gold-dark:#b47904;
   --color-blue-light: #13a3dc;
   --color-blue-dark: #131f76;
   --color-green: #2f8542;
   --color-green-dark:#1e582b;
+  --color-brown:#9b4022;
+  --color-brown-dark:#69220a;
+  --color-brown-light:#e4cfaf;
 
-  font-family: "Avenir Next", system-ui, sans-serif;
+  font-family: "Raleway", system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -21,11 +27,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
   font-weight: 400;
-  color: var(--color-blue-dark);
+  color: var(--color-brown);
 }
 
 main {
@@ -66,13 +76,13 @@ main {
 
 .btn-solid-green {
   color: white;
-  border: 2px solid var(--color-green);
-  background-color: var(--color-green);
+  border: 2px solid var(--color-brown);
+  background-color: var(--color-brown);
 }
 
 .btn-solid-green:hover {
-  background-color: var(--color-green-dark);
-  border: 2px solid var(--color-green-dark);
+  background-color: var(--color-brown-dark);
+  border: 2px solid var(--color-brown-dark);
 }
 
 /*button dark blue*/
@@ -164,8 +174,56 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.form-message {
+  margin: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+span.form-message {
+  font-size: 12px;
+  text-align: center;
+}
+
+.error-top {
+  margin-top: -30px;
+}
+
+.error-hero {
+  text-align: left;
+}
+
+.form-message.success {
+  color: green;
+}
+
+.form-message.error {
+  color: red;
+}
+
+.error-placeholder {
+  color: red;
+}
+.brown {
+  color: var(--color-brown);
+}
+
 .small {
   font-variant: small-caps;
+}
+
+.bigger {
+  font-size:large;
+}
+
+span.brown-bold {
+  color: var(--color-brown);
+  font-weight: 500;
+}
+
+span.gold-bold {
+  color: var(--color-gold);
+  font-weight: 500;
 }
 
 span.orange {
@@ -207,8 +265,38 @@ span.green2 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
 }
+
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway-Bold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway-Regular.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway-Light.ttf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: "Avenir Next";

@@ -1,15 +1,238 @@
 {
   "nav.home": "Avaleht",
   "nav.services": "Teenused",
+  "nav.works": "Meie tööd",
+  "nav.about": "Meist",
+  "nav.connect": "Võta ühendust",
+  "hero.subtitle": "Müü targalt. Hoia kokku tuhandeid.",
+  "hero.description": "Fikseeritud hind. Selge strateegia. Professionaalne tulemus. Ilma protsenditasudeta.",
+  "hero.mailPhone": "E-post või telefoni number",
+  "hero.freeCall": "Telli tasuta kõne",
+  "advantages": {
+    "price": {
+      "title": "Fikseeritud hind",
+      "description": "Ei mingeid 3% vahendustasusid"
+    },
+    "best": {
+      "title": "Maksimaalne müügihind",
+      "description": "Õige hinnastamine = rohkem raha sinu taskus."
+    },
+    "strategy": {
+      "title": "Selge strateegia",
+      "description": "Sa ei müü “tunnetuse järgi”, vaid plaani järgi."
+    },
+    "camera": {
+      "title": "Professionaalne esitlus",
+      "description": "Fotod ja tekst, mis toovad ostjad kohale."
+    },
+    "support": {
+      "title": "Tugi igal sammul",
+      "description": "Sa ei jää üksi küsimustega."
+    },
+    "fast": {
+      "title": "Kiirem müük",
+      "description": "Struktureeritud protsess = vähem seismist turul."
+    }
+  },
+  "pricing": {
+    "more":"Ava rohkem",
+    "flex": {
+      "type": "flex pakett",
+      "title": "Vali ise",
+      "price": "Alates 50 €",
+      "desc": "Vali täpselt need teenused, mida vajad. Maksad ainult vajaliku eest.",
+      "listTitle": "Teenused, mida saad valida eraldi:",
+      "list": [
+        "Professionaalsed fotod",
+        "Müügitekst",
+        "Kuulutuse ülespanek",
+        "Hinnasoovitus",
+        "Müügistrateegia konsultatsioon",
+        "Näitamised",
+        "Läbirääkimised",
+        "Tehingu ettevalmistus",
+        "Tugi kuni notarini"
+      ],
+      "button": "Koosta oma pakett"
+    },
+
+    "basic": {
+      "badge": "Kõige populaarsem valik",
+      "type": "põhiteenus",
+      "title": "Müü ise",
+      "subtitle": "Tark algus. Professionaalne vundament.",
+      "price": "Alates 280 €",
+      "desc": "Ideaalne, kui soovid ise müüki juhtida, kuid vajad tugevat professionaalset algust.",
+
+      "includesTitle": "Sisaldab:",
+      "includes": [
+        "Professionaalsed fotod",
+        "Müügitekst",
+        "Kuulutuse ülespanek",
+        "Hinnasoovitus",
+        "Müügistrateegia konsultatsioon"
+      ],
+
+      "notIncludesTitle": "Ei sisalda:",
+      "notIncludes": [
+        "Näitamisi",
+        "Läbirääkimisi",
+        "Portaali kuulutuse tasu (eraldi)"
+      ],
+
+      "button": "Vali teenus",
+
+      "pricing": {
+        "title": "Hinnastamine vastavalt pinnale:",
+        "items": [
+          "Kuni 40 m² - <0>280 €</0>",
+          "40–60 m² - <0>330 €</0>",
+          "60–80 m² - <0>400 €</0>",
+          "80+ m² - <0>kokkuleppel</0>"
+        ]
+      }
+    },
+
+    "full": {
+      "badge": "Võtmed kätte lahendus",
+      "type": "full teenus",
+      "title": "Sina puhka\nMeie müüme",
+      "price": "Alates 1200 €",
+      "desc": "Täisteenus neile, kes soovivad täielikku lahendust “võtmed kätte”.",
+
+      "includesTitle": "Sisaldab:",
+      "includes": [
+        "Kõik põhiteenusest",
+        "Kõik näitamised",
+        "Läbirääkimised",
+        "Tehingu ettevalmistus",
+        "Tugi kuni notarini"
+      ],
+
+      "button": "Vali teenus",
+
+      "pricing": {
+        "title": "Hinnastamine vastavalt pinnale:",
+        "items": [
+          "Kuni 40 m² - <1>1200 €</1>",
+          "40–60 m² - <1>1500 €</1>",
+          "60–80 m² - <1>2000 €</1>",
+          "80+ m² - <1>kokkuleppel</1>"
+        ]
+      }
+    },
+    "form": {
+      "name": "Nimi",
+      "contact": "E-post või telefon <0>*</0>",
+      "city": "Maakond - Linn",
+      "area": "Pind",
+      "areas": [
+        "Kuni 40 m²",
+        "40–60 m²",
+        "60–80 m²",
+        "80+ m²"
+      ],
+      "submit": "Saada päring",
+      "comment": "Kommentar:",
+      "service":"Vali teenus",
+      "serviceHint":"Vali kas pakett või üksikud teenused",
+      "selectService": "Vali ise",
+      "success": "Saadetud!",
+      "error": "Viga saatmisel",
+      "errorContact": "Sisesta korrektne e-post või telefon",
+      "required": "Kontakt on kohustuslik"
+    }
+  },
+  "footer": {
+    "topText": "Miks maksta tuhandeid protsentides,\nkui saad professionaalse teenuse fikseeritud hinnaga?",
+
+    "contact": "Kontakt",
+    "links": "Links",
+
+    "privacy": "Privaatsus poliitika",
+    "cookies": "Cookies",
+    "terms": "Kasutustingimused",
+
+    "viewWorks": "Vaata meie tööd",
+    "services": "Teenused",
+
+    "workAllEstonia": "Tegutseme üle Eesti",
+    "input": "E-post või telefoni number",
+
+    "rights": "© <0>OMADOMA</0>™ OÜ {{year}} | Kõik andmed kaitstud."
+  },
+  "dev": {
+    "title": "Veebileht on töös",
+    "subtitle": "Mõned osad võivad olla kättesaamatud",
+    "continue": "Jätka"
+  },
+  "legal": {
+    "privacyText": "Käesolev privaatsuspoliitika selgitab, kuidas GloReal Investments töötleb ja kaitseb Teie isikuandmeid. Meie eesmärk on tagada, et Teie andmed oleksid alati turvalised ning kasutataks ainult selgelt määratletud eesmärkidel.\n\nMe kogume isikuandmeid peamiselt siis, kui täidate meie veebilehel vormi, võtate meiega ühendust või kasutate meie teenuseid. Kogutavad andmed võivad hõlmata Teie nime, kontaktandmeid, kinnisvara eelistusi ja muid vabatahtlikult esitatud andmeid.\n\nKasutame Teie andmeid selleks, et pakkuda Teile sobivaid kinnisvarapakkumisi, vastata päringutele, koostada hinnanguid ning täiustada meie teenuseid. Töötleme andmeid ainult õiguspärasel alusel ning ei edasta neid kolmandatele osapooltele ilma Teie nõusolekuta, välja arvatud seadusest tulenevatel juhtudel.\n\nGloReal Investments rakendab tehnilisi ja organisatsioonilisi turvameetmeid, et kaitsta Teie andmeid volitamata juurdepääsu, muutmise või kadumise eest.\n\nTeil on õigus tutvuda oma andmetega, taotleda nende parandamist või kustutamist ning võtta tagasi oma nõusolek. Päringute esitamiseks palume võtta meiega ühendust e-posti teel.\n\nKäesolevat privaatsuspoliitikat võidakse ajakohastada vastavalt õigusaktide muutumisele või teenuste täiendamisele.",
+    "cookiesText":"Meie veebileht kasutab küpsiseid, et tagada paremat kasutuskogemust, analüüsida veebilehe toimivust ja pakkuda Teile asjakohasemat sisu. Küpsised on väikesed tekstifailid, mis salvestatakse Teie seadmesse, kui külastate meie veebilehte.\n\nKasutame nii vajalikke küpsiseid, mis tagavad veebilehe tehnilise toimimise, kui ka analüütilisi küpsiseid, mis aitavad mõista, kuidas külastajad meie lehte kasutavad. Need andmed on anonüümsed ega võimalda Teid isiklikult tuvastada.\n\nTeil on võimalus küpsiste kasutamist oma brauseri seadetes piirata või täielikult keelata. Palun arvestage, et küpsiste blokeerimine võib mõjutada veebilehe mõningate funktsioonide tööd.\n\nKüpsiste kasutamise eesmärk on parandada meie teenuste kvaliteeti ja pakkuda Teile sujuvamat ning mugavamat kasutuskogemust.",
+    "termsText":"Käesolevad kasutustingimused reguleerivad GloReal Investments veebilehe kasutamist ning kirjeldavad kasutaja õigusi ja kohustusi. Veebilehte kasutades kinnitate, et olete tingimustega tutvunud ja nõustute neid järgima.\n\nVeebilehel esitatud teave on mõeldud üldiseks kasutamiseks ning võib sisaldada hinnanguid, kirjeldusi ja turuülevaateid, mis ei pruugi olla ammendavad ega alati ajakohased. Kuigi püüame tagada teabe täpsuse, ei saa me garanteerida selle täielikku õigsust või sobivust konkreetseks eesmärgiks.\n\nKasutaja kohustub kasutama veebilehte heas usus ning mitte teostama tegevusi, mis võivad kahjustada veebilehe toimimist, turvalisust või kättesaadavust. Keelatud on veebilehe sisu kopeerimine, levitamine või muutmine ilma GloReal Investments kirjaliku loata.\n\nVeebilehel võivad olla viited kolmandate osapoolte teenustele või välistele veebilehtedele. GloReal Investments ei vastuta nende sisu, täpsuse ega turvalisuse eest. Kolmandate osapoolte teenuste kasutamine toimub kasutaja enda vastutusel.\n\nKasutaja poolt veebilehe kaudu edastatud andmeid, sealhulgas päringuid ja kontaktinfot, kasutatakse üksnes teenuse osutamiseks ja suhtluse tagamiseks. Andmete töötlemine toimub vastavalt meie privaatsuspoliitikale.\n\nGloReal Investments jätab endale õiguse veebilehte ajakohastada, muuta või peatada selle toimimist ilma eelneva etteteatamiseta. Samuti võime kasutustingimusi igal ajal täiendada või muuta, et tagada vastavus õigusaktidele ja teenuse arengule.\n\nKui kasutaja ei nõustu kasutustingimustega, ei ole tal lubatud veebilehte kasutada. Veebilehe kasutamist käsitletakse nõustumisena käesolevate tingimustega."
+  },
+  "services": {
+  "title": "Meie teenused",
+  "singleTitle":"Vali ise",
+  "singleDesc":"Vali täpselt need teenused, mida vajad. Maksad ainult vajaliku eest",
+  "singleServices":"Teenused mida saad valida eraldi:",
+  "readMore": "Vali teenus →",
+  "sendRequest": "Saada päring",
+  "sendRequest2": "Saada tellimus",
+  "eurPlusKM":"€ + KM",
+  "foto": {
+    "title": "Professionaalsed fotod",
+    "description": "Kuni 20 kvaliteetset kinnisvarafotot, mis toovad objekti parimad küljed esile",
+    "price": "170"
+  },
+  "text": {
+    "title": "Müügitekst",
+    "description": "Professionaalselt koostatud müügikuulutus, mis kõnetab potentsiaalseid ostjaid",
+    "price": "70"
+  },
+  "ad": {
+    "title": "Kuulutuse ülespanek",
+    "description": "Kuulutuse sisestamine populaarsematesse kinnisvaraportaalidesse (nt KV.ee, City24)",
+    "price": "60"
+  },
+  "priceadvice": {
+    "title": "Hinnasoovitus",
+    "description": "Turuanalüüs ja soovitus optimaalse müügihinna määramiseks",
+    "price": "70"
+  },
+  "consult": {
+    "title": "Müügistrateegia konsultatsioon",
+    "description": "Konsultatsioon, et leida parim strateegia kinnisvara müügiks",
+    "price": "90"
+  },
+  "show": {
+    "title": "Näitamised",
+    "description": "Objekti tutvustamine huvilistele, aja kokkuleppimine ja kliendisuhtlus",
+    "price": "70"
+  },
+  "negotiation": {
+    "title": "Läbirääkimised",
+    "description": "Ostjatega läbirääkimiste pidamine, et saavutada parim tehing",
+    "price": "190"
+  },
+    "prepare": {
+    "title": "Tehingu ettevalmistus ",
+    "description": "Kõik vajalikud dokumendid tehinguks, sh lepingute koostamine ja kontroll",
+    "price": "240"
+  },
+    "support": {
+    "title": "Tugi kuni notarini",
+    "description": "Nõustamine ja abi kogu protsessi vältel kuni notariaalse tehinguni",
+    "price": "80"
+  },
+  "formTitle": "Täida vorm ja vastame 24 tunni jooksul"
+},
+  "hero.offers": "MEIE PAKKUMISED",
   "nav.advantages": "Eelised",
   "nav.objects": "Vahendamine",
   "nav.team": "Tiim",
   "nav.process": "Protsess",
   "nav.contact": "Kontakt",
-  "hero.subtitle": "Sujuvad kinnisvaratehingud. Diskreetsed ja läbimõeldud investeerimislahendused.",
-  "hero.description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016",
-  "hero.offers": "MEIE PAKKUMISED",
-  "hero.buyPlot": "OSTA ELAMU KRUNT",
   "quickSale.title": "TURUHINNAGA KIIRMÜÜK",
   "quickSale.description": "Aitame Sinu kinnisvarale kiiresti leida ostja",
   "quickSale.buyersCount": "Hetkel on 10 registreeritud ostuhuvilist ",
@@ -166,39 +389,7 @@
   "description": "Saada enda päring meile ja lisame selle andmebaasi kuni leiame või meile pakutakse just sulle sobivat kinnisvara!",
   "button": "SAADA MEILE ENDA PÄRING"
 },
-"services": {
-  "title": "Meie teenused",
-  "readMore": "Vaata lähemalt →",
-  "sendRequest": "Saada päring",
-  "sendRequest2": "Saada tellimus",
-  "brokerage": {
-    "title": "Vahendus (Müük/Üür)",
-    "description": "Müügi ja üüri professionaalne vahendus"
-  },
-  "management": {
-    "title": "Haldus",
-    "description": "Kinnisvara igapäevane haldus ja hooldus"
-  },
-  "renovation": {
-    "title": "Remonditööd",
-    "description": "Väikesed ja suured remonditööd"
-  },
-  "valuation": {
-    "title": "Hindamine",
-    "description": "Kinnisvara turuväärtuse hindamine"
-  },
-  "media": {
-    "title": "Kinnisvara pildistamine",
-    "description": "Silmapaistvad foto- ja videomaterjalid"
-  },
-  "investment": {
-    "title": "Investeerimisnõustamine",
-    "description": "Nõustamine investeerimisvõimaluste osas"
-  },
-  "financing": {
-    "title": "Finantseerimine",
-    "description": "Kui pangad laenu ei anna, aga ikkagi on soovi kinnisvara soetada"
-  },
+
   "details": {
     "brokerage": "Kinnisvara ja äriprojektide vahendust teostab ja koordineerib GloReal INVESTMENTS asutaja ja firmajuht <0>German Randla</0> 6-taseme kutsetunnistusega nr KKM 219715 ja üle 18 aastase kinnisvaraalase kogemusega partner ja nõustaja. Müügi vahendamisel tasu on 3%-4% (püsiklientidel 2,5%) kinnisvara müügihinnast, mille tasub müüja (teenuse tellija). Üürikorteri vahendamisel Eestis tavapäraselt maksab vahendustasu kinnisvara üürnik, mis võrdub ühe kuu üürile. NB! GloReal INVESTMENTS elamute vahendustasule käibemaksu juurde ei lisa. See on hinna sees!",
     "management": "Pakume igapäevast haldust ja hooldust teie kinnisvarale, sealhulgas kommunaalkulude haldamine, tehniline järelevalve, koristus, avariitööde koordineerimine ja suhtlus üürnikega.",
@@ -368,11 +559,7 @@
         "formComponent": "FinancingForm"
       }
     ]
-  }
-
-
-
-},
+  },
 "category": {
   "title": "Mida me Vahendame",
   "description": "GloReal INVESTMENTS – teie kindel ja pikaajaline partner kinnisvara-, ehitus- ja investeerimisvaldkonnas alates aastast 2016"
@@ -440,33 +627,7 @@
     "description": "Toetus pärast tehingut ja edasine koostöö"
   }
 },
-"advantages": {
-  "title": "Meie Eelised",
-  "speed": {
-    "title": "Kiirmüük",
-    "description": "Otsus 24h, notar 3 päeva, raha järgmisel päeval"
-  },
-  "investment": {
-    "title": "Investeerimine",
-    "description": "Spetsialiseerumine investeerimisobjektidele"
-  },
-  "database": {
-    "title": "Andmebaas",
-    "description": "Aktiivsed ostjad ja investorid"
-  },
-  "business": {
-    "title": "Äripinnad ja arendused",
-    "description": "Vahendus uusarenduste ja äripindadega"
-  },
-  "personal": {
-    "title": "Personaalne suhtlus",
-    "description": "Kiire reageerimine ja individuaalne lähenemine"
-  },
-  "regions": {
-    "title": "Tööpiirkonnad",
-    "description": "Tallinn, Harjumaa, Riia, Tenerife"
-  }
-},
+
 "partners": "Meie partnerid",
 "contact": {
   "title": "Võtke meiega julgelt ühendust ja laske meil aidata Teid kõigis kinnisvara või investeeringutega seotud küsimustes",
@@ -487,42 +648,5 @@
     "phone": "+372 55599313",
     "email": "german@gloreal.ee"
   }
-},
-"footer": {
-  "slogan": "Diskreetne ja pädev – mõeldud Sulle",
-  "contact": {
-    "title": "Kontakt",
-    "phone": "+372 55599313",
-    "email": "info@gloreal.ee",
-    "address": "Liivalaia 28, Tallinn 10118"
-  },
-  "links": {
-    "title": "Lingid",
-    "offers": "Meie pakkumised",
-    "broker": "Vahendusteenus",
-    "management": "Telli haldusteenust",
-    "valuation": "Telli hindamisakt"
-  },
-  "legal": {
-    "title": "Õiguslik",
-    "privacy": "Privaatsuspoliitika",
-    "cookies": "Küpsised",
-    "terms": "Kasutustingimused"
-  },
-  "buttons": { "sell": "Müü/Üüri välja", "quick": "Kiirmüük" },
-  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ {{year}} | Kõik andmed kaitstud."
-},
-  "dev": {
-    "title": "Veebileht on töös",
-    "subtitle": "Mõned osad võivad olla kättesaamatud",
-    "continue": "Jätka"
-  },
-  "legal": {
-    "privacyText": "Käesolev privaatsuspoliitika selgitab, kuidas GloReal Investments töötleb ja kaitseb Teie isikuandmeid. Meie eesmärk on tagada, et Teie andmed oleksid alati turvalised ning kasutataks ainult selgelt määratletud eesmärkidel.\n\nMe kogume isikuandmeid peamiselt siis, kui täidate meie veebilehel vormi, võtate meiega ühendust või kasutate meie teenuseid. Kogutavad andmed võivad hõlmata Teie nime, kontaktandmeid, kinnisvara eelistusi ja muid vabatahtlikult esitatud andmeid.\n\nKasutame Teie andmeid selleks, et pakkuda Teile sobivaid kinnisvarapakkumisi, vastata päringutele, koostada hinnanguid ning täiustada meie teenuseid. Töötleme andmeid ainult õiguspärasel alusel ning ei edasta neid kolmandatele osapooltele ilma Teie nõusolekuta, välja arvatud seadusest tulenevatel juhtudel.\n\nGloReal Investments rakendab tehnilisi ja organisatsioonilisi turvameetmeid, et kaitsta Teie andmeid volitamata juurdepääsu, muutmise või kadumise eest.\n\nTeil on õigus tutvuda oma andmetega, taotleda nende parandamist või kustutamist ning võtta tagasi oma nõusolek. Päringute esitamiseks palume võtta meiega ühendust e-posti teel.\n\nKäesolevat privaatsuspoliitikat võidakse ajakohastada vastavalt õigusaktide muutumisele või teenuste täiendamisele.",
-    "cookiesText":"Meie veebileht kasutab küpsiseid, et tagada paremat kasutuskogemust, analüüsida veebilehe toimivust ja pakkuda Teile asjakohasemat sisu. Küpsised on väikesed tekstifailid, mis salvestatakse Teie seadmesse, kui külastate meie veebilehte.\n\nKasutame nii vajalikke küpsiseid, mis tagavad veebilehe tehnilise toimimise, kui ka analüütilisi küpsiseid, mis aitavad mõista, kuidas külastajad meie lehte kasutavad. Need andmed on anonüümsed ega võimalda Teid isiklikult tuvastada.\n\nTeil on võimalus küpsiste kasutamist oma brauseri seadetes piirata või täielikult keelata. Palun arvestage, et küpsiste blokeerimine võib mõjutada veebilehe mõningate funktsioonide tööd.\n\nKüpsiste kasutamise eesmärk on parandada meie teenuste kvaliteeti ja pakkuda Teile sujuvamat ning mugavamat kasutuskogemust.",
-    "termsText":"Käesolevad kasutustingimused reguleerivad GloReal Investments veebilehe kasutamist ning kirjeldavad kasutaja õigusi ja kohustusi. Veebilehte kasutades kinnitate, et olete tingimustega tutvunud ja nõustute neid järgima.\n\nVeebilehel esitatud teave on mõeldud üldiseks kasutamiseks ning võib sisaldada hinnanguid, kirjeldusi ja turuülevaateid, mis ei pruugi olla ammendavad ega alati ajakohased. Kuigi püüame tagada teabe täpsuse, ei saa me garanteerida selle täielikku õigsust või sobivust konkreetseks eesmärgiks.\n\nKasutaja kohustub kasutama veebilehte heas usus ning mitte teostama tegevusi, mis võivad kahjustada veebilehe toimimist, turvalisust või kättesaadavust. Keelatud on veebilehe sisu kopeerimine, levitamine või muutmine ilma GloReal Investments kirjaliku loata.\n\nVeebilehel võivad olla viited kolmandate osapoolte teenustele või välistele veebilehtedele. GloReal Investments ei vastuta nende sisu, täpsuse ega turvalisuse eest. Kolmandate osapoolte teenuste kasutamine toimub kasutaja enda vastutusel.\n\nKasutaja poolt veebilehe kaudu edastatud andmeid, sealhulgas päringuid ja kontaktinfot, kasutatakse üksnes teenuse osutamiseks ja suhtluse tagamiseks. Andmete töötlemine toimub vastavalt meie privaatsuspoliitikale.\n\nGloReal Investments jätab endale õiguse veebilehte ajakohastada, muuta või peatada selle toimimist ilma eelneva etteteatamiseta. Samuti võime kasutustingimusi igal ajal täiendada või muuta, et tagada vastavus õigusaktidele ja teenuse arengule.\n\nKui kasutaja ei nõustu kasutustingimustega, ei ole tal lubatud veebilehte kasutada. Veebilehe kasutamist käsitletakse nõustumisena käesolevate tingimustega."
-  }
-
-
-
+}
 }

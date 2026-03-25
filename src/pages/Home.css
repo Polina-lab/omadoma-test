@@ -15,9 +15,9 @@
   padding:20px;
 }
 
-.buyer-banner-wrapper {
+.advantages-wrapper {
   position: relative;
-  background-color: var(--color-blue-light);
+  background-color: var(--color-brown);
   width: 100%;
   display: flex;
   align-items: center;
@@ -26,42 +26,23 @@
   overflow: hidden;
 }
 
-.services-wrapper {
+.pricing-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.services-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: url("../assets/services-left.svg"), url("../assets/services-right.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: -100px 30px, calc(100% + 40px) 10%;
-  background-size: auto 110%, auto 100%;
+.process-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.category-wrapper {
-  background-image: url("../assets/category-bg.png");
-  background-size:auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
+@media (max-width: 768px) {
 
-.process-advantages-wrapper {
-  background-image: url("../assets/process-left.png"), url("../assets/process-right.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: left center, right center;
-  background-size: auto 110%, auto 100%;
-  background-attachment: fixed;
-  z-index: 10;
-}
-
-.partners-wrapper {
-  background-color: var(--color-blue-light);
-}
+  .process-wrapper {
+    padding: 20px;
+  }}
 
 

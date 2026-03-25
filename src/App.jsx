@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./layouts/Footer";
 import Home from "./pages/Home";
+import Services from "./pages/Services";
 import TopMenu from "./layouts/TopMenu";
 import DevOverlay from "./components/DevOverlay";
 
@@ -21,16 +22,14 @@ const [activeService, setActiveService] = useState(null);
       <main>
         <TopMenu />
         <Routes>
-          <Route path="/" element={<Home
-                activeService={activeService}
-                setActiveService={setActiveService}
-              />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/services" element={<Services/>} />
           <Route path="/privacy" element={<Privaatsuspoliitika />} />
           <Route path="/cookies" element={<Kupsised />} />
           <Route path="/terms" element={<Kasutustingimused />} />
         </Routes>
       </main>
-      <Footer setActiveService={setActiveService}/>
+      <Footer />
     </Router>
   );
 }

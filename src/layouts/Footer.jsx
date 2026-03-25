@@ -1,167 +1,196 @@
-import React, { useState } from "react";
-import { useTranslation, Trans } from "react-i18next";
-import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useTranslation, Trans } from "react-i18next";
+import React, { useState, useEffect } from "react";
 import "./Footer.css";
-import ContactBlock from "../pages/ContactBlock";
-import QuickSaleForm from "../components/QuickSaleForm";
 
-import ReactDOM from "react-dom";
+import { CONTACT } from "../constants/contact";
 
 import logo from "../assets/logo.svg";
-
-import iconPhone from "../assets/footer/phone.svg";
-import iconEmail from "../assets/footer/mail.svg";
-import iconLocation from "../assets/footer/location.svg";
+import mapImg from "../assets/map-estonia.png";
 
 import facebookIcon from "../assets/footer/facebook.svg";
 import twitterIcon from "../assets/footer/browser.svg";
 import instagramIcon from "../assets/footer/instagram.svg";
 
-const Footer = ({ setActiveService }) => {
+export default function Footer() {
   const { t } = useTranslation();
-  const location = useLocation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const hideContactBlockOn = [
-    "/privacy",
-    "/cookies",
-    "/terms"
-  ];
+  const [contact, setContact] = useState("");
+  const [formMessage, setFormMessage] = useState({ text: "", type: "" }); 
 
-  const openBrokerage = () => {
-    setActiveService("brokerage");
-
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth"
-    });
+  const checkLang = (curr) => {
+    if (curr==="et") return "Эстонский"
+    else if (curr==="ru") return "Русский"
+    else if (curr==="en") return "Английский"
+    else return "не понятно"
+  }
+  
+   const autoClearMessage = () => {
+    setTimeout(() => setFormMessage({ text: "", type: "" }), 4000); // 2 секунды
   };
 
-    const openManagement = () => {
-    setActiveService("management");
-
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth"
-    });
+  const validateContact = (value) => {
+    const email =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phone =
+      /^[+]?[\d\s\-()]{7,20}$/;
+    return email.test(value) || phone.test(value);
   };
 
-    const openValuation = () => {
-    setActiveService("valuation");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateContact(contact)) {
+      setFormMessage({ text: t("pricing.form.errorContact"), type: "error" });
 
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth"
-    });
+      autoClearMessage();
+      return;
+    }
+    try {
+      await emailjs.send(
+        "service_76jh06b",
+        "template_6bz4fb7",
+        {
+          type:"Contact request",
+          contact: contact,
+          lang: checkLang(i18n.language)
+        },
+        "iwhgtRN9BAWM9YCiN"
+      );
+
+      setFormMessage({ text: t("pricing.form.success"), type: "success" });
+      setContact(""); // очищаем поле
+
+      autoClearMessage();
+    } catch (err) {
+      console.error(err);
+      setFormMessage({ text: t("pricing.form.errorContact"), type: "error" });
+      autoClearMessage();
+    }
   };
-
-  const shouldHideContactBlock = hideContactBlockOn.includes(location.pathname);
-
-
-
-  const address = t("footer.contact.address");
-  const encoded = encodeURIComponent(address);
-  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  const mapLink = isIOS
-    ? `https://maps.apple.com/?q=${encoded}`
-    : `https://www.google.com/maps?q=${encoded}`;
-
 
   return (
-    <>
-    <div className="footer-bg-wrapper">
-      <div className="footer-bg-decor">
-        <div className="footer-content">
-          {!shouldHideContactBlock && (
-            <div className="contact-wrapper">
-              <ContactBlock />
-            </div>
-          )}
+    <footer className="footer" id="footer">
 
-          <footer className="footer">
-            <div className="footer-grid">
-              <div className="footer-brand">
-                <p className="footer-slogan">{t("footer.slogan")}</p>
-                <img src={logo} alt="GloReal Investments" className="footer-logo" onClick={() => { window.location.href = "/"; }}/>
-                <div className="footer-social">
-                  <div className="social-icon">
-                    <a href="https://www.facebook.com/glorealkinnisvara" target="_blank" rel="noopener">
+      <div className="footer-inner">
+
+        {/* LEFT */}
+        <div className="footer-left">
+
+          <p className="footer-top-text">
+            {t("footer.topText")}
+          </p>
+
+          <div className="footer-columns">
+
+            <div className="footer-col">
+              <h4>{t("footer.contact")}</h4>
+
+              <a href={`tel:${CONTACT.phone}`}>
+                {CONTACT.phoneFormatted}
+              </a>
+
+              <a href="mailto:info@omadoma.ee">
+                info@omadoma.ee
+              </a>
+
+              <div className="socials">
+                  <div className="social-icon facebook">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener">
                     <img src={facebookIcon} alt="Facebook" /></a>
                   </div>
                   <div className="social-icon">
-                    <a href="https://www.kv.ee/firma/12491" target="_blank" rel="noopener">
+                    <a href="" target="_blank" rel="noopener">
                     <img src={twitterIcon} alt="Twitter" /></a>
                   </div>
                   <div className="social-icon">
                     <a href="https://instagram.com" target="_blank" rel="noopener">
                     <img src={instagramIcon} alt="Instagram" /></a>
                   </div>
-                </div>
-              </div>
-
-              <div className="footer-social-buttons">
-                <button className="btn btn-outline-green" onClick={openBrokerage}>{t("footer.buttons.sell")}</button>
-                <button className="btn btn-solid-green" onClick={() => setIsModalOpen(true)}>{t("footer.buttons.quick")}</button>
-              </div>
-
-              <div className="footer-contact">
-                <h4>{t("footer.contact.title")}</h4>
-                <p><a href={`tel:${t("footer.contact.phone")}`}><img src={iconPhone} alt="" /> {t("footer.contact.phone")}</a></p>
-                <p><a href={`mailto:${t("footer.contact.email")}`}><img src={iconEmail} alt="" /> {t("footer.contact.email")}</a></p>
-                <p><a href={mapLink} target="_blank" rel="noopener noreferrer">
-                    <img src={iconLocation} alt="location" className="contact-icon" />
-                    <span>{address}</span>
-                </a></p>
-              </div>
-
-              <div className="footer-links">
-                <h4>{t("footer.links.title")}</h4>
-                <ul>
-                  <Link
-                    to="https://www.kv.ee/maakler/gloreal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li>{t("footer.links.offers")}</li>
-                  </Link>
-                  <li><a onClick={openBrokerage}>{t("footer.links.broker")}</a></li>
-                  <li><a onClick={openManagement}>{t("footer.links.management")}</a></li>
-                  <li><a onClick={openValuation}>{t("footer.links.valuation")}</a></li>
-                </ul>
-              </div>
-
-              <div className="footer-legal">
-                <h4>{t("footer.legal.title")}</h4>
-                <ul>
-                  <li><a href="/privacy">{t("footer.legal.privacy")}</a></li>
-                  <li><a href="/cookies">{t("footer.legal.cookies")}</a></li>
-                  <li><a href="/terms">{t("footer.legal.terms")}</a></li>
-                </ul>
               </div>
             </div>
 
-            <div className="footer-bottom">
-              <p>
-                <Trans
-                i18nKey="footer.bottom"
-                values={{ year: new Date().getFullYear() }}
-                components={[
-                  <span className="blue2" />,
-                  <span className="green2" />
-                ]} />
-              </p>
+            <div className="footer-col">
+              <h4>{t("footer.links")}</h4>
+
+              <Link to="/">{t("nav.home")}</Link>
+              <Link to="/about">{t("nav.about")}</Link>
+              <Link to="/privacy">{t("footer.privacy")}</Link>
+              <Link to="/cookies">{t("footer.cookies")}</Link>
+              <Link to="/terms">{t("footer.terms")}</Link>
             </div>
-          </footer>
+
+          </div>
         </div>
-      </div>
-    </div>
-        {isModalOpen &&
-          ReactDOM.createPortal(
-            <QuickSaleForm onClose={() => setIsModalOpen(false)} />,
-            document.body
-          )
-        }
-    </>
-  );
-};
 
-export default Footer;
+        {/* CENTER */}
+        <div className="footer-center">
+
+          <img src={logo} alt="logo" className="footer-logo" />
+
+          <button className="btn-outline">
+            {t("footer.viewWorks")}
+          </button>
+
+          <button className="btn-solid" onClick={() => (window.location.href = "/services")}>
+            {t("footer.services")}
+          </button>
+
+        </div>
+
+        {/* RIGHT */}
+        <div className="footer-right">
+
+          <img src={mapImg} alt="map" className="footer-map" />
+
+          <div className="footer-overlay">
+
+            <h4>{t("footer.workAllEstonia")}</h4>
+
+
+            <form
+              className="footer-input" // оставляем стиль футера
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
+              <input
+                type="text"
+                placeholder={t("hero.mailPhone")}
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+              />
+              <button type="submit" onClick={handleSubmit}>→</button>
+            </form>
+            {formMessage.text && (
+                <span className={`form-message ${formMessage.type}`}>
+                  {formMessage.text}
+                </span>
+              )}
+            {/*<div className="footer-input">
+              <input
+                placeholder={t("hero.mailPhone")}
+              />
+              <button>→</button>
+            </div>*/}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="footer-bottom">
+        <p>
+          <Trans
+          i18nKey="footer.rights"
+          values={{ year: new Date().getFullYear() }}
+          components={[
+            <span className="brown-bold" />
+          ]} />
+        </p>
+      </div>
+
+    </footer>
+  );
+}
