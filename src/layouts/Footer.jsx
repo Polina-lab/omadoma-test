@@ -14,7 +14,7 @@ import twitterIcon from "../assets/footer/browser.svg";
 import instagramIcon from "../assets/footer/instagram.svg";
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [contact, setContact] = useState("");
   const [formMessage, setFormMessage] = useState({ text: "", type: "" }); 

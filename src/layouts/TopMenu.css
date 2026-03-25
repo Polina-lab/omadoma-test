@@ -102,6 +102,15 @@
   font-weight: 700;
 }
 
+.nav-links .active.disabled-link, .disabled-link {
+  pointer-events: none;
+  border-bottom: none;
+  font-weight: 300;
+  color: var(--color-gray);
+  opacity: 0.5;
+  cursor:none;
+}
+
 .lang-dropdown {
   position: relative;
 }
