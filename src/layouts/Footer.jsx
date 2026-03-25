@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import "./Footer.css";
+import emailjs from "@emailjs/browser";
 
 import { CONTACT } from "../constants/contact";
 
@@ -59,7 +60,6 @@ export default function Footer() {
 
       setFormMessage({ text: t("pricing.form.success"), type: "success" });
       setContact(""); // очищаем поле
-
       autoClearMessage();
     } catch (err) {
       console.error(err);
@@ -148,7 +148,7 @@ export default function Footer() {
 
 
             <form
-              className="footer-input" // оставляем стиль футера
+              className="footer-input"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit();
@@ -167,12 +167,6 @@ export default function Footer() {
                   {formMessage.text}
                 </span>
               )}
-            {/*<div className="footer-input">
-              <input
-                placeholder={t("hero.mailPhone")}
-              />
-              <button>→</button>
-            </div>*/}
 
           </div>
 

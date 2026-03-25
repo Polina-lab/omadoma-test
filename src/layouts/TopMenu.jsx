@@ -93,7 +93,7 @@ const TopMenu = () => {
             <NavLink to="/services">
               {t("nav.services")}
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/" aria-disabled>
               {t("nav.works")}
             </NavLink>
             <NavLink to="/">

@@ -245,14 +245,13 @@
 
   .footer-overlay {
     position: absolute;
-    width: fit-content;
+    width: max-content;
     left: 25%;
     top:10%;
   }
 
   .footer-input {
     flex-direction: column;
-    gap: 10px;
   }
 
   .footer-input input {

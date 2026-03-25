@@ -358,9 +358,10 @@ select.disabled {
 @media (max-width: 768px) {
 
   .services-section {
-    padding: 0 40px;
-    padding-top: 80px;
+    padding: 0 20px;
+    padding-top: 60px;
     text-align: center;
+    margin-bottom: 20px;
   }
 
   .services-section h2 {
@@ -370,20 +371,20 @@ select.disabled {
     margin-bottom: 20px;
   }
 
-  .hero-form {
+  .services-section .hero-form {
     flex-direction: column;
-    width: 100%;
-    margin: 20px auto;
-    
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 60px;
   }
 
   .hero-input {
-    padding: 12px 16px;
+    text-align: center;
   }
 
-  .hero-submit {
-    width: 100%;
-    padding: 14px 0;
+  .contact-form-block {
+    padding: 20px;
+    margin-top: 30px;
   }
 
 }
@@ -412,41 +413,37 @@ select.disabled {
   }
 
   .service-card {
-    max-width: 300px;
+    max-width: 250px;
   }
 
   .service-card:hover {
-    /* отключаем hover полностью */
-    background-color: inherit;
-    color: inherit;
-  }
+  background-color: transparent;
+  color: var(--color-gray);
+}
 
-  .service-card:hover .icon-default,
-  .service-card:hover .icon-hover {
-    opacity: 1;
-  }
+.service-card:hover .service-name {
+  color: var(--color-dark-gray);
+}
 
-  /* --- Активная услуга --- */
-  .service-card.active {
-    background-color: var(--color-blue-dark);
-    color: white;
-  }
+.service-card:hover .service-price {
+  color: var(--color-gold);
+}
 
-  .service-card.active .icon-default {
-    opacity: 0;
-  }
+.service-card:hover .service-icon {
+  transform: none;
+}
 
-  .service-card.active .icon-hover {
-    opacity: 1;
-  }
+.service-card:hover .icon-default {
+  opacity: 1;
+}
 
-  .service-card.active .service-link {
-    color: var(--color-orange);
-  }
+.service-card:hover .icon-hover {
+  opacity: 0;
+}
 
-  .service-card.active .service-icon {
-    transform: scale(1.1);
-  }
+.service-price {
+  top: 10px;
+}
 
   .form-grid {
     display: flex;
