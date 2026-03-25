@@ -1,553 +1,241 @@
 {
   "nav.home": "Home",
   "nav.services": "Services",
-  "nav.advantages": "Advantages",
-  "nav.objects": "Brokerage",
-  "nav.team": "Team",
-  "nav.process": "Process",
-  "nav.contact": "Contact",
+  "nav.works": "Our Work",
+  "nav.about": "About Us",
+  "nav.connect": "Contact",
 
-  "hero.subtitle": "Smooth real estate transactions. Discreet and well-considered investment solutions.",
-  "hero.description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investment since 2016",
-  "hero.offers": "OUR OFFERS",
-  "hero.buyPlot": "BUY A RESIDENTIAL PLOT",
+  "hero.subtitle": "Sell smart. Save thousands.",
+  "hero.description": "Fixed price. Clear strategy. Professional results. No commission fees.",
+  "hero.mailPhone": "Email or phone number",
+  "hero.freeCall": "Request a free call",
 
-  "quickSale.title": "FAST SALE AT MARKET PRICE",
-  "quickSale.description": "We help you quickly find a buyer for your property",
-  "quickSale.buyersCount": "CURRENTLY 10 REGISTERED BUYERS",
-  "quickSale.sendOffer": "SEND US YOUR OFFER",
-
-  "buyerRequest.title": "LOOKING TO BUY?",
-  "buyerRequest.description": "Send us your request and we will add it to our database until we find or are offered a property that suits you!",
-  "buyerRequest.sendRequest": "SEND US YOUR REQUEST",
-
-  "quickSale": {
-    "title": "Fast sale at market price",
-    "description": "We help you quickly find a buyer for your property",
-    "counter": "Currently <0>{{count}}</0> registered buyers",
-    "button": "Send us your offer",
-    "modalIntro": "NB! At a reasonable price, not below market value! The GloReal INVESTMENTS database includes verified buyers to whom we want to offer your property and help complete a FAST TRANSACTION!"
-  },
-  "form": {
-    "name": "Name",
-    "email": "Email",
-    "address": "Address",
-    "backAddress": "Collateral address",
-    "desiredPlace": "Preferred location:",
-    "size": "Size (m²)",
-    "desiredPrice": "Desired price:",
-    "beforePrice": "Budget:",
-    "priceFrom": "from",
-    "priceTo": "to",
-    "uploadLabel": "Upload documents and images",
-    "uploadButton": "Upload files",
-    "uploadNote": "Maximum file size must not exceed 2MB. You can upload up to 10 files in total",
-    "phone": "Phone",
-    "region": "Preferred region",
-    "wish": "I want to:",
-    "wishInvest": "I want to invest in:",
-    "wishRE": "Real estate",
-    "wishBS": "Business",
-    "wishOther": "Other assets",
-    "sell": "Sell",
-    "rending": "Rent out",
-    "profile": "Professional photos",
-    "dron": "Drone photos",
-    "video": "Video service",
-    "sizeFrom": "from",
-    "sizeTo": "to",
-    "rooms": "Number of rooms",
-    "preferredLocation": "Preferred location",
-    "foreign": "Abroad",
-    "estonia": "Estonia",
-    "selectCounty": "Select county",
-    "selectCity": "Select city",
-    "counties": {
-      "harjumaa": "Harju County",
-      "tartumaa": "Tartu County",
-      "pärnumaa": "Pärnu County",
-      "idaVirumaa": "Ida-Viru County"
+  "advantages": {
+    "price": {
+      "title": "Fixed price",
+      "description": "No 3% commission fees"
     },
-    "financing": "Financing",
-    "loanPrice": "Desired loan amount",
-    "loanPurpose": "Loan purpose",
-    "loanPurposeOptions": {
-      "realEstate":"Real estate purchase",
-      "car":"Car purchase",
-      "business":"Business loan",
-      "renovation":"Renovation loan",
-      "personal":"Personal loan",
-      "other":"Other purpose"
+    "best": {
+      "title": "Maximum selling price",
+      "description": "Correct pricing = more money in your pocket."
     },
-    "loanPeriod": "Loan period",
-    "loanPeriodNumber": "Select number",
-    "loanPeriodUnit": "Select a unit first",
-    "loanUnits": {
-      "days": "days",
-      "months": "months",
-      "years": "years"
+    "strategy": {
+      "title": "Clear strategy",
+      "description": "You don’t sell by guesswork, but with a plan."
     },
-    "financingAfter": "We will review your request and offer solutions that best suit the achievement of your goals.\nAt this time, GloReal INVESTMENTS does not issue loans directly, but we work closely with several trusted partners who meet our requirements and to whom we can confidently refer our valued clients.",
-    "propertyType": "Property type",
-    "propertyTypeFinancing": "Type of property offered as collateral",
-    "addressMultiple": "Address(es):",
-    "objectCount": "I need property management service:",
-    "servicesWanted": "I would like the following services",
-    "servicesOptions": {
-      "fullManagement": "Full management",
-      "cleaning": "Cleaning",
-      "moving": "Moving",
-      "utilization": "Disposal of old furniture/equipment",
-      "associationCommunication": "Communication with apartment association",
-      "debtCollection": "Tenant debt collection",
-      "eviction": "Tenant eviction",
-      "contractExtension": "Lease contract extension",
-      "otherServices": "Other services"
+    "camera": {
+      "title": "Professional presentation",
+      "description": "Photos and text that attract buyers."
     },
-    "managementDetails": "Additional information/details: here you can provide all relevant information about the property/properties requiring management, such as whether they are rented out or vacant, whether tenants need to be found, whether renovation or preparation is needed before renting and management, whether there are problematic tenants that require immediate attention, current rental prices and rental expectations, etc.",
-    "renovationDetails": "Additional information/questions: here you can specify which service or renovation work you are interested in ordering",
-    "types": {
-      "studio": "Studio apartment",
-      "apartment": "Apartment",
-      "commercial": "Commercial",
-      "office": "Office",
-      "service": "Service space",
-      "food": "Food & beverage",
-      "storage": "Warehouse",
-      "production": "Production",
-      "house": "House",
-      "housePart": "Part of a house",
-      "rowhouse": "Townhouse unit",
-      "summerhouse": "Summer house",
-      "plot": "Land plot",
-      "parking": "Parking space",
-      "garage": "Garage"
+    "support": {
+      "title": "Support at every step",
+      "description": "You’re never left alone with questions."
     },
-    "cadastral": "Cadastral number",
-    "condition": "Condition:",
-    "conditionOptions": {
-      "new": "New, new development",
-      "good": "Good condition",
-      "freshFinish": "New finishing",
-      "renovated": "Renovated",
-      "sanitaryDone": "Sanitary renovation completed",
-      "average": "Average",
-      "sanitaryNeeds": "Needs sanitary renovation",
-      "capitalNeeds": "Needs major renovation"
-    },
-    "servicePeriod": "Service period",
-    "periodOptions": {
-      "oneTime": "One-time",
-      "oneYear": "1 year",
-      "moreThanYear": "More than one year",
-      "agreement": "By agreement"
-    },
-    "moreThan5": "more than 5",
-    "additionalInfo": "Additional information / Questions",
-    "additionalInfoFinancig": "Additional information / Questions: here you can describe in more detail what the loan is for",
-    "submit": "Submit offer"
-  },
-  "buyer": {
-    "title": "LOOKING TO BUY?",
-    "description": "Send us your request and we will add it to our database until we find or are offered a property that suits you!",
-    "region": "Preferred region",
-    "size": "Size (m²)",
-    "sizeFrom": "from",
-    "sizeTo": "to",
-    "rooms": "Number of rooms",
-    "financing": "Financing",
-    "financingOptions": {
-      "ownMoney": "Own funds",
-      "bankLoan": "Bank loan",
-      "fromSale": "From the sale of own property"
+    "fast": {
+      "title": "Faster sales",
+      "description": "Structured process = less time on the market."
     }
   },
 
-  "success": {
-    "title": "THANK YOU!",
-    "message": "We have received your request.\nWe will respond within 24 hours.",
-    "hintTitle": "Expected regions and properties:",
-    "hints": [
-      "Apartment (1–3 rooms, needs renovation, Tallinn)",
-      "Apartment (2 rooms, good/average condition, 1st floor, Lasnamäe)",
-      "Commercial space (food & beverage, 1st floor)",
-      "Garage (up to €12,000)",
-      "Land plot (residential land, water, sewage, electricity, road, Harju County)",
-      "Land plot (residential land, by or near the sea, Kakumäe, Pirita, Viimsi, Harku municipality)"
-    ]
+  "pricing": {
+    "more": "Show more",
+
+    "flex": {
+      "type": "flex package",
+      "title": "Choose yourself",
+      "price": "From 50 €",
+      "desc": "Choose exactly the services you need. Pay only for what you use.",
+      "listTitle": "Services you can choose separately:",
+      "list": [
+        "Professional photos",
+        "Sales copy",
+        "Listing setup",
+        "Price recommendation",
+        "Sales strategy consultation",
+        "Property viewings",
+        "Negotiations",
+        "Deal preparation",
+        "Support until notary"
+      ],
+      "button": "Build your package"
+    },
+
+    "basic": {
+      "badge": "Most popular choice",
+      "type": "basic service",
+      "title": "Sell it yourself",
+      "subtitle": "Smart start. Professional foundation.",
+      "price": "From 280 €",
+      "desc": "Ideal if you want to manage the sale yourself but need a strong professional start.",
+
+      "includesTitle": "Includes:",
+      "includes": [
+        "Professional photos",
+        "Sales copy",
+        "Listing setup",
+        "Price recommendation",
+        "Sales strategy consultation"
+      ],
+
+      "notIncludesTitle": "Does not include:",
+      "notIncludes": [
+        "Viewings",
+        "Negotiations",
+        "Listing portal fees (separate)"
+      ],
+
+      "button": "Select service",
+
+      "pricing": {
+        "title": "Pricing based on property size:",
+        "items": [
+          "Up to 40 m² - <0>280 €</0>",
+          "40–60 m² - <0>330 €</0>",
+          "60–80 m² - <0>400 €</0>",
+          "80+ m² - <0>on request</0>"
+        ]
+      }
+    },
+
+    "full": {
+      "badge": "Turnkey solution",
+      "type": "full service",
+      "title": "You relax\nWe sell",
+      "price": "From 1200 €",
+      "desc": "Full service for those who want a complete turnkey solution.",
+
+      "includesTitle": "Includes:",
+      "includes": [
+        "Everything from basic package",
+        "All viewings",
+        "Negotiations",
+        "Deal preparation",
+        "Support until notary"
+      ],
+
+      "button": "Select service",
+
+      "pricing": {
+        "title": "Pricing based on property size:",
+        "items": [
+          "Up to 40 m² - <1>1200 €</1>",
+          "40–60 m² - <1>1500 €</1>",
+          "60–80 m² - <1>2000 €</1>",
+          "80+ m² - <1>on request</1>"
+        ]
+      }
+    },
+
+    "form": {
+      "name": "Name",
+      "contact": "Email or phone <0>*</0>",
+      "city": "Region - City",
+      "area": "Area",
+      "areas": [
+        "Up to 40 m²",
+        "40–60 m²",
+        "60–80 m²",
+        "80+ m²"
+      ],
+      "submit": "Send request",
+      "comment": "Comment:",
+      "service": "Select service",
+      "serviceHint": "Choose a package or individual services",
+      "selectService": "Custom selection",
+      "success": "Sent!",
+      "error": "Error sending",
+      "errorContact": "Enter a valid email or phone",
+      "required": "Contact is required"
+    }
   },
 
-  "buyerBanner": {
-    "title": "LOOKING TO BUY?",
-    "description": "Send us your request and we will add it to our database until we find or are offered a property that suits you!",
-    "button": "SEND US YOUR REQUEST"
-  },
-"services": {
-  "title": "Our Services",
-  "readMore": "Read more →",
-  "sendRequest": "Send request",
-  "sendRequest2": "Submit order",
-  "brokerage": {
-    "title": "Brokerage (Sale / Rent)",
-    "description": "Professional brokerage for property sales and rentals"
-  },
-  "management": {
-    "title": "Property Management",
-    "description": "Daily management and maintenance of real estate"
-  },
-  "renovation": {
-    "title": "Renovation Works",
-    "description": "Minor and major renovation services"
-  },
-  "valuation": {
-    "title": "Valuation",
-    "description": "Market value assessment of real estate"
-  },
-  "media": {
-    "title": "Real Estate Photography",
-    "description": "High-quality photo and video materials"
-  },
-  "investment": {
-    "title": "Investment Consulting",
-    "description": "Consulting on investment opportunities"
-  },
-  "financing": {
-    "title": "Financing",
-    "description": "When banks do not provide loans but you still wish to acquire property"
-  },
-  "details": {
-    "brokerage": "Real estate and business project brokerage is carried out and coordinated by the founder and CEO of GloReal INVESTMENTS, German Randla — holder of a Level 6 professional certificate No. KKM 219715 and a partner and consultant with over 18 years of experience in the real estate sector. The brokerage fee for sales is 3–4% (2.5% for loyal clients) of the property sale price and is paid by the seller (service client). In rental transactions in Estonia, the brokerage fee is typically paid by the tenant and equals one month’s rent. NB! GloReal INVESTMENTS does not add VAT to residential property brokerage fees. VAT is included in the price.",
-    "management": "We provide daily management and maintenance of your property, including utility management, technical supervision, cleaning, coordination of emergency works, and communication with tenants.",
-    "renovation": "We carry out both minor repair works and large-scale renovation projects. We prepare a work plan, procure materials, and ensure high-quality execution.",
-    "valuation": "Property valuation based on market value, taking into account location, condition, market trends, and statistics of comparable properties. Required for sale, rental, or financing purposes.",
-    "media": "We create professional photo and video materials that highlight the best features of your property. We use drones, wide-angle lenses, and styling when necessary.",
-    "investment": "We advise on investment opportunities, including rental properties, development projects, and commercial real estate. We help create strategies and assess risks.",
-    "financing": "If banks do not provide financing, we offer alternative solutions in cooperation with investors. We assess the property, prepare a financial plan, and find the most suitable solution."
-  },
-  "detailss": {
-    "brokerage": [
-      {
-        "type": "text",
-        "content": "Real estate and business project brokerage is carried out and coordinated by the founder and CEO of GloReal INVESTMENTS, <0>German Randla</0>, holder of a Level 6 professional certificate No. KKM 219715 and a partner and consultant with over 18 years of experience in the real estate sector."
-      },
-      {
-        "type": "text",
-        "content": "The brokerage fee for sales is 3–4% (2.5% for loyal clients) of the property sale price and is paid by the seller (service client)."
-      },
-      {
-        "type": "text",
-        "content": "In rental transactions in Estonia, the brokerage fee is typically paid by the tenant and equals one month’s rent."
-      },
-      {
-        "type": "text",
-        "content": "NB! GloReal INVESTMENTS does not add VAT to residential property brokerage fees. VAT is included in the price."
-      },
-      {
-        "type": "cta",
-        "text": "Send your request and we will contact you shortly",
-        "button": "Send request",
-        "formComponent": "BrokerageForm"
-      }
-    ],
-    "management": [
-      {
-        "type": "text",
-        "content": "The property management service for owners provided by GloReal INVESTMENTS is a paid management and maintenance service for your property over a specified period, including the following services:"
-      },
-      {
-        "type": "list",
-        "items": [
-          "Communication with housing and utility service providers",
-          "Emergency response or supervision",
-          "Ongoing communication with tenants",
-          "Monitoring utility and rental payments",
-          "Coordination of property maintenance and repairs",
-          "Monitoring tenant compliance with rules",
-          "In case of debts: payment schedules, eviction, legal proceedings"
-        ]
-      },
-      {
-        "type": "pricing",
-        "items": [
-          "25.- EUR/hour",
-          "40.- EUR/hour (outside working hours 9:00–17:00)",
-          "Annual management = 100% of one month’s rent per year",
-          "Monthly management = 8% of monthly rent",
-          "10% — if rental value is below 300.- EUR per month",
-          "Contract renewal — 100.- EUR",
-          "75.- EUR — for loyal clients",
-          "0.- EUR — for full-service clients"
-        ]
-      },
-      {
-        "type": "cta",
-        "text": "Send your request and we will contact you shortly",
-        "button": "Send request",
-        "formComponent": "ManagementForm"
-      }
-    ],
-    "renovation": [
-      {
-        "type": "list",
-        "items": [
-          "Wall demolition and waste removal",
-          "Installation of internal walls and partitions",
-          "Painting works for walls and ceilings",
-          "Tiling works in hallways, bathrooms, and kitchens",
-          "Flooring: removal, preparation, installation, renovation",
-          "Electrical works and design",
-          "Plumbing and sanitary works",
-          "Ventilation works",
-          "Fire safety works and audit",
-          "Post-renovation waste removal and cleaning",
-          "Installation of kitchen furniture and appliances",
-          "Interior design project and furnishing"
-        ]
-      },
-      {
-        "type": "cta",
-        "text": "Request a quote",
-        "button": "Request a quote",
-        "formComponent": "RenovationForm"
-      }
-    ],
-    "valuation": [
-      {
-        "type": "text",
-        "content": "We provide fast and objective expert valuation of your property through our partners."
-      },
-      {
-        "type": "pricing",
-        "items": [
-          "Market value assessment before sale — 50.- EUR",
-          "FREE for clients with an exclusive agreement",
-          "Valuation of other properties — according to the price list",
-          "GloReal INVESTMENTS: -15% off the standard price for properties sold through us"
-        ]
-      },
-      {
-        "type": "cta",
-        "text": "Order valuation service",
-        "button": "Order valuation",
-        "formComponent": "ValuationForm"
-      }
-    ],
-    "media": [
-      {
-        "type": "text",
-        "content": "We create outstanding photo and video materials for property sales and rentals."
-      },
-      {
-        "type": "pricing",
-        "items": [
-          "1–2 room apartment — 50.- EUR",
-          "3–4 room apartment — 75.- EUR",
-          "5+ room apartment — 100.- EUR",
-          "House < 110 m² — 75.- EUR",
-          "House > 110 m² — 120.- EUR",
-          "Commercial property 1–3 rooms — 50.- EUR",
-          "Commercial property 4+ rooms — 100.- EUR",
-          "Land plot — 50.- EUR",
-          "Drone photography — 190.- EUR",
-          "Exclusive projects — from 200.- EUR",
-          "All photos FREE for clients with an exclusive agreement"
-        ]
-      },
-      {
-        "type": "cta",
-        "text": "Order real estate photography",
-        "button": "Order photography",
-        "formComponent": "MediaForm"
-      }
-    ],
-    "investment": [
-      {
-        "type": "text",
-        "content": "We offer various investment opportunities in real estate and business sectors."
-      },
-      {
-        "type": "cta",
-        "text": "Send your request and we will find the best solution",
-        "button": "Send request",
-        "formComponent": "InvestmentForm"
-      }
-    ],
-    "financing": [
-      {
-        "type": "text",
-        "content": "If banks do not provide financing, we offer alternative solutions in cooperation with investors."
-      },
-      {
-        "type": "text",
-        "content": "We will review your request and propose solutions that match your goals."
-      },
-      {
-        "type": "cta",
-        "text": "Send your request and we will contact you shortly",
-        "button": "Send request",
-        "formComponent": "FinancingForm"
-      }
-    ]
-  }
-},
-"category": {
-  "title": "What We Broker",
-  "description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investments since 2016"
-},
-"categories": {
-  "businessSpaces": "Commercial Spaces",
-  "summerhouses": "Summer Houses",
-  "houses": "Houses & House Parts",
-  "land": "Land & Plots",
-  "apartments": "Apartments",
-  "garages": "Garages",
-  "entrepreneurship": "Entrepreneurship & Business",
-  "development": "Development Projects",
-  "investments": "Investments",
-  "newDevelopments": "New Developments"
-},
-"team": {
-  "title": "Our team",
-  "subtitle": "Our professional team ensures smooth and reliable real estate service",
-  "contactButton": "Contact",
+  "footer": {
+    "topText": "Why pay thousands in commissions,\nwhen you can get professional service at a fixed price?",
 
-  "german": {
-    "name": "German Randla",
-    "position": "Main company contact person",
-    "description": "Responsible for strategy, investments and company management"
-  },
+    "contact": "Contact",
+    "links": "Links",
 
-  "liliana": {
-    "name": "Liliana Živel",
-    "position": "Key account manager",
-    "description": "Responsible for client communication and key account management"
-  },
-
-  "form": {
-    "name": "Name",
-    "phone": "Phone",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send request"
-  }
-},
-"process": {
-  "title": "Our Simple Work Process",
-  "description": "GloReal INVESTMENTS – your reliable long-term partner in real estate, construction, and investments since 2016",
-  "consultation": {
-    "title": "Consultation",
-    "description": "Initial meeting and needs assessment"
-  },
-  "analysis": {
-    "title": "Analysis",
-    "description": "Evaluation of market conditions and the property"
-  },
-  "strategy": {
-    "title": "Strategy",
-    "description": "Preparation of a sales or investment plan"
-  },
-  "marketing": {
-    "title": "Marketing",
-    "description": "Professional advertising and targeted campaigns"
-  },
-  "negotiation": {
-    "title": "Negotiation",
-    "description": "Price negotiations and agreement of terms"
-  },
-  "followup": {
-    "title": "Aftercare",
-    "description": "Support after the transaction and further cooperation"
-  }
-},
-"advantages": {
-  "title": "Our Advantages",
-  "speed": {
-    "title": "Fast Sale",
-    "description": "Decision in 24h, notary in 3 days, money the next day"
-  },
-  "investment": {
-    "title": "Investment",
-    "description": "Specialization in investment properties"
-  },
-  "database": {
-    "title": "Database",
-    "description": "Active buyers and investors"
-  },
-  "business": {
-    "title": "Commercial Spaces & Developments",
-    "description": "Brokerage of new developments and commercial spaces"
-  },
-  "personal": {
-    "title": "Personal Communication",
-    "description": "Quick response and individualized approach"
-  },
-  "regions": {
-    "title": "Operating Regions",
-    "description": "Tallinn, Harju County, Riga, Tenerife"
-  }
-},
-"partners": "Our Partners",
-"contact": {
-  "title": "Feel free to contact us and let us help you with all real estate or investment related matters",
-  "description": "To book a meeting, please fill out the form below and we will contact you within 24 hours. For specific requests, visit the <0>Our Services</0> section",
-  "form": {
-    "name": "Name",
-    "phone": "Phone",
-    "email": "Email",
-    "topic": "Topic",
-    "message": "Questions / Details",
-    "submit": "Send request"
-  },
-  "agent": {
-    "name": "<0>German Randla</0>",
-    "title": "Qualification level: Senior Broker level 6",
-    "cert": "Certificate: 219715",
-    "reg": "Real estate broker reg. no: KMR 26618",
-    "phone": "+372 55599313",
-    "email": "german@gloreal.ee"
-  }
-},
-"footer": {
-  "slogan": "Discreet and competent – made for you",
-  "contact": {
-    "title": "Contact",
-    "phone": "+372 55599313",
-    "email": "info@gloreal.ee",
-    "address": "Liivalaia 28, Tallinn 10118"
-  },
-  "links": {
-    "title": "Links",
-    "offers": "Our Offers",
-    "broker": "Brokerage Service",
-    "management": "Order Property Management",
-    "valuation": "Order Valuation Report"
-  },
-  "legal": {
-    "title": "Legal",
     "privacy": "Privacy Policy",
     "cookies": "Cookies",
-    "terms": "Terms of Use"
+    "terms": "Terms of Service",
+
+    "viewWorks": "View our work",
+    "services": "Services",
+
+    "workAllEstonia": "We operate across Estonia",
+    "input": "Email or phone number",
+
+    "rights": "© <0>OMADOMA</0>™ OÜ {{year}} | All rights reserved."
   },
-  "buttons": {
-    "sell": "Sell / Rent out",
-    "quick": "Fast Sale"
-  },
-  "bottom": "© <0>Glo</0><1>Real</1>™ OÜ {{year}} | All rights reserved."
-},
+
   "dev": {
-    "title": "Website under construction",
-    "subtitle": "Some sections may not be available",
+    "title": "Website in progress",
+    "subtitle": "Some parts may be unavailable",
     "continue": "Continue"
   },
+
   "legal": {
-  "privacyText": "This Privacy Policy explains how GloReal Investments processes and protects your personal data. Our goal is to ensure that your data is always secure and used only for clearly defined purposes.\n\nWe primarily collect personal data when you fill out forms on our website, contact us, or use our services. The collected data may include your name, contact details, property preferences, and other information voluntarily provided by you.\n\nWe use your data to provide suitable real estate offers, respond to inquiries, prepare assessments, and improve our services. Data processing is carried out strictly on a lawful basis, and we do not share your data with third parties without your consent, except where required by law.\n\nGloReal Investments implements technical and organizational security measures to protect your data against unauthorized access, alteration, or loss.\n\nYou have the right to access your data, request correction or deletion, and withdraw your consent. To submit a request, please contact us via email.\n\nThis Privacy Policy may be updated in accordance with changes in legislation or service enhancements.",
-  
-  "cookiesText": "Our website uses cookies to ensure a better user experience, analyze website performance, and provide more relevant content. Cookies are small text files that are stored on your device when you visit our website.\n\nWe use both essential cookies necessary for the technical functioning of the website and analytical cookies that help us understand how visitors use the site. This data is anonymous and does not allow personal identification.\n\nYou may restrict or completely disable the use of cookies in your browser settings. Please note that blocking cookies may affect the functionality of certain features of the website.\n\nThe purpose of using cookies is to improve the quality of our services and provide a smoother and more convenient user experience.",
-  
-  "termsText": "These Terms of Use govern the use of the GloReal Investments website and describe the rights and obligations of users. By using the website, you confirm that you have read and agree to comply with these terms.\n\nThe information provided on the website is for general informational purposes only and may include estimates, descriptions, and market overviews that may not always be complete or up to date. While we strive to ensure accuracy, we do not guarantee the completeness, correctness, or suitability of the information for any specific purpose.\n\nUsers agree to use the website in good faith and refrain from actions that could damage the website’s functionality, security, or availability. Copying, distributing, or modifying website content without written permission from GloReal Investments is prohibited.\n\nThe website may contain links to third-party services or external websites. GloReal Investments is not responsible for the content, accuracy, or security of such third-party resources. Use of third-party services is at the user’s own risk.\n\nData submitted by users through the website, including inquiries and contact information, is used solely for service provision and communication purposes. Data processing is carried out in accordance with our Privacy Policy.\n\nGloReal Investments reserves the right to update, modify, or suspend the operation of the website without prior notice. We may also amend these Terms of Use at any time to ensure compliance with legal requirements and service development.\n\nIf a user does not agree with these Terms of Use, they are not permitted to use the website. Continued use of the website constitutes acceptance of these terms."
-}
+    "privacyText": "This privacy policy explains how GloReal Investments processes and protects your personal data...",
+    "cookiesText": "Our website uses cookies to ensure a better user experience...",
+    "termsText": "These terms of use regulate the use of the GloReal Investments website..."
+  },
 
+  "services": {
+    "title": "Our Services",
+    "singleTitle": "Choose yourself",
+    "singleDesc": "Choose exactly the services you need. Pay only for what you use",
+    "singleServices": "Services you can choose separately:",
+    "readMore": "Select service →",
+    "sendRequest": "Send request",
+    "sendRequest2": "Place order",
+    "eurPlusKM": "€ + VAT",
 
+    "foto": {
+      "title": "Professional photos",
+      "description": "Up to 20 high-quality real estate photos highlighting the best features",
+      "price": "170"
+    },
+    "text": {
+      "title": "Sales copy",
+      "description": "Professionally written listing that attracts potential buyers",
+      "price": "70"
+    },
+    "ad": {
+      "title": "Listing setup",
+      "description": "Publishing listings on popular real estate portals (e.g. KV.ee, City24)",
+      "price": "60"
+    },
+    "priceadvice": {
+      "title": "Price recommendation",
+      "description": "Market analysis and optimal pricing suggestion",
+      "price": "70"
+    },
+    "consult": {
+      "title": "Sales strategy consultation",
+      "description": "Consultation to define the best sales strategy",
+      "price": "90"
+    },
+    "show": {
+      "title": "Viewings",
+      "description": "Showing the property to clients and managing appointments",
+      "price": "70"
+    },
+    "negotiation": {
+      "title": "Negotiations",
+      "description": "Handling negotiations to achieve the best deal",
+      "price": "190"
+    },
+    "prepare": {
+      "title": "Deal preparation",
+      "description": "Preparing all documents for the transaction",
+      "price": "240"
+    },
+    "support": {
+      "title": "Support until notary",
+      "description": "Guidance throughout the process until notarization",
+      "price": "80"
+    },
 
-
+    "formTitle": "Fill out the form and we will respond within 24 hours"
+  }
 }
