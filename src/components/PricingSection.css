@@ -495,12 +495,15 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .list-simple.open {
+    margin-top: 0;
+  }
   .pricing-section {
     padding: 20px;
   }
   .pricing-grid {
     display: flex;
-    max-width: 320px;
+    max-width: 350px;
     margin: auto;
   }
 
@@ -509,13 +512,13 @@ ul {
   }
  .card ul {
     margin: auto;
-    width:max-content;
+    width:100%;
     
   }
   .check li, .cross li, .flex li {
     text-align: left;
   }
-  .card p {
+  .card p, .pricing-extra div {
     text-align: center;
   }
 

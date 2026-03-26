@@ -113,7 +113,7 @@ export default function Footer() {
               <h4>{t("footer.links")}</h4>
 
               <Link to="/">{t("nav.home")}</Link>
-              <Link to="/about">{t("nav.about")}</Link>
+              <Link to="/" className="disabled-link">{t("nav.about")}</Link>
               <Link to="/privacy">{t("footer.privacy")}</Link>
               <Link to="/cookies">{t("footer.cookies")}</Link>
               <Link to="/terms">{t("footer.terms")}</Link>
@@ -125,11 +125,11 @@ export default function Footer() {
         {/* CENTER */}
         <div className="footer-center">
 
-          <img src={logo} alt="logo" className="footer-logo" />
+          <img src={logo} alt="logo" className="footer-logo" onClick={() => (window.location.href = "/")}/>
 
-          <button className="btn-outline">
+          {/*<button className="btn-outline">
             {t("footer.viewWorks")}
-          </button>
+          </button>*/}
 
           <button className="btn-solid" onClick={() => (window.location.href = "/services")}>
             {t("footer.services")}

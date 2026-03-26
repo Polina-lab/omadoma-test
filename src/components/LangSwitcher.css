@@ -10,7 +10,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-blue-dark);
+  color: var(--color-brown-dark);
   font-weight: 700;
   padding: 6px 10px;
 }
@@ -50,8 +50,8 @@
   border: none;
   padding: 6px 10px;
   cursor: pointer;
-  color: var(--color-blue-dark);
-  font-weight: 200;
+  color: var(--color-brown-dark);
+  font-weight: 600;
   overflow: visible;
 }
 .lang-option:hover .flag-icon {

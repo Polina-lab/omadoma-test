@@ -14,8 +14,6 @@ import Kasutustingimused from "./pages/legal/Kasutustingimused";
 
 function App() {
 
-const [activeService, setActiveService] = useState(null);
-
   return (
     <Router>
       <DevOverlay />

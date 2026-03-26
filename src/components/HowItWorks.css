@@ -143,9 +143,12 @@ background: linear-gradient(
 
 @media (max-width: 768px) {
 
-
   .how-line {
     display: none;
+  }
+
+  .how-title {
+    margin:10px 0;
   }
 
   .how-container {
@@ -181,9 +184,8 @@ background: linear-gradient(
   }
 
   /* контент */
-  .content {
-    text-align: left;
-    margin-top: 0;
+  .step.step-1 .content, .step.step-2 .content, .step.step-3 .content, .content {
+    margin: 15px 0;
   }
 
   .content h3 {

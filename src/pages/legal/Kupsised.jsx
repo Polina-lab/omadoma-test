@@ -4,7 +4,7 @@ import LegalPage from "./LegalPage";
 const Kupsised = () => {
   return (
     <LegalPage
-      titleKey="footer.legal.cookies"
+      titleKey="footer.cookies"
       contentKey="legal.cookiesText"
     />
   );

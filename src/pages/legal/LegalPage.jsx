@@ -11,7 +11,7 @@ const LegalPage = ({ titleKey, contentKey }) => {
     <div className="legal-page">
       <div className="legal-header">
         <button className="back-btn" onClick={() => navigate(-1)}>
-          <span className="arrow">←</span> Tagasi
+          <span className="arrow">←</span> {t("back")}
         </button>
 
         <h1 className="legal-title">{t(titleKey)}</h1>

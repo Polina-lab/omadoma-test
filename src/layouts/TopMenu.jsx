@@ -53,9 +53,9 @@ const TopMenu = () => {
           <RouterLink to="/services" onClick={() => setMenuOpen(false)}>
             {t("nav.services")}
           </RouterLink>
-          <RouterLink to="/" className="disabled-link" onClick={() => setMenuOpen(false)}>
+          {/*<RouterLink to="/" className="disabled-link" onClick={() => setMenuOpen(false)}>
             {t("nav.works")}
-          </RouterLink>
+          </RouterLink>*/}
           <RouterLink to="/" className="disabled-link" onClick={() => setMenuOpen(false)}>
             {t("nav.about")}
           </RouterLink>
@@ -93,9 +93,9 @@ const TopMenu = () => {
             <NavLink to="/services">
               {t("nav.services")}
             </NavLink>
-            <NavLink to="/" className="disabled-link">
+            {/*<NavLink to="/" className="disabled-link">
               {t("nav.works")}
-            </NavLink>
+            </NavLink>*/}
             <NavLink to="/" className="disabled-link">
               {t("nav.about")}
             </NavLink>

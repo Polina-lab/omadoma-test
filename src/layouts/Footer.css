@@ -94,6 +94,7 @@
 .footer-logo {
   height: 120px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .btn-outline {
@@ -215,8 +216,7 @@
 
   /* CENTER */
   .footer-center {
-    order: -1; /* ставим выше остальных */
-    margin-bottom: 20px;
+    order: -1;
   }
 
   .footer-logo {

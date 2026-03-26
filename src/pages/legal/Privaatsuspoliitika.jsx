@@ -4,7 +4,7 @@ import LegalPage from "./LegalPage";
 const Privaatsuspoliitika = () => {
   return (
     <LegalPage
-      titleKey="footer.legal.privacy"
+      titleKey="footer.privacy"
       contentKey="legal.privacyText"
     />
   );

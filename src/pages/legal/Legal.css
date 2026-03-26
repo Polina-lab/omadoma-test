@@ -9,7 +9,7 @@
 
 /* Мини-хедер */
 .legal-header {
-  background: linear-gradient(135deg, #f5f7ff, #eef3ff);
+  background: linear-gradient(135deg, #fffaf5, #fff6ee);
   padding: 20px 25px;
   border-radius: 14px;
   display: flex;
@@ -24,7 +24,7 @@
 .legal-title {
   font-size: 26px;
   font-weight: 600;
-  color: var(--color-blue-dark);
+  color: var(--color-brown);
   margin: 0;
 }
 .legal-content {
@@ -41,12 +41,12 @@
   align-items: center;
   gap: 6px;
   background: #ffffff;
-  border: 1px solid #d7ddff;
+  border: 1px solid #ffe9d7;
   padding: 8px 14px;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  color: var(--color-blue-dark);
+  color: var(--color-brown);
   transition: all 0.25s ease;
 }
 
@@ -58,9 +58,9 @@
 
 /* Ховер эффект */
 .back-btn:hover {
-  background: var(--color-blue-dark);
+  background: var(--color-brown);
   color: #ffffff;
-  border-color: var(--color-blue-dark);
+  border-color: var(--color-brown);
 }
 
 .back-btn:hover .arrow {

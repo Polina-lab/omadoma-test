@@ -1,15 +1,20 @@
+import { useTranslation } from "react-i18next";
+import { useEffect, useRef, useState } from "react";
+
 import "./HowItWorks.css";
-import step1Icon from "../assets/step-1.svg";
-import step2Icon from "../assets/step-2.svg";
-import step3Icon from "../assets/step-3.svg";
+import step1Icon from "../assets/process/step-1.svg";
+import step2Icon from "../assets/process/step-2.svg";
+import step3Icon from "../assets/process/step-3.svg";
 
 import LineMain from "../assets/line-main.svg?react";
 import LineShadow from "../assets/line-shadow.svg?react";
-import { useEffect, useRef, useState } from "react";
+
 
 export default function HowItWorks() {
     const ref = useRef();
     const [visible, setVisible] = useState(false);
+
+    const { t } = useTranslation();
 
     useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +32,7 @@ export default function HowItWorks() {
     }, []);
   return (
     <section className={`how ${visible ? "visible" : ""}`} ref={ref}>
-      <h2 className="how-title">Kuidas see töötab?</h2>
+      <h2 className="how-title">{t("howItWorks.title")}</h2>
 
       <div className="how-container">
 
@@ -40,8 +45,8 @@ export default function HowItWorks() {
           <div className="content">
             <span className="step-number">1</span>
 
-            <h3>Jäta oma kontakt</h3>
-            <p>Täida lühike vorm ainult põhiinfo.</p>
+            <h3>{t("howItWorks.step1.title")}</h3>
+            <p>{t("howItWorks.step1.description")}</p>
           </div>
           <div className="icon">
             <img src={step1Icon} alt="" />
@@ -57,8 +62,8 @@ export default function HowItWorks() {
           <div className="content">
             <span className="step-number">2</span>
 
-            <h3>Saad tasuta konsultatsiooni</h3>
-            <p>Arutame sinu objekti, turusituatsiooni ja strateegiat.</p>
+            <h3>{t("howItWorks.step2.title")}</h3>
+            <p>{t("howItWorks.step2.description")}</p>
           </div>
         </div>
 
@@ -71,8 +76,8 @@ export default function HowItWorks() {
           <div className="content">
             <span className="step-number">3</span>
 
-            <h3>Alustame müüki</h3>
-            <p>Selge plaan. Struktureeritud protsess. Fookus tulemusele.</p>
+            <h3>{t("howItWorks.step3.title")}</h3>
+            <p>{t("howItWorks.step3.description")}</p>
           </div>
         </div>
 

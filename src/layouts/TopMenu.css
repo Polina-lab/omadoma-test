@@ -163,7 +163,7 @@
     padding-bottom: 30px;
   }
   .menu-inner {
-    padding: 10px 0px 0px 15px;
+    padding: 15px 15px;
     align-items: center;
   }
 
@@ -242,9 +242,10 @@
     display: none;
   }
   .logo-icon-mobile {
+    position: absolute;
     display: block;
     height: 70px;
-    margin-left: 30px;
+    top: 10px;
   }
 
   /* мобильное меню */

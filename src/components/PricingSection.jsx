@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
+import { Link as RouterLink, NavLink, useLocation } from "react-router-dom"
 import ServiceFormOverlay from "./ServiceFormOverlay";
+
 import "./PricingSection.css";
 
 import arrowDown from "../assets/services/arrow-down.svg";
@@ -211,12 +213,13 @@ export default function PricingSection({
                   ))}
                 </ul>
 
-                <button
+                <NavLink to="/services">
+            <button
                   className="btn-pricing"
                   onClick={() => (window.location.href = "/services")}
                 >
                   {data.button}
-                </button>
+                </button></NavLink>
               </>
             )}
 

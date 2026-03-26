@@ -4,7 +4,7 @@ import LegalPage from "./LegalPage";
 const Kasutustingimused = () => {
   return (
     <LegalPage
-      titleKey="footer.legal.terms"
+      titleKey="footer.terms"
       contentKey="legal.termsText"
     />
   );

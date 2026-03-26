@@ -7,7 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 
 import "./Home.css"
 
-const Home = ({ activeService, setActiveService }) => {
+const Home = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
