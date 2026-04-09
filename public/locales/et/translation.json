@@ -39,7 +39,7 @@
     "flex": {
       "type": "paindlik teenus",
       "title": "Vali ise",
-      "price": "Alates 50 €",
+      "price": "Alates 100 €",
       "desc": "Vali täpselt need teenused, mida vajad. Maksad ainult vajaliku eest.",
       "listTitle": "Teenused, mida saad valida eraldi:",
       "list": [
