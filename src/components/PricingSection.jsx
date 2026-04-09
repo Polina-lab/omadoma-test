@@ -73,7 +73,12 @@ export default function PricingSection({
 
       <ul className="check">
         {data.includes.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}><Trans
+              i18nKey={item}
+              components={[
+                <span className="black-bold" />
+              ]}
+            /></li>
         ))}
       </ul>
 
@@ -88,6 +93,12 @@ export default function PricingSection({
           </ul>
         </>
       )}
+      {data.includesDesc && (<p className="pricing-extra"><Trans
+              i18nKey={data.includesDesc}
+              components={[
+                <span className="gold-bold" />
+              ]}
+            /></p>)}
       <button
           className="btn-pricing"
           onClick={() => {

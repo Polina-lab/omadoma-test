@@ -12,6 +12,7 @@
   --color-brown:#9b4022;
   --color-brown-dark:#69220a;
   --color-brown-light:#e4cfaf;
+  --color-brown-light2:#8b6c3d;
 
   font-family: "Raleway", system-ui, sans-serif;
   line-height: 1.5;
@@ -214,6 +215,11 @@ span.form-message {
 
 span.brown-bold {
   color: var(--color-brown);
+  font-weight: 500;
+}
+
+.black-bold {
+  color: black;
   font-weight: 500;
 }
 

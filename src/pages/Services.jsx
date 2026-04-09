@@ -33,15 +33,15 @@ import supportIconHover from "../assets/services/support-hover.svg";
 import PricingSection from "../components/PricingSection";
 
 const serviceList = [
-  { key: "foto", iconDefault: fotoIcon, iconHover: fotoIconHover },
-  { key: "text", iconDefault: textIcon, iconHover: textIconHover },
-  { key: "ad", iconDefault: adIcon, iconHover: adIconHover },
-  { key: "priceadvice", iconDefault: priceadviceIcon, iconHover: priceadviceIconHover },
-  { key: "consult", iconDefault: consultIcon, iconHover: consultIconHover },
+  { key: "ready", iconDefault: adIcon, iconHover: adIconHover },
+  { key: "consult", iconDefault: priceadviceIcon, iconHover: priceadviceIconHover },
+  { key: "prepare", iconDefault: supportIcon, iconHover: supportIconHover },
+  { key: "foto", iconDefault: fotoIcon, iconHover: fotoIconHover }
+  /*{ key: "consult", iconDefault: consultIcon, iconHover: consultIconHover },
   { key: "show", iconDefault: showIcon, iconHover: showIconHover },
   { key: "negotiation", iconDefault: negotiationIcon, iconHover: negotiationIconHover },
   { key: "prepare", iconDefault: prepareIcon, iconHover: prepareIconHover },
-  { key: "support", iconDefault: supportIcon, iconHover: supportIconHover }
+  { key: "support", iconDefault: supportIcon, iconHover: supportIconHover }*/
 ];
 
 const Services = () => {
@@ -57,6 +57,7 @@ const Services = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isOpen, setIsOpen] = useState(false);
+  const [openService, setOpenService] = useState(null);
   const [formMessage, setFormMessage] = useState({ text: "", type: "" }); 
 
   const areas = t("pricing.form.areas", { returnObjects: true });
@@ -198,6 +199,12 @@ const Services = () => {
   };
 
   const handleCardClick = (key) => {
+  setOpenService(prev => (prev === key ? null : key));
+};
+
+  const handleSelectAndScroll = (key) => {
+    
+    setOpenService(null);
     setForm(prev => {
       const selected = prev.selectedService.includes(key)
         ? prev.selectedService.filter(k => k !== key)  // снять выбор
@@ -210,9 +217,25 @@ const Services = () => {
       };
     });
 
-    document.getElementById("contact-form")?.scrollIntoView({
-      behavior: "smooth"
-    });
+    if (isMobile) {
+      setTimeout(() => {
+        const form = document.getElementById("contact-form");
+        if (form) {
+          const top = form.getBoundingClientRect().top + window.scrollY - 130; // отступ сверху
+          window.scrollTo({
+            top,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+
+    if (!isMobile) {
+      document.getElementById("contact-form")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start" // вместо default, чтобы не скроллить до футера
+      });
+    }
   };
 
   useEffect(() => {
@@ -263,8 +286,9 @@ const Services = () => {
         <h3 className="single-services">{t("services.singleServices")}</h3>
         <div className="services-grid">
           {serviceList.map(({ key, iconDefault, iconHover }) => (
+            <>
             <React.Fragment key={key}>
-              <div className={`service-card ${form.selectedService.includes(key) ? "active" : ""}`} onClick={() => handleCardClick(key)}
+              <div className={`service-card ${form.selectedService.includes(key) ? "active" : ""} ${openService === key ? "open" : ""}`} onClick={() => handleCardClick(key)}
               >
                 <div className="service-layout">
                   <div className="service-icon-wrapper">
@@ -275,13 +299,81 @@ const Services = () => {
                   <div className="service-content">
 
                     <h3 className="service-name">{t(`services.${key}.title`)}</h3>
-                    <span className="service-price">{t(`services.${key}.price`)} {t("services.eurPlusKM")}</span>
+                    <span className="service-price">{t(`services.${key}.price`)}</span>
                     <p className="service-description">{t(`services.${key}.description`)}</p>
-                    <span className="service-link">{t("services.readMore")}</span>
+                    <span className="service-link">{openService === key ? "Sulge" : t("services.readMore")}</span>
+                    {isMobile && openService === key && (
+                        <div className="expanded-content">
+                          
+                          <p>{t(`services.${key}.fullDescription`)}</p>
+
+                          <ul>
+                            {t(`services.${key}.includes`, { returnObjects: true }).map((item, i) => (
+                              <li key={i}>✔ {item}</li>
+                            ))}
+                          </ul>
+
+                          <p className="extra">{t(`services.${key}.extra`)}</p>
+
+                          <button
+                            className="select-btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSelectAndScroll(key);
+                            }}
+                          >
+                            Vali teenus
+                          </button>
+                        </div>
+                    )}
                   </div>
                 </div>
               </div>
+              
             </React.Fragment>
+            {!isMobile && openService === key && (
+                <div className="service-expanded">
+                  <div className="expanded-content">
+                    
+                    <p>{t(`services.${key}.fullDescription`)}</p>
+
+                    <ul>
+                      {t(`services.${key}.includes`, { returnObjects: true }).map((item, i) => (
+                        <li key={i}>✔ {item}</li>
+                      ))}
+                    </ul>
+
+                    {key === "foto" && t(`services.${key}.priceExtra.prices`, { returnObjects: true }).length > 0 && (
+                      <div className="price-extra">
+                        <p className="price-extra-title">{t(`services.${key}.priceExtra.title`)}</p>
+                        <ul>
+                          {t(`services.${key}.priceExtra.prices`, { returnObjects: true }).map((line, i) => (
+                            <li key={i}>
+                              <Trans
+                                i18nKey={`services.${key}.priceExtra.prices.${i}`}
+                                components={[ <span className="brown-bold" /> ]}
+                              />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <p className="extra">{t(`services.${key}.extra`)}</p>
+
+                    <button
+                      className="select-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSelectAndScroll(key);
+                      }}
+                    >
+                      Vali teenus
+                    </button>
+                  </div>
+                </div>
+              )}
+              </>
           ))}
         </div>
         <form id="contact-form" className="contact-form-block" onSubmit={handleSubmit}>

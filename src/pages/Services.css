@@ -58,8 +58,8 @@
 .services-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .service-card {
@@ -74,7 +74,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  width: 400px;
+  width: 270px;
   flex-shrink: 0;
 }
 
@@ -83,6 +83,7 @@
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 0;
+  margin-top: 30px;
   font-variant: small-caps;
 }
 
@@ -349,6 +350,66 @@ select.disabled {
   color: white;
 }
 
+.service-card.open {
+  border-color: var(--color-brown);
+  background: #faf7f5;
+}
+
+.service-card.open:hover {
+  border-color: var(--color-brown);
+  background: var(--color-brown);
+}
+
+.service-expanded {
+  position: absolute;
+  top: 72%; /* под карточкой */
+  left: 30%;
+  background: white;
+  padding: 25px;
+  width: fit-content;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-brown-light);
+  border-radius: 8px;
+
+  animation: expand 0.3s ease;
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 300;
+  color: var(--color-dark-gray);
+}
+
+.expanded-content ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+
+.select-btn {
+  margin-top: 20px;
+  background: var(--color-brown);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .services-section{
     padding: 0px;
@@ -412,13 +473,46 @@ select.disabled {
     margin: 6px 0;
   }
 
+  .services-grid {
+  justify-content: center;
+}
+
   .service-card {
-    max-width: 250px;
+    max-width: 300px;
   }
 
   .service-card:hover {
   background-color: transparent;
   color: var(--color-gray);
+}
+
+.service-card.open {
+  border-color: var(--color-brown);
+  background: #faf7f5;
+}
+
+.service-card.open .select-btn {
+  margin: 0;
+  width: 100%;
+
+}
+
+.service-card.open .service-icon-wrapper {
+  display: none;
+}
+
+.expanded-content {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+
+.expanded-content ul {
+  text-align: left;
+}
+
+.service-card.open:hover {
+  background-color: transparent;
 }
 
 .service-card:hover .service-name {
