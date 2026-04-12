@@ -31,6 +31,11 @@ export default function PricingSection({
   const [activeForm, setActiveForm] = useState(null);
   const [openCard, setOpenCard] = useState(null);
 
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  const [translateX, setTranslateX] = useState(0);
+
   const isSimpleUI = variant === "simple" || isMobile;
 
   const getPricingData = () => {
@@ -64,6 +69,42 @@ export default function PricingSection({
     setOpenCard(null);
     setActiveForm(null);
   }, [activeIndex]);
+
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    const currentX = e.targetTouches[0].clientX;
+    setTouchEndX(currentX);
+
+    const delta = currentX - touchStartX;
+    setTranslateX(delta); // 👈 двигаем карточку
+  };
+
+  const handleTouchEnd = () => {
+    const distance = touchStartX - touchEndX;
+
+    if (distance > 80) {
+      // свайп влево
+      setTranslateX(-300); // уезжает
+      setTimeout(() => {
+        setActiveIndex(prev => (prev + 1) % packages.length);
+        setTranslateX(0);
+      }, 200);
+    } else if (distance < -80) {
+      // свайп вправо
+      setTranslateX(300);
+      setTimeout(() => {
+        setActiveIndex(prev => (prev - 1 + packages.length) % packages.length);
+        setTranslateX(0);
+      }, 200);
+    } else {
+      // возврат назад
+      setTranslateX(0);
+    }
+  };
 
 
 
@@ -154,10 +195,17 @@ export default function PricingSection({
           />
         )}
     <section className="pricing-section">
-      <div className="pricing-grid">
+      <div className="pricing-grid" onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}>
 
         {visiblePackages.map(({ type, data }) => (
-          <div key={type} className={`card ${type}`}>
+          <div key={type} className={`card ${type}`} style={{
+    transform: isMobile
+  ? `translateX(${translateX}px) rotate(${translateX * 0.05}deg)`
+  : "none",
+    transition: touchEndX ? "none" : "transform 0.3s ease"
+  }}>
 
             {/* BADGE */}
             {(variant === "simple" || isMobile) && (

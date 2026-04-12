@@ -307,9 +307,9 @@ const Services = () => {
                           
                           <p>{t(`services.${key}.fullDescription`)}</p>
 
-                          <ul>
+                          <ul className="check">
                             {t(`services.${key}.includes`, { returnObjects: true }).map((item, i) => (
-                              <li key={i}>✔ {item}</li>
+                              <li key={i}>{item}</li>
                             ))}
                           </ul>
 
@@ -331,15 +331,15 @@ const Services = () => {
               </div>
               
             </React.Fragment>
-            {!isMobile && openService === key && (
+            {/*{!isMobile && openService === key && (
                 <div className="service-expanded">
                   <div className="expanded-content">
                     
                     <p>{t(`services.${key}.fullDescription`)}</p>
 
-                    <ul>
+                    <ul className="check">
                       {t(`services.${key}.includes`, { returnObjects: true }).map((item, i) => (
-                        <li key={i}>✔ {item}</li>
+                        <li key={i}>{item}</li>
                       ))}
                     </ul>
 
@@ -372,10 +372,57 @@ const Services = () => {
                     </button>
                   </div>
                 </div>
-              )}
+              )}*/}
               </>
           ))}
         </div>
+        {/* 💻 DESKTOP EXPANDED ВНИЗУ */}
+{!isMobile && openService && (
+  <div className="service-expanded">
+    <div className="expanded-content">
+      
+      <div className="first-step">
+        <p>{t(`services.${openService}.fullDescription`)}</p>
+
+        <p className="extra">{t(`services.${openService}.extra`)}</p>
+      </div>
+
+      <ul className="check">
+        {t(`services.${openService}.includes`, { returnObjects: true }).map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+
+      {openService === "foto" &&
+        t(`services.${openService}.priceExtra.prices`, { returnObjects: true }).length > 0 && (
+          <div className="price-extra">
+            {/*<p className="price-extra-title">
+              {t(`services.${openService}.priceExtra.title`)}
+            </p>*/}
+            <ul>
+              {t(`services.${openService}.priceExtra.prices`, { returnObjects: true }).map((line, i) => (
+                <li key={i}>
+                  <Trans
+                    i18nKey={`services.${openService}.priceExtra.prices.${i}`}
+                    components={[<span className="brown-bold" />]}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+    </div>
+    <div className="expended-button"><button
+          className="select-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleSelectAndScroll(openService);
+          }}
+        >
+          Vali teenus
+        </button></div>
+  </div>
+)}
         <form id="contact-form" className="contact-form-block" onSubmit={handleSubmit}>
           <h3>{t("services.formTitle")}</h3>
           <div className="form-grid">

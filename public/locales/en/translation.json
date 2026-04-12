@@ -2,38 +2,38 @@
   "nav.home": "Home",
   "nav.services": "Services",
   "nav.works": "Our Work",
-  "nav.about": "About Us",
+  "nav.about": "About",
   "nav.connect": "Contact",
 
-  "hero.subtitle": "Sell smart. Save thousands.",
-  "hero.description": "Fixed price. Clear strategy. Professional results. No commission fees.",
+  "hero.subtitle": "All real estate services — at a fixed price",
+  "hero.description": "Operating in Harju County",
   "hero.mailPhone": "Email or phone number",
-  "hero.freeCall": "Request a free call",
+  "hero.freeCall": "Get a free consultation",
 
   "advantages": {
     "price": {
-      "title": "Fixed price",
-      "description": "No 3% commission fees"
+      "title": "Fixed pricing",
+      "description": "No 3% commissions or hidden fees"
     },
     "best": {
       "title": "Maximum selling price",
-      "description": "Correct pricing = more money in your pocket."
+      "description": "The right pricing = more money in your pocket"
     },
     "strategy": {
       "title": "Clear strategy",
-      "description": "You don’t sell by guesswork, but with a plan."
+      "description": "You’re not guessing — you’re following a plan"
     },
     "camera": {
       "title": "Professional presentation",
-      "description": "Photos and text that attract buyers."
+      "description": "Photos and copy that attract real buyers"
     },
     "support": {
       "title": "Support at every step",
-      "description": "You’re never left alone with questions."
+      "description": "You’re never left alone with questions"
     },
     "fast": {
       "title": "Faster sales",
-      "description": "Structured process = less time on the market."
+      "description": "Structured process = less time on the market"
     }
   },
 
@@ -41,18 +41,18 @@
     "more": "Show more",
 
     "flex": {
-      "type": "flex package",
-      "title": "Choose yourself",
-      "price": "From 50 €",
-      "desc": "Choose exactly the services you need. Pay only for what you use.",
-      "listTitle": "Services you can choose separately:",
+      "type": "flexible plan",
+      "title": "Build your own",
+      "price": "From €100",
+      "desc": "Choose only the services you actually need",
+      "listTitle": "Available services:",
       "list": [
         "Professional photos",
-        "Sales copy",
-        "Listing setup",
+        "Listing copy",
+        "Ad publishing",
         "Price recommendation",
         "Sales strategy consultation",
-        "Property viewings",
+        "Property showings",
         "Negotiations",
         "Deal preparation",
         "Support until notary"
@@ -61,67 +61,74 @@
     },
 
     "basic": {
-      "badge": "Most popular choice",
-      "type": "basic service",
+      "badge": "Most popular",
+      "type": "basic plan",
       "title": "Sell it yourself",
-      "subtitle": "Smart start. Professional foundation.",
-      "price": "From 280 €",
-      "desc": "Ideal if you want to manage the sale yourself but need a strong professional start.",
+      "subtitle": "A strong start for your property sale",
+      "price": "From €280",
+      "desc": "Perfect if you want to manage the sale yourself but need a professional start",
 
       "includesTitle": "Includes:",
       "includes": [
         "Professional photos",
-        "Sales copy",
-        "Listing setup",
+        "Listing copy",
+        "Ad publishing",
         "Price recommendation",
-        "Sales strategy consultation"
+        "Strategy consultation"
       ],
 
-      "notIncludesTitle": "Does not include:",
+      "notIncludesTitle": "Not included:",
       "notIncludes": [
-        "Viewings",
-        "Negotiations",
-        "Listing portal fees (separate)"
+        "Property showings",
+        "Buyer negotiations",
+        "Real estate portal fees"
       ],
 
-      "button": "Select service",
+      "button": "Select",
 
       "pricing": {
         "title": "Pricing based on property size:",
         "items": [
-          "Up to 40 m² - <0>280 €</0>",
-          "40–60 m² - <0>330 €</0>",
-          "60–80 m² - <0>400 €</0>",
-          "80+ m² - <0>on request</0>"
+          "1-room up to 35 m² — <0>€280</0>",
+          "2-room up to 53 m² — <0>€350</0>",
+          "3-room up to 70 m² — <0>€400</0>",
+          "4-room up to 80 m² — <0>€450</0>",
+          "80+ m² — <0>on request</0>"
         ]
       }
     },
 
     "full": {
-      "badge": "Turnkey solution",
+      "badge": "End-to-end",
       "type": "full service",
-      "title": "You relax\nWe sell",
-      "price": "From 1200 €",
-      "desc": "Full service for those who want a complete turnkey solution.",
+      "title": "We handle everything",
+      "subtitle": "From start to finish",
+      "price": "From €1700",
+      "desc": "A complete solution for a smooth, stress-free sale",
 
       "includesTitle": "Includes:",
       "includes": [
-        "Everything from basic package",
-        "All viewings",
-        "Negotiations",
+        "Everything from the basic plan",
+        "Publishing your listing on portals",
+        "<0>Official property valuation</0>",
+        "Property showings",
+        "Negotiations with buyers",
         "Deal preparation",
         "Support until notary"
       ],
 
-      "button": "Select service",
+      "includesDesc": "<0>All included</0> — including valuation and portal fees, no hidden costs",
+
+      "button": "Select",
 
       "pricing": {
         "title": "Pricing based on property size:",
         "items": [
-          "Up to 40 m² - <1>1200 €</1>",
-          "40–60 m² - <1>1500 €</1>",
-          "60–80 m² - <1>2000 €</1>",
-          "80+ m² - <1>on request</1>"
+          "1-room up to 35 m² — <1>€1700</1>",
+          "2-room up to 53 m² — <1>€2000</1>",
+          "3-room up to 70 m² — <1>€2500</1>",
+          "4-room up to 80 m² — <1>€3000</1>",
+          "80+ m² — <1>on request</1>"
         ]
       }
     },
@@ -129,8 +136,8 @@
     "form": {
       "name": "Name",
       "contact": "Email or phone <0>*</0>",
-      "city": "Region - City",
-      "area": "Area",
+      "city": "Region — City",
+      "area": "Size",
       "areas": [
         "Up to 40 m²",
         "40–60 m²",
@@ -138,123 +145,126 @@
         "80+ m²"
       ],
       "submit": "Send request",
-      "comment": "Comment:",
+      "comment": "Comment",
       "service": "Select service",
       "serviceHint": "Choose a package or individual services",
-      "selectService": "Custom selection",
+      "selectService": "Select manually",
       "success": "Sent!",
-      "error": "Error sending",
+      "error": "Error sending request",
       "errorContact": "Enter a valid email or phone",
       "required": "Contact is required"
     }
   },
 
-  "footer": {
-    "topText": "Why pay thousands in commissions,\nwhen you can get professional service at a fixed price?",
-
-    "contact": "Contact",
-    "links": "Links",
-
-    "privacy": "Privacy Policy",
-    "cookies": "Cookies",
-    "terms": "Terms of Service",
-
-    "viewWorks": "View our work",
-    "services": "Services",
-
-    "workAllEstonia": "We operate across Estonia",
-    "input": "Email or phone number",
-
-    "rights": "© <0>OMADOMA</0>™ OÜ {{year}} | All rights reserved."
-  },
-
-  "dev": {
-    "title": "Website in progress",
-    "subtitle": "Some parts may be unavailable",
-    "continue": "Continue"
-  },
-
-    "legal": {
-    "privacyText": "This privacy policy explains how the Omadoma website collects, uses, and protects users' personal data.\n\n1. Data we collect\n\nWe only collect data that the user voluntarily provides:\n- name (if provided)\n- phone number or email address\n- other information entered in the form\n- selected language (for communication purposes)\n\nWe may also collect technical data (e.g. via cookies) to improve website performance and user experience.\n\n2. Purpose of data usage\n\nCollected data is used to:\n- contact the user\n- provide services and respond to inquiries\n- tailor communication based on the user's language\n- analyze statistics and improve our services\n\n3. Data retention\n\nPersonal data is stored only as long as necessary to fulfill the purposes described above or to comply with legal obligations.\n\n4. Data sharing\n\nWe do not sell or share personal data with third parties, except when:\n- it is necessary for providing the service\n- it is required by law\n\n5. User rights\n\nUsers have the right to:\n- access their personal data\n- request correction or deletion of their data\n- restrict data processing\n\nTo exercise these rights, please contact us via email.\n\n6. Data security\n\nWe apply reasonable technical and organizational measures to protect personal data from unauthorized access, alteration, or disclosure.\n\n7. Changes\n\nWe reserve the right to update this privacy policy at any time. Updates will be published on the website.",
-    "cookiesText": "The Omadoma website uses cookies to ensure a better user experience and to collect anonymous statistics.\n\nWhat are cookies?\nCookies are small text files stored on a user's device when visiting a website.\n\nWhat cookies do we use?\n- Essential cookies – ensure basic website functionality\n- Analytical cookies – help us understand how users interact with the website\n- Preference cookies – store user preferences such as selected language\n\nPurpose of cookies\nCookies are used to:\n- ensure proper website functionality\n- improve user experience\n- collect and analyze statistical data\n\nManaging cookies\nUsers can control or delete cookies in their browser settings.\nPlease note that some website features may not function properly if cookies are disabled.\n\nChanges\nWe may update this cookie policy from time to time. All changes will be published on the website.",
-    "termsText": "These terms govern the use of the Omadoma website.\n\nGeneral provisions\nBy using the website, the user agrees to these terms.\n\nService description\nOmadoma provides information about its services and allows users to submit inquiries via a contact form.\n\nUser obligations\nThe user agrees to:\n- provide accurate and truthful information\n- not use the website for unlawful purposes\n\nLimitation of liability\nWe are not responsible for:\n- temporary unavailability of the website\n- technical errors\n- any damages resulting from the use of the website\n\nIntellectual property\nAll website content (texts, design, visuals) belongs to Omadoma and is protected by copyright.\n\nChanges\nWe reserve the right to modify these terms at any time. The updated version will be published on the website.\n\nApplicable law\nThese terms are governed by the laws of the Republic of Estonia."
-  },
-
   "services": {
     "title": "Our Services",
-    "singleTitle": "Choose yourself",
-    "singleDesc": "Choose exactly the services you need. Pay only for what you use",
-    "singleServices": "Services you can choose separately:",
-    "readMore": "Select service →",
+    "singleTitle": "Build your own",
+    "singleDesc": "Choose only what you need and pay only for that",
+    "singleServices": "Available services:",
+    "readMore": "Read more →",
     "sendRequest": "Send request",
     "sendRequest2": "Place order",
-    "eurPlusKM": "€ + VAT",
+    "close": "Close",
 
     "foto": {
-      "title": "Professional photos",
-      "description": "Up to 20 high-quality real estate photos highlighting the best features",
-      "price": "170"
-    },
-    "text": {
-      "title": "Sales copy",
-      "description": "Professionally written listing that attracts potential buyers",
-      "price": "70"
-    },
-    "ad": {
-      "title": "Listing setup",
-      "description": "Publishing listings on popular real estate portals (e.g. KV.ee, City24)",
-      "price": "60"
-    },
-    "priceadvice": {
-      "title": "Price recommendation",
-      "description": "Market analysis and optimal pricing suggestion",
-      "price": "70"
-    },
-    "consult": {
-      "title": "Sales strategy consultation",
-      "description": "Consultation to define the best sales strategy",
-      "price": "90"
-    },
-    "show": {
-      "title": "Viewings",
-      "description": "Showing the property to clients and managing appointments",
-      "price": "70"
-    },
-    "negotiation": {
-      "title": "Negotiations",
-      "description": "Handling negotiations to achieve the best deal",
-      "price": "190"
-    },
-    "prepare": {
-      "title": "Deal preparation",
-      "description": "Preparing all documents for the transaction",
-      "price": "240"
-    },
-    "support": {
-      "title": "Support until notary",
-      "description": "Guidance throughout the process until notarization",
-      "price": "80"
+      "title": "Professional photography",
+      "description": "Photos that capture buyers’ attention",
+      "price": "from €190",
+      "fullDescription": "High-quality photos that increase interest and attract more buyers",
+
+      "includes": [
+        "Professional real estate photography",
+        "Proper lighting and composition",
+        "Photo editing",
+        "Ready-to-use images for listings"
+      ],
+
+      "priceExtra": {
+        "title": "Pricing based on property size:",
+        "prices": [
+          "1-room up to 35 m² — <0>€190</0>",
+          "2-room up to 53 m² — <0>€250</0>",
+          "3-room up to 70 m² — <0>€300</0>",
+          "4-room up to 80 m² — <0>€350</0>"
+        ]
+      },
+
+      "extra": "Best combined with other services"
     },
 
-    "formTitle": "Fill out the form and we will respond within 24 hours"
+    "ready": {
+      "title": "Ready-to-sell listing",
+      "description": "Increases visibility and attracts more interest",
+      "price": "€150",
+      "fullDescription": "We create a listing that stands out and attracts more potential buyers",
+
+      "includes": [
+        "Professional listing copy",
+        "Highlighting key strengths",
+        "Clear and structured layout",
+        "Publishing on real estate portals",
+        "Choosing the right channels"
+      ],
+
+      "extra": "Result: more views and stronger interest"
+    },
+
+    "consult": {
+      "title": "Sales consultation",
+      "description": "Clear plan and the right price without risks",
+      "price": "€100",
+      "fullDescription": "Get a clear understanding of the market and a solid sales plan",
+
+      "includes": [
+        "On-site visit",
+        "Property inspection",
+        "Market analysis",
+        "Recommended price",
+        "Step-by-step sales plan"
+      ],
+
+      "extra": "Avoid underpricing or overpricing and sell faster"
+    },
+
+    "prepare": {
+      "title": "Full deal support",
+      "description": "We handle everything — zero stress for you",
+      "price": "€1000",
+      "fullDescription": "We manage the entire process so you don’t have to worry",
+
+      "includes": [
+        "Organizing property showings",
+        "Communication with buyers",
+        "Negotiations",
+        "Achieving the best price",
+        "Deal preparation",
+        "Support until notary"
+      ],
+
+      "extra": "Save time and avoid stress — focus on what matters"
+    },
+
+    "formTitle": "Fill out the form and we’ll reply within 24 hours"
   },
+
   "howItWorks": {
     "title": "How it works",
 
     "step1": {
-      "title": "Leave your contact details",
-      "description": "Fill out a short form with the basic information."
+      "title": "Leave your contact",
+      "description": "Fill in a short form"
     },
 
     "step2": {
-      "title": "Get a free consultation",
-      "description": "We’ll discuss your property, the market situation, and the strategy."
+      "title": "Get a consultation",
+      "description": "We’ll discuss your property, market and strategy"
     },
 
     "step3": {
-      "title": "We start the sale",
-      "description": "Clear plan. Structured process. Focus on results."
+      "title": "Start selling",
+      "description": "Clear plan, structured process, focus on results"
     }
   },
-  "back":"Back"
+
+  "back": "Back"
 }

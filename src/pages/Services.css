@@ -3,10 +3,10 @@
     linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0.9) 10%,
-      rgba(255, 255, 255, 0.6) 20%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.95) 10%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.95) 20%,
+      rgba(255, 255, 255, 1) 40%,
       rgba(255, 255, 255, 1) 100%
     ),
     url("../assets/services/services_bg.jpg");
@@ -360,9 +360,9 @@ select.disabled {
   background: var(--color-brown);
 }
 
-.service-expanded {
+/*.service-expanded {
   position: absolute;
-  top: 72%; /* под карточкой */
+  top: 72%;
   left: 30%;
   background: white;
   padding: 25px;
@@ -373,6 +373,51 @@ select.disabled {
   border-radius: 8px;
 
   animation: expand 0.3s ease;
+}*/
+
+@media (min-width: 769px) {
+  .service-expanded {
+    position: static; /* ВАЖНО */
+    width: fit-content;
+    margin-top: 10px;
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid var(--color-brown-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    animation: slideDown 0.7s ease;
+    box-sizing: border-box;
+    margin: 30px auto 0px;
+  }
+  .services-grid {
+    align-items: flex-start;
+  }
+  .first-step {
+    max-width: 300px;
+  }
+  .expanded-content {
+  width: fit-content;
+  text-align: left;
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  
+}
+.expended-button {
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
+.select-btn {
+  margin: auto;
+  width: 20%;
+  text-align: center;
+}
+
+.expanded-content ul {
+  text-align: left;
+}
 }
 
 @keyframes expand {
@@ -387,21 +432,30 @@ select.disabled {
 }
 
 .expanded-content {
-  max-width: 800px;
   margin: 0 auto;
-  text-align: center;
   font-weight: 300;
   color: var(--color-dark-gray);
 }
 
 .expanded-content ul {
   list-style-type: none;
-  text-align: center;
+}
+
+.expanded-content .check li::before {
+  text-align: left;
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+
+  background-image: url("../assets/include.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
 .select-btn {
-  margin-top: 20px;
   background: var(--color-brown);
   color: white;
   padding: 12px 20px;
@@ -537,6 +591,10 @@ select.disabled {
 
 .service-price {
   top: 10px;
+}
+
+.service-card.open .service-description {
+  display: none;
 }
 
   .form-grid {

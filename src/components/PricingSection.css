@@ -34,6 +34,7 @@
   justify-content: center;
   gap: 40px;
   align-items: center;
+  touch-action: pan-y;
 }
 
 /* CARD BASE */
@@ -42,13 +43,14 @@
   position: relative;
   border-radius: 20px;
   padding: 0px 20px 20px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   text-align: center;
   max-width: 280px;
   font-size: 14px;
   height:fit-content;
   font-weight: 100;
   border: 1px solid var(--border);
+  transition: transform 0.5s ease;
 }
 .card h2 {
     margin: 5px;
@@ -168,7 +170,7 @@ ul {
     color: black;
 }
 
-.check li::before {
+/*.check li::before {
   content: "✔ ";
   color: green;
 }
@@ -176,6 +178,30 @@ ul {
 .cross li::before {
   content: "✖ ";
   color: red;
+}*/
+
+.check li::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+
+  background-image: url("../assets/include.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cross li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+
+  background-image: url("../assets/not-include.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* BUTTON */
@@ -489,6 +515,23 @@ ul {
   font-size: 16px;
   border-radius: 8px;
   background: var(--color-brown);
+}
+
+.mobile-peek {
+  display: flex;
+  overflow: hidden;
+}
+
+.mobile-peek .card {
+  flex: 0 0 85%;
+  margin-left: 200px;
+}
+
+/* 👇 вот он — peek эффект */
+.mobile-peek .card:nth-child(2) {
+  opacity: 0.6;
+  margin-left: 50px;
+  transform: scale(0.9);
 }
 
 @media (max-width: 768px) {

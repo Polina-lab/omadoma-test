@@ -4,10 +4,10 @@
   "nav.works": "Meie tööd",
   "nav.about": "Meist",
   "nav.connect": "Võta ühendust",
-  "hero.subtitle": "Sinu kinnisvara müük ilma vahendustasudeta",
-  "hero.description": "Fikseeritud hind, selge strateegia ja tugi kuni notarini.",
+  "hero.subtitle": "Kõik kinnisvara teenused - fikseeritud hinnaga",
+  "hero.description": "Tegutseme Harjumaal",
   "hero.mailPhone": "E-post või telefoni number",
-  "hero.freeCall": "Telli tasuta kõne",
+  "hero.freeCall": "Telli tasuta konsultatsioon",
   "advantages": {
     "price": {
       "title": "Fikseeritud hind",
@@ -60,7 +60,7 @@
       "badge": "Kõige populaarsem valik",
       "type": "põhiteenus",
       "title": "Müü ise",
-      "subtitle": "Tark algus. Professionaalne vundament.",
+      "subtitle": "Tark algus sinu kinnisvara müügile",
       "price": "Alates 280 €",
       "desc": "Ideaalne, kui soovid ise müüki juhtida, kuid vajad tugevat professionaalset algust.",
 
@@ -77,7 +77,7 @@
       "notIncludes": [
         "Objekti näitamisi",
         "Läbirääkimisi ostjatega",
-        "Kuulutuse avaldamise tasusid portaalides"
+        "Kinnisvaraportaalide tasud ei ole hinna sees"
       ],
 
       "button": "Vali teenus",
@@ -95,7 +95,7 @@
     },
 
     "full": {
-      "badge": "Võtmed kätte lahendus",
+      "badge": "Algusest lõpuni",
       "type": "täisteenus",
       "title": "Kõik sinu eest",
       "subtitle": "Kogu müügiprotsess ühest kohast",
@@ -113,7 +113,7 @@
         "Tugi kuni notaritehinguni"
       ],
 
-      "includesDesc": "<0>Kõik hinnas</0> -  sh ametlik hindamisakt ja kuulutused kinnisvaraportaalides - lisatasud puuduvad.",
+      "includesDesc": "<0>Kõik hinnas</0> - sh ametlik hindamisakt ja  kinnisvaraportaali tasud - lisatasud puuduvad.",
 
       "button": "Vali teenus",
 
@@ -151,7 +151,7 @@
     }
   },
   "footer": {
-    "topText": "Miks maksta tuhandeid protsentides,\nkui saad professionaalse teenuse fikseeritud hinnaga?",
+    "topText": "Milleks maksta tuhandeid protsentides,\nkui saad professionaalse teenuse fikseeritud hinnaga?",
 
     "contact": "Kontakt",
     "links": "Links",
@@ -181,7 +181,7 @@
   "services": {
   "title": "Meie teenused",
   "singleTitle":"Vali ise",
-  "singleDesc":"Vali täpselt need teenused, mida vajad. Maksad ainult vajaliku eest",
+  "singleDesc":"Vali täpselt need teenused, mida vajad, maksad ainult vajaliku eest",
   "singleServices":"Teenused mida saad valida eraldi:",
   "readMore": "Ava rohkem →",
   "sendRequest": "Saada päring",
@@ -191,32 +191,31 @@
     "title": "Professionaalsed fotod",
     "description": "Fotod, mis panevad ostjad huvi tundma",
     "price": "alates 190 €",
-    "fullDescription": "Kvaliteetsed fotod, mis suurendavad huvi ja toovad rohkem potentsiaalseid ostjaid.",
+    "fullDescription": "Kvaliteetsed fotod, mis suurendavad huvi ja toovad ostjaid",
 
     "includes": [
-      "Professionaalne fotosessioon objektil",
+      "Professionaalsed kinnisvara pildid",
       "Õige valgus ja kompositsioon",
-      "Parimate nurkade valik",
       "Fotode järeltöötlus",
       "Valmis pildid kuulutuste jaoks"
     ],
     "priceExtra": {
       "title":"Hinnastamine vastavalt pinnale:",
       "prices" : [
-        "1 tuba kuni 35 m² – <0>190 €</0>",
-        "2 tuba kuni 53 m² – <0>250 €</0>",
-        "3 tuba kuni 70 m² – <0>300 €</0>",
-        "4 tuba kuni 80 m² – <0>350 €</0>"
+        "1-toaline kuni 35 m² – <0>190 €</0>",
+        "2-toaline kuni 53 m² – <0>250 €</0>",
+        "3-toaline kuni 70 m² – <0>300 €</0>",
+        "4-toaline kuni 80 m² – <0>350 €</0>"
       ]
     },
 
-    "extra": "Soovitame kombineerida teiste teenustega."
+    "extra": "Soovitame kombineerida teiste teenustega"
   },
   "ready": {
     "title": "Müügivalmis kuulutus",
     "description": "Toob rohkem huvilisi ja tõstab nähtavust",
     "price": "150 €",
-    "fullDescription": "Loome kuulutuse, mis toob rohkem huvilisi ja aitab sinu objektil silma paista.",
+    "fullDescription": "Loome kuulutuse, mis toob rohkem huvilisi ja aitab sinu objektil silma paista",
 
     "includes": [
       "Professionaalne müügitekst",
@@ -226,29 +225,29 @@
       "Õigete kanalite valik maksimaalse nähtavuse jaoks"
     ],
 
-    "extra": "Tulemus: rohkem vaatamisi ja suurem huvi sinu objekti vastu."
+    "extra": "Tulemus: rohkem vaatamisi ja suurem huvi sinu objekti vastu"
   },
   "consult": {
     "title": "Müügikonsultatsioon",
     "description": "Selge plaan ja õige hind ilma riskita",
     "price": "100 €",
-    "fullDescription": "Saad selge arusaama turust ja kindla plaani, kuidas oma objekti müüa.",
+    "fullDescription": "Saad selge arusaama turust ja kindla plaani, kuidas oma objekti müüa",
 
     "includes": [
       "Väljasõit objektile",
-      "Objekti hindamine kohapeal",
+      "Objekti ülevaatus kohapeal",
       "Turuanalüüs sarnaste pakkumiste põhjal",
       "Soovituslik müügihind",
-      "Lühike müügistrateegia"
+      "Selge tegevusplaan kinnisvara müügiks"
     ],
 
-    "extra": "Aitab vältida alahindamist või ülehindamist ja kiirendab müüki."
+    "extra": "Aitab vältida alahindamist või ülehindamist ja kiirendab müüki"
   },
   "prepare": {
     "title": "Tehinguni välja",
     "description": "Kõik müügiga seotud, sinule null stressi",
     "price": "1000 €",
-    "fullDescription": "Võtame kogu müügiprotsessi enda kanda – sina ei pea muretsema.",
+    "fullDescription": "Võtame kogu müügiprotsessi enda kanda – sina ei pea muretsema",
 
     "includes": [
       "Objekti näitamiste korraldamine",
@@ -259,35 +258,9 @@
       "Tugi kuni notarini"
     ],
 
-    "extra": "Säästad aega ja väldid stressi – keskendu olulisele, meie teeme ülejäänu."
+    "extra": "Säästad aega ja väldid stressi – keskendu olulisele, meie teeme ülejäänu"
   },
 
-
-  "ad": {
-    "title": "Müügistrateegia konsultatsioon",
-    "description": "Konsultatsioon, et leida parim strateegia kinnisvara müügiks",
-    "price": "90"
-  },
-  "show": {
-    "title": "Näitamised",
-    "description": "Objekti tutvustamine huvilistele, aja kokkuleppimine ja kliendisuhtlus",
-    "price": "70"
-  },
-  "negotiation": {
-    "title": "Läbirääkimised",
-    "description": "Ostjatega läbirääkimiste pidamine, et saavutada parim tehing",
-    "price": "190"
-  },
-    "prepare2": {
-    "title": "Tehingu ettevalmistus ",
-    "description": "Kõik vajalikud dokumendid tehinguks, sh lepingute koostamine ja kontroll",
-    "price": "240"
-  },
-    "support": {
-    "title": "Tugi kuni notarini",
-    "description": "Nõustamine ja abi kogu protsessi vältel kuni notariaalse tehinguni",
-    "price": "80"
-  },
   "formTitle": "Täida vorm ja vastame 24 tunni jooksul"
 },
 "howItWorks": {
@@ -295,17 +268,17 @@
 
     "step1": {
       "title": "Jäta oma kontakt",
-      "description": "Täida lühike vorm ainult põhiinfo."
+      "description": "Täida lühike vorm ainult põhiinfo"
     },
 
     "step2": {
       "title": "Saad tasuta konsultatsiooni",
-      "description": "Arutame sinu objekti, turusituatsiooni ja strateegiat."
+      "description": "Arutame sinu objekti, turusituatsiooni ja strateegiat"
     },
 
     "step3": {
       "title": "Alustame müüki",
-      "description": "Selge plaan. Struktureeritud protsess. Fookus tulemusele."
+      "description": "Selge plaan, struktureeritud protsess, fookus tulemusele"
     }
   }
 ,
